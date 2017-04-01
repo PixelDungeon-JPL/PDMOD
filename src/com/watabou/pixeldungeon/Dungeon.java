@@ -267,7 +267,12 @@ public class Dungeon {
 	public static boolean bossLevel() {
 		return bossLevel( depth );
 	}
-	
+
+	/**
+	 * Testet, ob das Level ein Boss-Level ist
+	 * @param depth Das level
+	 * @return True, wenn es ein boss level ist.
+	 */
 	public static boolean bossLevel( int depth ) {
 		return depth == 5 || depth == 10 || depth == 15 || depth == 20 || depth == 25;
 	}
@@ -292,7 +297,11 @@ public class Dungeon {
 		
 		observe();
 	}
-	
+
+    /**
+     * Wirft ein Item durch eine lücke im Boden
+     * @param item
+     */
 	public static void dropToChasm( Item item ) {
 		int depth = Dungeon.depth + 1;
 		ArrayList<Item> dropped = (ArrayList<Item>)Dungeon.droppedItems.get( depth );
@@ -301,21 +310,34 @@ public class Dungeon {
 		}
 		dropped.add( item );
 	}
-	
+
+    /**
+     * Testet, ob ein Stärketrank auf dieser Ebene nötig ist
+     * @return True, enn einer nötig ist
+     */
 	public static boolean posNeeded() {
 		int[] quota = {4, 2, 9, 4, 14, 6, 19, 8, 24, 9};
 		return chance( quota, potionOfStrength );
 	}
-	
+
+    /**
+     * Testet, ob ein Scroll of Upgrade auf dieser Ebene nötig ist
+     * @return True, enn einer nötig ist
+     */
 	public static boolean souNeeded() {
 		int[] quota = {5, 3, 10, 6, 15, 9, 20, 12, 25, 13};
 		return chance( quota, scrollsOfUpgrade );
 	}
-	
+
+    /**
+     * Testet, ob ein Scroll of update auf dieser Ebene nötig ist
+     * @return True, enn einer nötig ist
+     */
 	public static boolean soeNeeded() {
 		return Random.Int( 12 * (1 + scrollsOfEnchantment) ) < depth;
 	}
-	
+
+
 	private static boolean chance( int[] quota, int number ) {
 		
 		for (int i=0; i < quota.length; i += 2) {
@@ -355,7 +377,12 @@ public class Dungeon {
 	private static final String CHAPTERS	= "chapters";
 	private static final String QUESTS		= "quests";
 	private static final String BADGES		= "badges";
-	
+
+    /**
+     * Gibt den Namen Datei zurück, in der der Spielstand der jw. Klasse Gespeichert ist
+     * @param cl Die Klasse, von der der Name der Datei benötigt wird
+     * @return Den Dateinamen
+     */
 	public static String gameFile( HeroClass cl ) {
 		switch (cl) {
 		case WARRIOR:
@@ -368,7 +395,12 @@ public class Dungeon {
 			return RG_GAME_FILE;
 		}
 	}
-	
+
+    /**
+     * Gibt den Namen Datei zurück, in dem die Tiefe der jw. Klasse Gespeichert ist
+     * @param cl Die Klasse, von der der Name der Datei benötigt wird
+     * @return Den Dateinamen
+     */
 	private static String depthFile( HeroClass cl ) {
 		switch (cl) {
 		case WARRIOR:
@@ -381,7 +413,12 @@ public class Dungeon {
 			return RG_DEPTH_FILE;
 		}
 	}
-	
+
+    /**
+     * Speichert das Spiel
+     * @param fileName Der Dateiname, der Speicherdatei
+     * @throws IOException
+     */
 	public static void saveGame( String fileName ) throws IOException {
 		try {
 			Bundle bundle = new Bundle();
@@ -440,7 +477,11 @@ public class Dungeon {
 			GamesInProgress.setUnknown( hero.heroClass );
 		}
 	}
-	
+
+    /**
+     * Speichert das jetzige Level
+     * @throws IOException
+     */
 	public static void saveLevel() throws IOException {
 		Bundle bundle = new Bundle();
 		bundle.put( LEVEL, level );
@@ -449,7 +490,11 @@ public class Dungeon {
 		Bundle.write( bundle, output );
 		output.close();
 	}
-	
+
+    /**
+     * Spechert alles, was nötig ist, um das Spiel weiter zu spielen
+     * @throws IOException
+     */
 	public static void saveAll() throws IOException {
 		if (hero.isAlive()) {
 			
@@ -466,15 +511,31 @@ public class Dungeon {
 			
 		}
 	}
-	
+
+    /**
+     * Lädt den Speicherstand einer Klasse
+     * @param cl Die Klasse
+     * @throws IOException
+     */
 	public static void loadGame( HeroClass cl ) throws IOException {
 		loadGame( gameFile( cl ), true );
 	}
-	
+
+    /**
+     * Lädt einen Speichestand von seinem Dateinamen
+     * @param fileName Der Dateiname
+     * @throws IOException
+     */
 	public static void loadGame( String fileName ) throws IOException {
 		loadGame( fileName, false );
 	}
-	
+
+    /**
+     * Lädt einen Kompletten Speicherstand
+     * @param fileName Der Dateiname des Speicherstands
+     * @param fullLoad Soll wirklich ALLES geladen werden?
+     * @throws IOException
+     */
 	public static void loadGame( String fileName, boolean fullLoad ) throws IOException {
 		
 		Bundle bundle = gameBundle( fileName );
@@ -557,7 +618,13 @@ public class Dungeon {
 			}
 		}
 	}
-	
+
+    /**
+     * Lädt ein Level, das zur Klasse gehört
+     * @param cl Die Klasse
+     * @return Das geladene Level
+     * @throws IOException
+     */
 	public static Level loadLevel( HeroClass cl ) throws IOException {
 		
 		Dungeon.level = null;
@@ -569,7 +636,12 @@ public class Dungeon {
 		
 		return (Level)bundle.get( "level" );
 	}
-	
+
+    /**
+     * Löscht einen Spielstand ausgenend von der Klasse
+     * @param cl Die Klasse
+     * @param deleteLevels Sollen auch die Level gelöscht werden?
+     */
 	public static void deleteGame( HeroClass cl, boolean deleteLevels ) {
 		
 		Game.instance.deleteFile( gameFile( cl ) );
