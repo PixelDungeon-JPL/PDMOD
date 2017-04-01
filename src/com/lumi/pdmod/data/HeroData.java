@@ -1,7 +1,10 @@
 package com.lumi.pdmod.data;
 
+import com.lumi.pdmod.RLoader;
+
 /**
  * Created by Luis Michaelis on 31.03.2017.
+ * Updated by Jan-Torben Sendke on 01.04.2017
  */
 public class HeroData {
     ///////////////////////////////////////////////////////////////////////////
@@ -10,14 +13,14 @@ public class HeroData {
 
     public static class Death {
 
-        public static final String DEATH_TOXIC_GAS = "You died from a toxic gas..";
-        public static final String DEATH_BLEEDING = "You bled to death...";
-        public static final String DEATH_FIRE = "You burned to death...";
-        public static final String DEATH_HUNGER = "You starved to death...";
-        public static final String DEATH_HERO = "%s killed you...";
-        public static final String DEATH_DEATHGAZE = "%s's deathgaze killed you...";
-        public static final String DEATH_EXPLOSION_BONE = "You were killed by the explosion of bones...";
-        public static final String DEATH_SHADOWBOLT = "%s's shadow bolt killed you...";
+        public static final String DEATH_TOXIC_GAS = RLoader.get("HeroData.death.toxicgas");
+        public static final String DEATH_BLEEDING = RLoader.get("HeroData.death.bleeding");
+        public static final String DEATH_FIRE = RLoader.get("HeroData.death.burned");
+        public static final String DEATH_HUNGER = RLoader.get("HeroData.death.starved");
+        public static final String DEATH_HERO = RLoader.get("HeroData.death.killed");
+        public static final String DEATH_DEATHGAZE = RLoader.get("HeroData.death.deathgaze");
+        public static final String DEATH_EXPLOSION_BONE = RLoader.get("HeroData.death.bones");
+        public static final String DEATH_SHADOWBOLT = RLoader.get("HeroData.death.shadow");
     }
 
     ///////////////////////////////////////////////////////////////////////////
