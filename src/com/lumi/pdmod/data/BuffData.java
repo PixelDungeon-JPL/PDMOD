@@ -45,5 +45,5 @@ public class BuffData {
 
     // Combo
     public static final String BUFF_COMBO_TXT_COMBO = RLoader.get("BuffData.hit-combo");
-    public static final String BUFF_COMBO_DESC = RLoader.get("BuffData.combo");
+    public static final String BUFF_COMBO_DESC = RLoader.get("BuffData.Combo");
 }
