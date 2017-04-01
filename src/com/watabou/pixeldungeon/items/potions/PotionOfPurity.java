@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.potions;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
@@ -35,13 +36,10 @@ import com.watabou.utils.PathFinder;
 
 public class PotionOfPurity extends Potion {
 
-	private static final String TXT_FRESHNESS	= "You feel uncommon freshness in the air.";
-	private static final String TXT_NO_SMELL	= "You've stopped sensing any smells!";
-	
 	private static final int DISTANCE	= 2;
-	
+
 	{
-		name = "Potion of Purification";
+		name = ItemData.Potion.POTION_PURITY_NAME;
 	}
 	
 	@Override
@@ -94,7 +92,7 @@ public class PotionOfPurity extends Potion {
 			setKnown();
 			
 			if (heroAffected) {
-				GLog.p( TXT_FRESHNESS );
+				GLog.p(ItemData.Potion.POTION_PURITY_TXT_FRESHNESS);
 			}
 			
 		} else {
@@ -102,7 +100,7 @@ public class PotionOfPurity extends Potion {
 			super.shatter( cell );
 			
 			if (heroAffected) {
-				GLog.i( TXT_FRESHNESS );
+				GLog.i(ItemData.Potion.POTION_PURITY_TXT_FRESHNESS);
 				setKnown();
 			}
 			
@@ -111,16 +109,14 @@ public class PotionOfPurity extends Potion {
 	
 	@Override
 	protected void apply( Hero hero ) {
-		GLog.w( TXT_NO_SMELL );
+		GLog.w(ItemData.Potion.POTION_PURITY_TXT_NO_SMELL);
 		Buff.prolong( hero, GasesImmunity.class, GasesImmunity.DURATION );
 		setKnown();
 	}
 	
 	@Override
 	public String desc() {
-		return 
-			"This reagent will quickly neutralize all harmful gases in the area of effect. " +
-			"Drinking it will give you a temporary immunity to such gases.";
+		return ItemData.Potion.POTION_PURITY_DESC;
 	}
 	
 	@Override

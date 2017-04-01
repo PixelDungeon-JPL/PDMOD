@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.potions;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.MindVision;
@@ -26,7 +27,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 public class PotionOfMindVision extends Potion {
 
 	{
-		name = "Potion of Mind Vision";
+		name = ItemData.Potion.POTION_VISION_NAME;
 	}
 	
 	@Override
@@ -36,18 +37,15 @@ public class PotionOfMindVision extends Potion {
 		Dungeon.observe();
 		
 		if (Dungeon.level.mobs.size() > 0) {
-			GLog.i( "You can somehow feel the presence of other creatures' minds!" );
+			GLog.i(ItemData.Potion.POTION_VISION_MSG_MOBS);
 		} else {
-			GLog.i( "You can somehow tell that you are alone on this level at the moment." );
+			GLog.i(ItemData.Potion.POTION_VISION_MSG_NO_MOBS);
 		}
 	}
 	
 	@Override
 	public String desc() {
-		return
-			"After drinking this, your mind will become attuned to the psychic signature " +
-			"of distant creatures, enabling you to sense biological presences through walls. " +
-			"Also this potion will permit you to see through nearby walls and doors.";
+		return ItemData.Potion.POTION_VISION_DESC;
 	}
 	
 	@Override

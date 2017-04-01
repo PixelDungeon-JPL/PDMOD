@@ -161,4 +161,67 @@ public class ItemData {
         public static final String KEY_SKELETON_NAME = "skeleton key";
         public static final String KEY_SKELETON_DESC = "This key looks serious: its head is shaped like a skull. Probably it can open some serious door.";
     }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // POTIONS
+    ///////////////////////////////////////////////////////////////////////////
+
+    public class Potion {
+        public static final String POTION_TXT_BENEFICIAL = "Beneficial potion";
+        public static final String POTION_TXT_YES = "Yes, I know what I'm doing";
+        public static final String POTION_TXT_NO = "No, I changed my mind";
+        public static final String POTION_TXT_SURE_DRINK = "Are you sure you want to drink it? In most cases you should throw such potions at your enemies.";
+        public static final String POTION_TXT_SURE_THROW = "Are you sure you want to throw it? In most cases it makes sense to drink it.";
+        public static final String POTION_TXT_HARMFUL = "Harmful potion!";
+        public static final String POTION_TXT_SPLASH_HARMLESS = "The flask shatters and %d liquid splashes harmlessly";
+        public static final String POTION_NAME = " potion";
+        public static final String POTION_DEFAULT_INFO = "This flask contains a swirling %d liquid. Who knows what it will do when drunk or thrown?";
+
+        public static final String POTION_EXPERIENCE_NAME = "Potion of Experience";
+        public static final String POTION_EXPERIENCE_DESC = "The storied experiences of multitudes of battles reduced to liquid form, this draught will instantly raise your experience level.";
+
+        public static final String POTION_FROST_NAME = "Potion of Frost";
+        public static final String POTION_FROST_DESC = "Upon exposure to open air, this chemical will evaporate into a freezing cloud, causing any creature that contacts it to be frozen in place, unable to act and move.";
+
+        public static final String POTION_HEALING_NAME = "Potion of Healing";
+        public static final String POTION_HEALING_MSG = "Your wounds heal completely.";
+        public static final String POTION_HEALING_DESC = "An elixir that will instantly return you to full health and cure poison.";
+
+        public static final String POTION_INVISIBILITY_NAME = "Potion of Invisibility";
+        public static final String POTION_INVISIBILITY_DESC = "Drinking this potion will render you temporarily invisible. While invisible, enemies will be unable to see you. Attacking an enemy, as well as using a wand or a scroll before enemy's eyes, will dispel the effect.";
+
+        public static final String POTION_INVISIBILITY_MSG = "You see your hands turn invisible!";
+        public static final String POTION_LEVITATION_NAME = "Potion of Levitation";
+        public static final String POTION_LEVITATION_MSG = "You float into the air!";
+        public static final String POTION_LEVITATION_DESC = "Drinking this curious liquid will cause you to hover in the air, able to drift effortlessly over traps. Flames and gases fill the air, however, and cannot be bypassed while airborne.";
+
+        public static final String POTION_FLAME_NAME = "Potion of Liquid Flame";
+        public static final String POTION_FLAME_DESC = "This flask contains an unstable compound which will burst violently into flame upon exposure to open air.";
+
+        public static final String POTION_MIGHT_NAME = "Potion of Might";
+        public static final String POTION_MIGHT_MSG = "Newfound strength surges through your body.";
+        public static final String POTION_MIGHT_SPRITE = "+1 str, +5 ht";
+        public static final String POTION_MIGHT_DESC = "This powerful liquid will course through your muscles, permanently increasing your strength by one point and health by five points.";
+
+        public static final String POTION_VISION_NAME = "Potion of Mind Vision";
+        public static final String POTION_VISION_MSG_MOBS = "You can somehow feel the presence of other creatures' minds!";
+        public static final String POTION_VISION_MSG_NO_MOBS = "You can somehow tell that you are alone on this level at the moment.";
+        public static final String POTION_VISION_DESC = "After drinking this, your mind will become attuned to the psychic signature of distant creatures, enabling you to sense biological presences through walls. Also this potion will permit you to see through nearby walls and doors.";
+
+        public static final String POTION_GAS_PARALYTIC_NAME = "Potion of Paralytic Gas";
+        public static final String POTION_GAS_PARALYTIC_DESC = "Upon exposure to open air, the liquid in this flask will vaporize into a numbing yellow haze. Anyone who inhales the cloud will be paralyzed instantly, unable to move for some time after the cloud dissipates. This item can be thrown at distant enemies to catch them within the effect of the gas.";
+
+        public static final String POTION_PURITY_TXT_FRESHNESS = "You feel uncommon freshness in the air.";
+        public static final String POTION_PURITY_TXT_NO_SMELL = "You've stopped sensing any smells!";
+        public static final String POTION_PURITY_NAME = "Potion of Purification";
+        public static final String POTION_PURITY_DESC = "This reagent will quickly neutralize all harmful gases in the area of effect. Drinking it will give you a temporary immunity to such gases.";
+
+        public static final String POTION_STRENGTH_NAME = "Potion of Strength";
+        public static final String POTION_STRENGTH_SPRITE = "+1 str";
+        public static final String POTION_STRENGTH_MSG = "Newfound strength surges through your body.";
+        public static final String POTION_STRENGTH_DESC = "This powerful liquid will course through your muscles, permanently increasing your strength by one point.";
+
+        public static final String POTION_GAS_TOXIC_NAME = "Potion of Toxic Gas";
+        public static final String POTION_GAS_TOXIC_DESC = "Uncorking or shattering this pressurized glass will cause its contents to explode into a deadly cloud of toxic green gas. You might choose to fling this potion at distant enemies instead of uncorking it by hand.";
+    }
 }

@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.potions;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
@@ -27,7 +28,7 @@ import com.watabou.pixeldungeon.scenes.GameScene;
 public class PotionOfToxicGas extends Potion {
 
 	{
-		name = "Potion of Toxic Gas";
+		name = ItemData.Potion.POTION_GAS_TOXIC_NAME;
 	}
 	
 	@Override
@@ -44,11 +45,7 @@ public class PotionOfToxicGas extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"Uncorking or shattering this pressurized glass will cause " +
-			"its contents to explode into a deadly cloud of toxic green gas. " +
-			"You might choose to fling this potion at distant enemies " +
-			"instead of uncorking it by hand.";
+		return ItemData.Potion.POTION_GAS_TOXIC_DESC;
 	}
 	
 	@Override

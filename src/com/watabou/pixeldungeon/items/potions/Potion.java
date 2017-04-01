@@ -20,6 +20,7 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
@@ -40,16 +41,7 @@ import com.watabou.utils.Bundle;
 public class Potion extends Item {
 	
 	public static final String AC_DRINK	= "DRINK";
-	
-	private static final String TXT_HARMFUL		= "Harmful potion!";
-	private static final String TXT_BENEFICIAL	= "Beneficial potion";
-	private static final String TXT_YES			= "Yes, I know what I'm doing";
-	private static final String TXT_NO			= "No, I changed my mind";
-	private static final String TXT_R_U_SURE_DRINK = 
-		"Are you sure you want to drink it? In most cases you should throw such potions at your enemies.";
-	private static final String TXT_R_U_SURE_THROW = 
-		"Are you sure you want to throw it? In most cases it makes sense to drink it.";
-	
+
 	private static final float TIME_TO_DRINK = 1f;
 	
 	private static final Class<?>[] potions = {
@@ -129,7 +121,7 @@ public class Potion extends Item {
 					this instanceof PotionOfParalyticGas)) {
 				
 					GameScene.show( 
-						new WndOptions( TXT_HARMFUL, TXT_R_U_SURE_DRINK, TXT_YES, TXT_NO ) {
+						new WndOptions(ItemData.Potion.POTION_TXT_HARMFUL, ItemData.Potion.POTION_TXT_SURE_DRINK, ItemData.Potion.POTION_TXT_YES, ItemData.Potion.POTION_TXT_NO) {
 							@Override
 							protected void onSelect(int index) {
 								if (index == 0) {
@@ -163,7 +155,7 @@ public class Potion extends Item {
 			this instanceof PotionOfMight)) {
 		
 			GameScene.show( 
-				new WndOptions( TXT_BENEFICIAL, TXT_R_U_SURE_THROW, TXT_YES, TXT_NO ) {
+				new WndOptions(ItemData.Potion.POTION_TXT_BENEFICIAL, ItemData.Potion.POTION_TXT_SURE_THROW, ItemData.Potion.POTION_TXT_YES, ItemData.Potion.POTION_TXT_NO) {
 					@Override
 					protected void onSelect(int index) {
 						if (index == 0) {
@@ -214,7 +206,7 @@ public class Potion extends Item {
 	
 	public void shatter( int cell ) {
 		if (Dungeon.visible[cell]) {
-			GLog.i( "The flask shatters and " + color() + " liquid splashes harmlessly" );
+			GLog.i(String.format(ItemData.Potion.POTION_TXT_SPLASH_HARMLESS, color()));
 			Sample.INSTANCE.play( Assets.SND_SHATTER );
 			splash( cell );
 		}
@@ -244,15 +236,13 @@ public class Potion extends Item {
 	
 	@Override
 	public String name() {
-		return isKnown() ? name : color + " potion";
+		return isKnown() ? name : color + ItemData.Potion.POTION_NAME;
 	}
 	
 	@Override
 	public String info() {
 		return isKnown() ?
-			desc() :
-			"This flask contains a swirling " + color + " liquid. " +
-			"Who knows what it will do when drunk or thrown?";
+			desc() : String.format(ItemData.Potion.POTION_DEFAULT_INFO, color);
 	}
 	
 	@Override

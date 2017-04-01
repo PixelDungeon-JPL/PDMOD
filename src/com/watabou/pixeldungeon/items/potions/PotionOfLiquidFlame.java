@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.potions;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
@@ -27,7 +28,7 @@ import com.watabou.pixeldungeon.scenes.GameScene;
 public class PotionOfLiquidFlame extends Potion {
 
 	{
-		name = "Potion of Liquid Flame";
+		name = ItemData.Potion.POTION_FLAME_NAME;
 	}
 	
 	@Override
@@ -45,9 +46,7 @@ public class PotionOfLiquidFlame extends Potion {
 	
 	@Override
 	public String desc() {
-		return
-			"This flask contains an unstable compound which will burst " +
-			"violently into flame upon exposure to open air.";
+		return ItemData.Potion.POTION_FLAME_DESC;
 	}
 	
 	@Override
