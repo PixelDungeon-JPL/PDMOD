@@ -52,18 +52,18 @@ public class HeroData {
     ///////////////////////////////////////////////////////////////////////////
 
     public static class Buff {
-        public static final String HERO_TXT_FIRE = RLoader.get("HeroData.Buff.You catch fire!");
-        public static final String HERO_TXT_PARALYSED = RLoader.get("HeroData.Buff.You are paralysed!");
-        public static final String HERO_TXT_POISONED = RLoader.get("HeroData.Buff.You are poisoned!");
-        public static final String HERO_TXT_OOZE = RLoader.get("HeroData.Buff.Caustic ooze eats your flesh. Wash away it!");
-        public static final String HERO_TXT_ROOTED = RLoader.get("HeroData.Buff.You can't move!");
-        public static final String HERO_TXT_WEAKNESS = RLoader.get("HeroData.Buff.You feel weakened!");
-        public static final String HERO_TXT_BLINDED = RLoader.get("HeroData.Buff.You are blinded!");
-        public static final String HERO_TXT_FURIOUS = RLoader.get("HeroData.Buff.You become furious!");
-        public static final String HERO_TXT_CHARM = RLoader.get("HeroData.Buff.You are charmed!");
-        public static final String HERO_TXT_CRIPPLED = RLoader.get("HeroData.Buff.You are crippled!");
-        public static final String HERO_TXT_BLEEDING = RLoader.get("HeroData.Buff.You are bleeding!");
-        public static final String HERO_TXT_DIZZY = RLoader.get("HeroData.Buff.Everything is spinning around you!");
+        public static final String HERO_TXT_FIRE = RLoader.get("HeroData.Buff.catch.fire");
+        public static final String HERO_TXT_PARALYSED = RLoader.get("HeroData.Buff.catch.paralysed");
+        public static final String HERO_TXT_POISONED = RLoader.get("HeroData.Buff.catch.poisoned");
+        public static final String HERO_TXT_OOZE = RLoader.get("HeroData.Buff.eats_flesh");
+        public static final String HERO_TXT_ROOTED = RLoader.get("HeroData.Buff.cantmove");
+        public static final String HERO_TXT_WEAKNESS = RLoader.get("HeroData.Buff.weakened");
+        public static final String HERO_TXT_BLINDED = RLoader.get("HeroData.Buff.blinded");
+        public static final String HERO_TXT_FURIOUS = RLoader.get("HeroData.Buff.furious");
+        public static final String HERO_TXT_CHARM = RLoader.get("HeroData.Buff.charmed");
+        public static final String HERO_TXT_CRIPPLED = RLoader.get("HeroData.Buff.crippled");
+        public static final String HERO_TXT_BLEEDING = RLoader.get("HeroData.Buff.bleeding");
+        public static final String HERO_TXT_DIZZY = RLoader.get("HeroData.Buff.spinning");
     }
 
     ///////////////////////////////////////////////////////////////////////////
