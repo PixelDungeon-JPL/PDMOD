@@ -37,7 +37,7 @@ public class HeroData {
         public static final String TXT_LOCKED_DOOR		= RLoader.get("HeroData.Common.notkey");
         public static final String TXT_NOTICED_SMTH	= RLoader.get("HeroData.Common.noticedsth");
         public static final String TXT_WAIT	= RLoader.get("HeroData.Common.goon");
-        public static final String TXT_SEARCH	= RLoader.get("HeroData.Common.search";
+        public static final String TXT_SEARCH	= RLoader.get("HeroData.Common.search");
         public static final String TXT_LEAVE = RLoader.get("HeroData.Common.dontleave");
         public static final String TXT_ENRAGED = RLoader.get("HeroData.Common.enraged");
         public static final String TXT_DISARM	= RLoader.get("HeroData.Common.knockedouthands");
