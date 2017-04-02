@@ -19,6 +19,7 @@ package com.watabou.noosa;
 
 import java.util.HashMap;
 
+import android.util.Log;
 import com.watabou.gltextures.SmartTexture;
 import com.watabou.gltextures.TextureCache;
 

@@ -13,6 +13,7 @@ import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
 import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.plants.Plant;
 import com.watabou.pixeldungeon.plants.Sorrowmoss;
+import com.watabou.pixeldungeon.sprites.ItemSprite;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
 /**
@@ -48,7 +49,7 @@ public class Hanp extends Plant {
             plantName = "Hanp";
 
             name = "seed of " + plantName;
-            image = ItemSpriteSheet.SEED_ROTBERRY;
+            image = ItemSpriteSheet.SEED_HANP;
 
             plantClass = Hanp.class;
             alchemyClass = PotionOfStrength.class;

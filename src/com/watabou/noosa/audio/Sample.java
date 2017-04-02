@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+import android.media.AudioAttributes;
 import com.watabou.noosa.Game;
 
 import android.content.res.AssetFileDescriptor;
@@ -45,7 +46,7 @@ public enum Sample implements SoundPool.OnLoadCompleteListener {
 	public void reset() {
 
 		pool.release();
-		
+
 		pool = new SoundPool( MAX_STREAMS, AudioManager.STREAM_MUSIC, 0 );
 		pool.setOnLoadCompleteListener( this );
 		
