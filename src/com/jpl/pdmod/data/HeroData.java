@@ -5,6 +5,7 @@ import com.jpl.pdmod.RLoader;
 /**
  * Created by Luis Michaelis on 31.03.2017.
  * Updated by Jan-Torben Sendke on 01.04.2017
+ * Updated by Jan-Torben Sendke 02-04-2017
  */
 public class HeroData {
     ///////////////////////////////////////////////////////////////////////////
@@ -71,9 +72,9 @@ public class HeroData {
     ///////////////////////////////////////////////////////////////////////////
 
     public static class Sprite {
-        public static final String SPRITE_FURIOUS = "furious";
-        public static final String SPRITE_ENRAGED = "enraged";
-        public static final String SPRITE_EXCLAMATION = "!!!";
+        public static final String SPRITE_FURIOUS = RLoader.get("HeroData.Sprite.furious");
+        public static final String SPRITE_ENRAGED = RLoader.get("HeroData.Sprite.enraged");
+        public static final String SPRITE_EXCLAMATION = RLoader.get("HeroData.Sprite.!!!");
     }
 
 
@@ -85,33 +86,33 @@ public class HeroData {
     public static class Classes {
 
         public static final String[] WAR_PERKS = {
-            "Warriors start with 11 points of Strength.",
-            "Warriors start with a unique short sword. This sword can be later \"reforged\" to upgrade another melee weapon.",
-            "Warriors are less proficient with missile weapons.",
-            "Any piece of food restores some health when eaten.",
-            "Potions of Strength are identified from the beginning.",
+            RLoader.get("HeroData.Classes.Warriors.1"),
+            RLoader.get("HeroData.Classes.Warriors.2"),
+            RLoader.get("HeroData.Classes.Warriors.3"),
+            RLoader.get("HeroData.Classes.Warriors.4"),
+            RLoader.get("HeroData.Classes.Warriors.5"),
         };
         public static final String[] MAG_PERKS = {
-            "Mages start with a unique Wand of Magic Missile. This wand can be later \"disenchanted\" to upgrade another wand.",
-            "Mages recharge their wands faster.",
-            "When eaten, any piece of food restores 1 charge for all wands in the inventory.",
-            "Mages can use wands as a melee weapon.",
-            "Scrolls of Identify are identified from the beginning."
+            RLoader.get("HeroData.Classes.Mages.1"),
+            RLoader.get("HeroData.Classes.Mages.2"),
+            RLoader.get("HeroData.Classes.Mages.3"),
+            RLoader.get("HeroData.Classes.Mages.4"),
+            RLoader.get("HeroData.Classes.Mages.5")
         };
         public static final String[] ROG_PERKS = {
-            "Rogues start with a Ring of Shadows+1.",
-            "Rogues identify a type of a ring on equipping it.",
-            "Rogues are proficient with light armor, dodging better while wearing one.",
-            "Rogues are proficient in detecting hidden doors and traps.",
-            "Rogues can go without food longer.",
-            "Scrolls of Magic Mapping are identified from the beginning."
+            RLoader.get("HeroData.Classes.Rogues.1"),
+            RLoader.get("HeroData.Classes.Rogues.2"),
+            RLoader.get("HeroData.Classes.Rogues.3"),
+            RLoader.get("HeroData.Classes.Rogues.4"),
+            RLoader.get("HeroData.Classes.Rogues.5"),
+            RLoader.get("HeroData.Classes.Rogues.6")
         };
         public static final String[] HUN_PERKS = {
-            "Huntresses start with 15 points of Health.",
-            "Huntresses start with a unique upgradeable boomerang.",
-            "Huntresses are proficient with missile weapons and get a damage bonus for excessive strength when using them.",
-            "Huntresses gain more health from dewdrops.",
-            "Huntresses sense neighbouring monsters even if they are hidden behind obstacles."
+            RLoader.get("HeroData.Classes.Huntresses.1"),
+            RLoader.get("HeroData.Classes.Huntresses.2"),
+            RLoader.get("HeroData.Classes.Huntresses.3"),
+            RLoader.get("HeroData.Classes.Huntresses.4"),
+            RLoader.get("HeroData.Classes.Huntresses.5")
         };
     }
 
@@ -121,22 +122,22 @@ public class HeroData {
     ///////////////////////////////////////////////////////////////////////////
 
     public static class Subclasses {
-        public static final String HERO_SUB_GLADIATOR_NAME = "gladiator";
-        public static final String HERO_SUB_GLADIATOR_DESC = "A successful attack with a melee weapon allows the _Gladiator_ to start a combo, in which every next successful hit inflicts more damage.";
-        public static final String HERO_SUB_BERSERKER_NAME = "berserker";
-        public static final String HERO_SUB_BERSERKER_DESC = "When severely wounded, the _Berserker_ enters a state of wild fury significantly increasing his damage output.";
-        public static final String HERO_SUB_WARLOCK_NAME = "warlock";
-        public static final String HERO_SUB_WARLOCK_DESC = "After killing an enemy the _Warlock_ consumes its soul. It heals his wounds and satisfies his hunger.";
-        public static final String HERO_SUB_BATTLEMAGE_NAME = "battlemage";
-        public static final String HERO_SUB_BATTLEMAGE_DESC = "When fighting with a wand in his hands, the _Battlemage_ inflicts additional damage depending on the current number of charges. Every successful hit restores 1 charge to this wand.";
-        public static final String HERO_SUB_ASSASSIN_NAME = "assassin";
-        public static final String HERO_SUB_ASSASSIN_DESC = "When performing a surprise attack, the _Assassin_ inflicts additional damage to his target.";
-        public static final String HERO_SUB_FREERUNNER_NAME = "freerunner";
-        public static final String HERO_SUB_FREERUNNER_DESC = "The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.";
-        public static final String HERO_SUB_SNIPER_NAME = "sniper";
-        public static final String HERO_SUB_SNIPER_DESC = "_Snipers_ are able to detect weak points in an enemy's armor, effectively ignoring it when using a missile weapon.";
-        public static final String HERO_SUB_WARDEN_NAME = "warden";
-        public static final String HERO_SUB_WARDEN_DESC = "Having a strong connection with forces of nature gives _Wardens_ an ability to gather dewdrops and seeds from plants. Also trampling a high grass grants them a temporary armor buff.";
+        public static final String HERO_SUB_GLADIATOR_NAME = RLoader.get("HeroData.Subclasses.gladiator");
+        public static final String HERO_SUB_GLADIATOR_DESC = RLoader.get("HeroData.Subclasses.gladiator.desc --A successful attack with a melee weapon allows the _Gladiator_ to start a combo, in which every next successful hit inflicts more damage.");
+        public static final String HERO_SUB_BERSERKER_NAME = RLoader.get("HeroData.Subclasses.berserker");
+        public static final String HERO_SUB_BERSERKER_DESC = RLoader.get("HeroData.Subclasses.berserker.desc --When severely wounded, the _Berserker_ enters a state of wild fury significantly increasing his damage output.");
+        public static final String HERO_SUB_WARLOCK_NAME = RLoader.get("HeroData.Subclasses.warlock");
+        public static final String HERO_SUB_WARLOCK_DESC = RLoader.get("HeroData.Subclasses.warlock.desc --After killing an enemy the _Warlock_ consumes its soul. It heals his wounds and satisfies his hunger.");
+        public static final String HERO_SUB_BATTLEMAGE_NAME = RLoader.get("HeroData.Subclasses.battlemage");
+        public static final String HERO_SUB_BATTLEMAGE_DESC = RLoader.get("HeroData.Subclasses.battlemage.desc --When fighting with a wand in his hands, the _Battlemage_ inflicts additional damage depending on the current number of charges. Every successful hit restores 1 charge to this wand.");
+        public static final String HERO_SUB_ASSASSIN_NAME = RLoader.get("HeroData.Subclasses.assassin");
+        public static final String HERO_SUB_ASSASSIN_DESC = RLoader.get("HeroData.Subclasses.assassin.desc --When performing a surprise attack, the _Assassin_ inflicts additional damage to his target.");
+        public static final String HERO_SUB_FREERUNNER_NAME = RLoader.get("HeroData.Subclasses.freerunner");
+        public static final String HERO_SUB_FREERUNNER_DESC = RLoader.get("HeroData.Subclasses.freerunner.desc --The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.";
+        public static final String HERO_SUB_SNIPER_NAME = RLoader.get("HeroData.Subclasses.sniper");
+        public static final String HERO_SUB_SNIPER_DESC = RLoader.get("HeroData.Subclasses.sniper.desc --_Snipers_ are able to detect weak points in an enemy's armor, effectively ignoring it when using a missile weapon.");
+        public static final String HERO_SUB_WARDEN_NAME = RLoader.get("HeroData.Subclasses.warden");
+        public static final String HERO_SUB_WARDEN_DESC = RLoader.get("HeroData.Subclasses.warden.desc --Having a strong connection with forces of nature gives _Wardens_ an ability to gather dewdrops and seeds from plants. Also trampling a high grass grants them a temporary armor buff.");
     }
 
 
