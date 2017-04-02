@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.potions;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.sprites.CharSprite;

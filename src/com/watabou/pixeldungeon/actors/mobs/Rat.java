@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.actors.mobs;
 
-import com.lumi.pdmod.data.MobData;
+import com.jpl.pdmod.data.MobData;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Ghost;
 import com.watabou.pixeldungeon.sprites.RatSprite;

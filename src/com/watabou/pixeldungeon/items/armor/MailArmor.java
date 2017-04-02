@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.armor;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
 

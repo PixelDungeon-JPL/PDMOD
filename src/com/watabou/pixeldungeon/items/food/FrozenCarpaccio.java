@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.food;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.actors.buffs.Barkskin;
 import com.watabou.pixeldungeon.actors.buffs.Bleeding;
 import com.watabou.pixeldungeon.actors.buffs.Buff;

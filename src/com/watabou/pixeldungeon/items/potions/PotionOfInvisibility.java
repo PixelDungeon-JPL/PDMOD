@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.potions;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.tweeners.AlphaTweener;
 import com.watabou.pixeldungeon.Assets;

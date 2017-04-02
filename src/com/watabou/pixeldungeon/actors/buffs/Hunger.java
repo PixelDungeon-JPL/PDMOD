@@ -17,8 +17,8 @@
  */
 package com.watabou.pixeldungeon.actors.buffs;
 
-import com.lumi.pdmod.data.BuffData;
-import com.lumi.pdmod.data.HeroData;
+import com.jpl.pdmod.data.BuffData;
+import com.jpl.pdmod.data.HeroData;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;

@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.armor.glyphs;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.hero.Hero;

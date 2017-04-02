@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.features;
 
-import com.lumi.pdmod.data.HeroData;
+import com.jpl.pdmod.data.HeroData;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;

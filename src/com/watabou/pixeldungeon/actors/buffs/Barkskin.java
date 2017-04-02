@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.actors.buffs;
 
-import com.lumi.pdmod.data.BuffData;
+import com.jpl.pdmod.data.BuffData;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 
 public class Barkskin extends Buff {

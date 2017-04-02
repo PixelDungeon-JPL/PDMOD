@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.keys;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;

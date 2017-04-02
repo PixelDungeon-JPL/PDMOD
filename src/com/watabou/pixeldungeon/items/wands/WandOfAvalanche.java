@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.items.wands;
 
-import com.lumi.pdmod.data.HeroData;
+import com.jpl.pdmod.data.HeroData;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;

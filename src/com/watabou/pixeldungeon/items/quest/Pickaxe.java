@@ -19,8 +19,8 @@ package com.watabou.pixeldungeon.items.quest;
 
 import java.util.ArrayList;
 
-import com.lumi.pdmod.data.HeroData;
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.HeroData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;

@@ -17,7 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.traps;
 
-import com.lumi.pdmod.data.HeroData;
+import com.jpl.pdmod.data.HeroData;
 import com.watabou.noosa.Camera;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;

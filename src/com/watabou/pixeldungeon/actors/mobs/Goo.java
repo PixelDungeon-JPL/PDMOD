@@ -19,8 +19,8 @@ package com.watabou.pixeldungeon.actors.mobs;
 
 import java.util.HashSet;
 
-import com.lumi.pdmod.data.HeroData;
-import com.lumi.pdmod.data.MobData;
+import com.jpl.pdmod.data.HeroData;
+import com.jpl.pdmod.data.MobData;
 import com.watabou.pixeldungeon.Badges;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.Statistics;

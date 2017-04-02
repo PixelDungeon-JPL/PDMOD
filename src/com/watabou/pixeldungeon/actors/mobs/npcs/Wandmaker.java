@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon.actors.mobs.npcs;
 
 import java.util.ArrayList;
 
-import com.lumi.pdmod.data.MobData;
+import com.jpl.pdmod.data.MobData;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.Journal;
 import com.watabou.pixeldungeon.actors.Actor;

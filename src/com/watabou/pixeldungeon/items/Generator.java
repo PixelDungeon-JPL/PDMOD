@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon.items;
 
 import java.util.HashMap;
 
-import com.lumi.pdmod.plants.Hanp;
+import com.jpl.pdmod.plants.Hanp;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.armor.*;

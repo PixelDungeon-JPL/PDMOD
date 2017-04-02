@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon.actors.buffs;
 
 import java.util.HashSet;
 
-import com.lumi.pdmod.data.BuffData;
+import com.jpl.pdmod.data.BuffData;
 import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 

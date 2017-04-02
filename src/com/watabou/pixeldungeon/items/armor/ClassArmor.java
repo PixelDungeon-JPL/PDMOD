@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon.items.armor;
 
 import java.util.ArrayList;
 
-import com.lumi.pdmod.data.ItemData;
+import com.jpl.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;

@@ -19,8 +19,8 @@ package com.watabou.pixeldungeon.actors.mobs.npcs;
 
 import java.util.Collection;
 
-import com.lumi.pdmod.data.HeroData;
-import com.lumi.pdmod.data.MobData;
+import com.jpl.pdmod.data.HeroData;
+import com.jpl.pdmod.data.MobData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
