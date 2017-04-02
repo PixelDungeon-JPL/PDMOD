@@ -224,4 +224,27 @@ public class ItemData {
         public static final String POTION_GAS_TOXIC_NAME = "Potion of Toxic Gas";
         public static final String POTION_GAS_TOXIC_DESC = "Uncorking or shattering this pressurized glass will cause its contents to explode into a deadly cloud of toxic green gas. You might choose to fling this potion at distant enemies instead of uncorking it by hand.";
     }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // QUEST
+    ///////////////////////////////////////////////////////////////////////////
+
+    public class Quest {
+        public static final String ITEM_QUEST_CORPSE_DUST_NAME = "corpse dust";
+        public static final String ITEM_QUEST_CORPSE_DUST_DESC = "The ball of corpse dust doesn't differ outwardly from a regular dust ball. However, you know somehow that it's better to get rid of it as soon as possible.";
+        public static final String ITEM_QUEST_GOLD_ORE_NAME = "dark gold ore";
+        public static final String ITEM_QUEST_GOLD_ORE_DESC = "This metal is called dark not because of its color (it doesn't differ from the normal gold), but because it melts under the daylight, making it useless on the surface.";
+        public static final String ITEM_QUEST_ROSE_NAME = "dried rose";
+        public static final String ITEM_QUEST_ROSE_DESC = "The rose has dried long ago, but it has kept all its petals somehow.";
+        public static final String ITEM_QUEST_DWARF_TOKEN_NAME = "dwarf token";
+        public static final String ITEM_QUEST_DWARF_TOKEN_DESC = "Many dwarves and some of their larger creations carry these small pieces of metal of unknown purpose. Maybe they are jewelry or maybe some kind of ID. Dwarves are strange folk.";
+        public static final String ITEM_QUEST_PHANTOM_FISH_NAME = "phantom fish";
+        public static final String ITEM_QUEST_PHANTOM_FISH_MSG = "You see your hands turn invisible!";
+        public static final String ITEM_QUEST_PHANTOM_FISH_DESC = "You can barely see this tiny translucent fish in the air. In the water it becomes effectively invisible.";
+        public static final String ITEM_QUEST_PICKAXE_TXT_NO_VEIN = "There is no dark gold vein near you to mine";
+        public static final String ITEM_QUEST_PICKAXE_NAME = "pickaxe";
+        public static final String ITEM_QUEST_PICKAXE_DESC = "This is a large and sturdy tool for breaking rocks. Probably it can be used as a weapon.";
+        public static final String ITEM_QUEST_RAT_SKULL_NAME = "giant rat skull";
+        public static final String ITEM_QUEST_RAT_SKULL_DESC = "It could be a nice hunting trophy, but it smells too bad to place it on a wall.";
+    }
 }

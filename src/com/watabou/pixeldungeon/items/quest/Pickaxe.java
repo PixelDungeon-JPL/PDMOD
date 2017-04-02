@@ -20,6 +20,7 @@ package com.watabou.pixeldungeon.items.quest;
 import java.util.ArrayList;
 
 import com.lumi.pdmod.data.HeroData;
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;
@@ -45,13 +46,11 @@ public class Pickaxe extends Weapon {
 	public static final String AC_MINE	= "MINE";
 	
 	public static final float TIME_TO_MINE = 2;
-	
-	private static final String TXT_NO_VEIN = "There is no dark gold vein near you to mine";
-	
+
 	private static final Glowing BLOODY = new Glowing( 0x550000 );
-	
+
 	{
-		name = "pickaxe";
+		name = ItemData.Quest.ITEM_QUEST_PICKAXE_NAME;
 		image = ItemSpriteSheet.PICKAXE;
 		
 		unique = true;
@@ -86,7 +85,7 @@ public class Pickaxe extends Weapon {
 		if (action == AC_MINE) {
 			
 			if (Dungeon.depth < 11 || Dungeon.depth > 15) {
-				GLog.w( TXT_NO_VEIN );
+				GLog.w(ItemData.Quest.ITEM_QUEST_PICKAXE_TXT_NO_VEIN);
 				return;
 			}
 			
@@ -130,7 +129,7 @@ public class Pickaxe extends Weapon {
 				}
 			}
 			
-			GLog.w( TXT_NO_VEIN );
+			GLog.w(ItemData.Quest.ITEM_QUEST_PICKAXE_TXT_NO_VEIN);
 			
 		} else {
 			
@@ -180,7 +179,6 @@ public class Pickaxe extends Weapon {
 	
 	@Override
 	public String info() {
-		return
-			"This is a large and sturdy tool for breaking rocks. Probably it can be used as a weapon.";
+		return ItemData.Quest.ITEM_QUEST_PICKAXE_DESC;
 	}
 }

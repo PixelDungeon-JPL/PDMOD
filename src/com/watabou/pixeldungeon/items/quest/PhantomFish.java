@@ -19,6 +19,7 @@ package com.watabou.pixeldungeon.items.quest;
 
 import java.util.ArrayList;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
@@ -29,13 +30,13 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
 
 public class PhantomFish extends Item {
-	
+
 	private static final String AC_EAT	= "EAT";
 	
 	private static final float TIME_TO_EAT	= 2f;
-	
+
 	{
-		name = "phantom fish";
+		name = ItemData.Quest.ITEM_QUEST_PHANTOM_FISH_NAME;
 		image = ItemSpriteSheet.PHANTOM;
 
 		unique = true;
@@ -59,7 +60,7 @@ public class PhantomFish extends Item {
 			Sample.INSTANCE.play( Assets.SND_EAT );
 			Sample.INSTANCE.play( Assets.SND_MELD );
 			
-			GLog.i( "You see your hands turn invisible!" );
+			GLog.i(ItemData.Quest.ITEM_QUEST_PHANTOM_FISH_MSG);
 			Buff.affect( hero, Invisibility.class, Invisibility.DURATION );
 			
 			hero.spend( TIME_TO_EAT );
@@ -83,8 +84,6 @@ public class PhantomFish extends Item {
 	
 	@Override
 	public String info() {
-		return
-			"You can barely see this tiny translucent fish in the air. " +
-			"In the water it becomes effectively invisible.";
+		return ItemData.Quest.ITEM_QUEST_PHANTOM_FISH_DESC;
 	}
 }

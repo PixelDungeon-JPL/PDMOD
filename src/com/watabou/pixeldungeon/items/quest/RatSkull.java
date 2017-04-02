@@ -17,13 +17,14 @@
  */
 package com.watabou.pixeldungeon.items.quest;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
 public class RatSkull extends Item {
-	
+
 	{
-		name = "giant rat skull";
+		name = ItemData.Quest.ITEM_QUEST_RAT_SKULL_NAME;
 		image = ItemSpriteSheet.SKULL;
 		
 		unique = true;
@@ -41,8 +42,7 @@ public class RatSkull extends Item {
 	
 	@Override
 	public String info() {
-		return
-			"It could be a nice hunting trophy, but it smells too bad to place it on a wall.";
+		return ItemData.Quest.ITEM_QUEST_RAT_SKULL_DESC;
 	}
 	
 	@Override

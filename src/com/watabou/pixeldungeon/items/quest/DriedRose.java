@@ -17,13 +17,14 @@
  */
 package com.watabou.pixeldungeon.items.quest;
 
+import com.lumi.pdmod.data.ItemData;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
 public class DriedRose extends Item {
-	
+
 	{
-		name = "dried rose";
+		name = ItemData.Quest.ITEM_QUEST_ROSE_NAME;
 		image = ItemSpriteSheet.ROSE;
 		
 		unique = true;
@@ -41,7 +42,6 @@ public class DriedRose extends Item {
 	
 	@Override
 	public String info() {
-		return
-			"The rose has dried long ago, but it has kept all its petals somehow.";
+		return ItemData.Quest.ITEM_QUEST_ROSE_DESC;
 	}
 }
