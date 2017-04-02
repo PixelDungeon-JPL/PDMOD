@@ -34,7 +34,7 @@ public class Key extends Item {
 	
 	public Key() {
 		super();
-		depth = 0; // CHANGED Dungeon.depth
+		depth = Dungeon.depth; // TODO: Key kann auf jeder ebene verwendet werden!
 	}
 	
 	private static final String DEPTH = "depth";

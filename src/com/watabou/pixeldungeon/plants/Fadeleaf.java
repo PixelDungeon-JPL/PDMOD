@@ -26,6 +26,7 @@ import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.potions.PotionOfMindVision;
 import com.watabou.pixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 
 public class Fadeleaf extends Plant {
 
@@ -34,7 +35,7 @@ public class Fadeleaf extends Plant {
 		"to a random place on the current level.";
 	
 	{
-		image = 6;
+		image = PlantSpriteSheet.PLANT_FADELEAF;
 		plantName = "Fadeleaf";
 	}
 	

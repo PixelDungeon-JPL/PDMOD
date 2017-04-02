@@ -15,6 +15,7 @@ import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
 
 public class Rotberry extends Plant {
@@ -23,7 +24,7 @@ public class Rotberry extends Plant {
 		"Berries of this shrub taste like sweet, sweet death.";
 	
 	{
-		image = 7;
+		image = PlantSpriteSheet.PLANT_ROTBERRY;
 		plantName = "Rotberry";
 	}
 	

@@ -26,13 +26,14 @@ import com.watabou.pixeldungeon.effects.particles.FlameParticle;
 import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 
 public class Firebloom extends Plant {
 
 	private static final String TXT_DESC = "When something touches a Firebloom, it bursts into flames.";
 	
 	{
-		image = 0;
+		image = PlantSpriteSheet.PLANT_FIREBLOOM;
 		plantName = "Firebloom";
 	}
 	

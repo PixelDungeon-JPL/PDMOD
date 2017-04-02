@@ -25,6 +25,7 @@ import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.particles.EarthParticle;
 import com.watabou.pixeldungeon.items.potions.PotionOfParalyticGas;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 import com.watabou.pixeldungeon.ui.BuffIndicator;
 import com.watabou.utils.Bundle;
 
@@ -35,7 +36,7 @@ public class Earthroot extends Plant {
 		"create a kind of natural armor around it.";
 	
 	{
-		image = 5;
+		image = PlantSpriteSheet.PLANT_EARTHROOT;
 		plantName = "Earthroot";
 	}
 	

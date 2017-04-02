@@ -25,6 +25,7 @@ import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.particles.PoisonParticle;
 import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 
 public class Sorrowmoss extends Plant {
 
@@ -32,7 +33,7 @@ public class Sorrowmoss extends Plant {
 		"A Sorrowmoss is a flower (not a moss) with razor-sharp petals, coated with a deadly venom.";
 	
 	{
-		image = 2;
+		image = PlantSpriteSheet.PLANT_SORROWMOSS;
 		plantName = "Sorrowmoss";
 	}
 	

@@ -3,17 +3,12 @@ package com.lumi.pdmod.plants;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Poison;
 import com.watabou.pixeldungeon.actors.buffs.Vertigo;
 import com.watabou.pixeldungeon.effects.CellEmitter;
-import com.watabou.pixeldungeon.effects.particles.ElmoParticle;
 import com.watabou.pixeldungeon.effects.particles.EnergyParticle;
-import com.watabou.pixeldungeon.effects.particles.PoisonParticle;
 import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
-import com.watabou.pixeldungeon.items.potions.PotionOfToxicGas;
 import com.watabou.pixeldungeon.plants.Plant;
-import com.watabou.pixeldungeon.plants.Sorrowmoss;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 
 /**
@@ -21,7 +16,7 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
  */
 public class Hanp extends Plant {
     {
-        image = 2;
+        image = PlantSpriteSheet.PLANT_HANP;
         plantName = "Hanp";
 
     }

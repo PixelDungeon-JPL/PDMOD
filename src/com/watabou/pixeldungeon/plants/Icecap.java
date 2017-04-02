@@ -24,6 +24,7 @@ import com.watabou.pixeldungeon.actors.blobs.Freezing;
 import com.watabou.pixeldungeon.items.potions.PotionOfFrost;
 import com.watabou.pixeldungeon.levels.Level;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 import com.watabou.pixeldungeon.utils.BArray;
 import com.watabou.utils.PathFinder;
 
@@ -32,7 +33,7 @@ public class Icecap extends Plant {
 	private static final String TXT_DESC = "Upon touching an Icecap excretes a pollen, which freezes everything in its vicinity.";
 	
 	{
-		image = 1;
+		image = PlantSpriteSheet.PLANT_ICECAP;
 		plantName = "Icecap";
 	}
 	

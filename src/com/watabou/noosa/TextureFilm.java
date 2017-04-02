@@ -17,7 +17,9 @@
 
 package com.watabou.noosa;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Set;
 
 import android.util.Log;
 import com.watabou.gltextures.SmartTexture;
@@ -59,12 +61,12 @@ public class TextureFilm {
 		float vh = (float)height / texHeight;
 		int cols = texWidth / width;
 		int rows = texHeight / height;
-		
+
 		for (int i=0; i < rows; i++) {
 			for (int j=0; j < cols; j++) {
 				RectF rect = new RectF( j * uw, i * vh, (j+1) * uw, (i+1) * vh );
 				add( i * cols + j, rect );
-			}
+            }
 		}
 	}
 	

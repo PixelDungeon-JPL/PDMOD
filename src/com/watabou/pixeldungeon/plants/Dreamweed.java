@@ -23,6 +23,7 @@ import com.watabou.pixeldungeon.actors.blobs.ConfusionGas;
 import com.watabou.pixeldungeon.items.potions.PotionOfInvisibility;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 
 public class Dreamweed extends Plant {
 
@@ -30,7 +31,7 @@ public class Dreamweed extends Plant {
 		"Upon touching a Dreamweed it secretes a glittering cloud of confusing gas.";
 	
 	{
-		image = 3;
+		image = PlantSpriteSheet.PLANT_DREAMWEED;
 		plantName = "Dreamweed";
 	}
 	
