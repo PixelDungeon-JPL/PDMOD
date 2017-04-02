@@ -12,6 +12,7 @@ import com.watabou.utils.Random;
 
 /**
  * Created by Philip in on 02.04.2017.
+ * Moieeeen by Jan-Torben Sendke 02.04.2017
  */
 public class BagUp {
     if (doPickUp) { /*doPickUp richtig?*/
