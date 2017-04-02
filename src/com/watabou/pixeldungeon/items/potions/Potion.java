@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import com.jpl.pdmod.data.ItemData;
+import com.jpl.pdmod.potions.PotionOfSatisfy;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Badges;
@@ -56,11 +57,13 @@ public class Potion extends Item {
 		PotionOfPurity.class,
 		PotionOfInvisibility.class,
 		PotionOfMight.class,
-		PotionOfFrost.class
+		PotionOfFrost.class,
+
+			PotionOfSatisfy.class
 	};
 	private static final String[] colors = {
 		"turquoise", "crimson", "azure", "jade", "golden", "magenta", 
-		"charcoal", "ivory", "amber", "bistre", "indigo", "silver"};
+		"charcoal", "ivory", "amber", "bistre", "indigo", "silver", "green"};
 	private static final Integer[] images = {
 		ItemSpriteSheet.POTION_TURQUOISE, 
 		ItemSpriteSheet.POTION_CRIMSON, 
@@ -73,7 +76,8 @@ public class Potion extends Item {
 		ItemSpriteSheet.POTION_AMBER, 
 		ItemSpriteSheet.POTION_BISTRE, 
 		ItemSpriteSheet.POTION_INDIGO, 
-		ItemSpriteSheet.POTION_SILVER};
+		ItemSpriteSheet.POTION_SILVER,
+	ItemSpriteSheet.POTION_GREEN};
 	
 	private static ItemStatusHandler<Potion> handler;
 	

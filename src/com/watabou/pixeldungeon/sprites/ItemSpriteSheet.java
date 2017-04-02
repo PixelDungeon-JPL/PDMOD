@@ -105,6 +105,8 @@ public class ItemSpriteSheet {
 	public static final int POTION_BISTRE		= 65;
 	public static final int POTION_INDIGO		= 66;
 	public static final int POTION_SILVER		= 67;
+
+	public static final int POTION_GREEN        = 128;
 	
 	// Scrolls
 	public static final int SCROLL_KAUNAN	= 40;

@@ -20,7 +20,8 @@ public class PotionOfSatisfy extends Potion {
     protected void apply( Hero hero ) {
         setKnown();
         hero.buff(Hunger.class).satisfy(Hunger.STARVING);
-        hero.sprite.emitter().start( Speck.factory( Speck.HEALING ), 0.4f, 4 );
+        hero.sprite.emitter().start( Speck.factory( Speck.LIGHT ), 0.4f, 4 );
+
         GLog.p(ItemData.Potion.POTION_SATISFY_MSG);
     }
 

@@ -173,9 +173,9 @@ public class ItemData {
         public static final String POTION_TXT_SURE_DRINK = "Are you sure you want to drink it? In most cases you should throw such potions at your enemies.";
         public static final String POTION_TXT_SURE_THROW = "Are you sure you want to throw it? In most cases it makes sense to drink it.";
         public static final String POTION_TXT_HARMFUL = "Harmful potion!";
-        public static final String POTION_TXT_SPLASH_HARMLESS = "The flask shatters and %d liquid splashes harmlessly";
+        public static final String POTION_TXT_SPLASH_HARMLESS = "The flask shatters and %s liquid splashes harmlessly";
         public static final String POTION_NAME = " potion";
-        public static final String POTION_DEFAULT_INFO = "This flask contains a swirling %d liquid. Who knows what it will do when drunk or thrown?";
+        public static final String POTION_DEFAULT_INFO = "This flask contains a swirling %s liquid. Who knows what it will do when drunk or thrown?";
 
         public static final String POTION_EXPERIENCE_NAME = "Potion of Experience";
         public static final String POTION_EXPERIENCE_DESC = "The storied experiences of multitudes of battles reduced to liquid form, this draught will instantly raise your experience level.";

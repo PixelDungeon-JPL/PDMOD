@@ -20,6 +20,7 @@ package com.watabou.pixeldungeon.items;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import android.util.Log;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.tweeners.AlphaTweener;
 import com.watabou.pixeldungeon.Assets;
@@ -282,7 +283,7 @@ public class Heap implements Bundlable {
 		
 		CellEmitter.get( pos ).burst( Speck.factory( Speck.BUBBLE ), 3 );
 		Splash.at( pos, 0xFFFFFF, 3 );
-		
+
 		float chances[] = new float[items.size()];
 		int count = 0;
 		
@@ -329,6 +330,7 @@ public class Heap implements Bundlable {
 					try {
 						return itemClass.newInstance();
 					} catch (Exception e) {
+						Log.e("AlchemyObserver", "transmute: Error during creating class:", e);
 						return null;
 					}
 				}

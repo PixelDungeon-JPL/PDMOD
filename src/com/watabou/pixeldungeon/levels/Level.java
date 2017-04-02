@@ -23,7 +23,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import com.jpl.pdmod.traps.DropTrap;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
@@ -703,10 +702,6 @@ public abstract class Level implements Bundlable {
 					Alchemy.transmute( cell );
 				}
 				break;
-            case Terrain.DROP_TRAP:
-                if (ch instanceof Hero)
-                    DropTrap.trigger(cell, (Hero) ch);
-                break;
 			case Terrain.DOOR:
 				Door.enter( cell );
 				break;

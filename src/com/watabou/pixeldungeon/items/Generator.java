@@ -190,7 +190,7 @@ public class Generator {
 				Rotberry.Seed.class,
 
 				Hanp.Seed.class };
-		Category.SEED.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 0, 1};
+		Category.SEED.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 0, 100};
 		
 		Category.MISC.classes = new Class<?>[]{ 
 			Bomb.class,
