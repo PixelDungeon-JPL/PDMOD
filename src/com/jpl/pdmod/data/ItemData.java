@@ -223,6 +223,10 @@ public class ItemData {
 
         public static final String POTION_GAS_TOXIC_NAME = "Potion of Toxic Gas";
         public static final String POTION_GAS_TOXIC_DESC = "Uncorking or shattering this pressurized glass will cause its contents to explode into a deadly cloud of toxic green gas. You might choose to fling this potion at distant enemies instead of uncorking it by hand.";
+
+        public static final String POTION_SATISFY_NAME = "potion of satisfy";
+        public static final String POTION_SATISFY_DESC = "You won't be hungry after drinking this elixir";
+        public static final String POTION_SATISFY_MSG = "You feel satisfied.";
     }
 
     ///////////////////////////////////////////////////////////////////////////

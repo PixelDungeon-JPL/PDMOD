@@ -1,5 +1,6 @@
 package com.jpl.pdmod.plants;
 
+import com.jpl.pdmod.potions.PotionOfSatisfy;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
@@ -47,7 +48,7 @@ public class Hanp extends Plant {
             image = ItemSpriteSheet.SEED_HANP;
 
             plantClass = Hanp.class;
-            alchemyClass = PotionOfStrength.class;
+            alchemyClass = PotionOfSatisfy.class;
         }
 
         @Override

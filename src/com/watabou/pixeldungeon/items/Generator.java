@@ -20,6 +20,7 @@ package com.watabou.pixeldungeon.items;
 import java.util.HashMap;
 
 import com.jpl.pdmod.plants.Hanp;
+import com.jpl.pdmod.potions.PotionOfSatisfy;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.armor.*;
@@ -108,8 +109,9 @@ public class Generator {
 			PotionOfPurity.class,
 			PotionOfInvisibility.class,
 			PotionOfMight.class,
-			PotionOfFrost.class };
-		Category.POTION.probs = new float[]{ 45, 5, 15, 10, 15, 10, 10, 20, 12, 10, 0, 10 };
+			PotionOfFrost.class,
+				PotionOfSatisfy.class };
+		Category.POTION.probs = new float[]{ 45, 5, 15, 10, 15, 10, 10, 20, 12, 10, 0, 10, 5};
 		
 		Category.WAND.classes = new Class<?>[]{ 
 			WandOfTeleportation.class, 
