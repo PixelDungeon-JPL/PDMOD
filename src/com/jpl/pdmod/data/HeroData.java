@@ -29,21 +29,21 @@ public class HeroData {
 
     public static class Common {
 
-        public static final String TXT_LEVEL_UP = "level up!";
-        public static final String TXT_NEW_LEVEL = "Welcome to level %d! Now you are healthier and more focused. It's easier for you to hit enemies and dodge their attacks.";
-        public static final String TXT_YOU_NOW_HAVE	= "You now have %s";
-        public static final String TXT_SOMETHING_ELSE	= "There is something else here";
-        public static final String TXT_LOCKED_CHEST	= "This chest is locked and you don't have matching key";
-        public static final String TXT_LOCKED_DOOR		= "You don't have a matching key";
-        public static final String TXT_NOTICED_SMTH	= "You noticed something";
-        public static final String TXT_WAIT	= "...";
-        public static final String TXT_SEARCH	= "search";
-        public static final String TXT_LEAVE = "One does not simply leave Pixel Dungeon.";
-        public static final String TXT_ENRAGED = "%s becomes enraged!";
-        public static final String TXT_DISARM	= "%s has knocked the %s from your hands!";
-        public static final String TXT_LIGHTNING_KILLED = "%s's lightning bolt killed you...";
-        public static final String TXT_LOOKS_BETTER	= "your %s certainly looks better now";
-        public static final String TXT_IDENTIFY	= "you are now familiar enough with your %s to identify it. It is %s.";
+        public static final String TXT_LEVEL_UP = RLoader.get("HeroData.Common.levelup");
+        public static final String TXT_NEW_LEVEL = RLoader.get("HeroData.Common.newLvl");
+        public static final String TXT_YOU_NOW_HAVE	= RLoader.get("HeroData.Common.havenow");
+        public static final String TXT_SOMETHING_ELSE	= RLoader.get("HeroData.Common.somethingelse");
+        public static final String TXT_LOCKED_CHEST	= RLoader.get("HeroData.Common.chest_locked");
+        public static final String TXT_LOCKED_DOOR		= RLoader.get("HeroData.Common.notkey");
+        public static final String TXT_NOTICED_SMTH	= RLoader.get("HeroData.Common.noticedsth");
+        public static final String TXT_WAIT	= RLoader.get("HeroData.Common.goon");
+        public static final String TXT_SEARCH	= RLoader.get("HeroData.Common.search";
+        public static final String TXT_LEAVE = RLoader.get("HeroData.Common.dontleave");
+        public static final String TXT_ENRAGED = RLoader.get("HeroData.Common.enraged");
+        public static final String TXT_DISARM	= RLoader.get("HeroData.Common.knockedouthands");
+        public static final String TXT_LIGHTNING_KILLED = RLoader.get("HeroData.Common.death.lightning_bolt");
+        public static final String TXT_LOOKS_BETTER	= RLoader.get("HeroData.Common.looks_better_now");
+        public static final String TXT_IDENTIFY	= RLoader.get("HeroData.Common.identify_it");
     }
 
 
@@ -52,18 +52,18 @@ public class HeroData {
     ///////////////////////////////////////////////////////////////////////////
 
     public static class Buff {
-        public static final String HERO_TXT_FIRE = "You catch fire!";
-        public static final String HERO_TXT_PARALYSED = "You are paralysed!";
-        public static final String HERO_TXT_POISONED = "You are poisoned!";
-        public static final String HERO_TXT_OOZE = "Caustic ooze eats your flesh. Wash away it!";
-        public static final String HERO_TXT_ROOTED = "You can't move!";
-        public static final String HERO_TXT_WEAKNESS = "You feel weakened!";
-        public static final String HERO_TXT_BLINDED = "You are blinded!";
-        public static final String HERO_TXT_FURIOUS = "You become furious!";
-        public static final String HERO_TXT_CHARM = "You are charmed!";
-        public static final String HERO_TXT_CRIPPLED = "You are crippled!";
-        public static final String HERO_TXT_BLEEDING = "You are bleeding!";
-        public static final String HERO_TXT_DIZZY = "Everything is spinning around you!";
+        public static final String HERO_TXT_FIRE = RLoader.get("HeroData.Buff.You catch fire!");
+        public static final String HERO_TXT_PARALYSED = RLoader.get("HeroData.Buff.You are paralysed!");
+        public static final String HERO_TXT_POISONED = RLoader.get("HeroData.Buff.You are poisoned!");
+        public static final String HERO_TXT_OOZE = RLoader.get("HeroData.Buff.Caustic ooze eats your flesh. Wash away it!");
+        public static final String HERO_TXT_ROOTED = RLoader.get("HeroData.Buff.You can't move!");
+        public static final String HERO_TXT_WEAKNESS = RLoader.get("HeroData.Buff.You feel weakened!");
+        public static final String HERO_TXT_BLINDED = RLoader.get("HeroData.Buff.You are blinded!");
+        public static final String HERO_TXT_FURIOUS = RLoader.get("HeroData.Buff.You become furious!");
+        public static final String HERO_TXT_CHARM = RLoader.get("HeroData.Buff.You are charmed!");
+        public static final String HERO_TXT_CRIPPLED = RLoader.get("HeroData.Buff.You are crippled!");
+        public static final String HERO_TXT_BLEEDING = RLoader.get("HeroData.Buff.You are bleeding!");
+        public static final String HERO_TXT_DIZZY = RLoader.get("HeroData.Buff.Everything is spinning around you!");
     }
 
     ///////////////////////////////////////////////////////////////////////////
