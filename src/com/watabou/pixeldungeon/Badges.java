@@ -138,9 +138,9 @@ public class Badges {
 		POTIONS_COOKED_5( "badge.potions_cooking.15", 55 ),
 		NO_MONSTERS_SLAIN( "badge.no-monster-slain", 28 ),
 		GRIM_WEAPON( "badge.killEnemy.withGrim", 29 ),
-		PIRANHAS( "badge.killPiranhas.6", 30 ),
-		PIRANHAS( "badge.killPiranhas.12", 30 ),
-		PIRANHAS( "badge.killPiranhas.18", 30 ),
+		PIRANHAS_1( "badge.killPiranhas.6", 30 ),
+		PIRANHAS_2( "badge.killPiranhas.12", 30 ),
+		PIRANHAS_3( "badge.killPiranhas.18", 30 ),
 		NIGHT_HUNTER( "badge.nighthunter", 58 ),
 		GAMES_PLAYED_1( "badge.playgames.10", 60, true ),
 		GAMES_PLAYED_2( "badge.playgames.100", 61, true ),
@@ -409,8 +409,16 @@ public class Badges {
 	public static void validatePiranhasKilled() {
 		Badge badge = null;
 		
-		if (!local.contains( Badge.PIRANHAS ) && Statistics.piranhasKilled >= 6) {
-			badge = Badge.PIRANHAS;
+		if (!local.contains( Badge.PIRANHAS_1 ) && Statistics.piranhasKilled >= 6) {
+			badge = Badge.PIRANHAS_1;
+			local.add( badge );
+		}
+		if (!local.contains( Badge.PIRANHAS_2 ) && Statistics.piranhasKilled >= 12) {
+			badge = Badge.PIRANHAS_2;
+			local.add( badge );
+		}
+		if (!local.contains( Badge.PIRANHAS_3 ) && Statistics.piranhasKilled >= 18) {
+			badge = Badge.PIRANHAS_3;
 			local.add( badge );
 		}
 		
