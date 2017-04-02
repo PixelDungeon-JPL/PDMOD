@@ -29,6 +29,7 @@ public class HealthBar extends Component {
 	
 	private ColorBlock hpBg;
 	private ColorBlock hpLvl;
+
 	
 	private float level;
 	
@@ -39,6 +40,7 @@ public class HealthBar extends Component {
 		
 		hpLvl = new ColorBlock( 1, 1, COLOR_LVL );
 		add( hpLvl );
+
 		
 		height = HEIGHT;
 	}

@@ -133,7 +133,7 @@ public class HeroData {
         public static final String HERO_SUB_ASSASSIN_NAME = RLoader.get("HeroData.Subclasses.assassin");
         public static final String HERO_SUB_ASSASSIN_DESC = RLoader.get("HeroData.Subclasses.assassin.desc --When performing a surprise attack, the _Assassin_ inflicts additional damage to his target.");
         public static final String HERO_SUB_FREERUNNER_NAME = RLoader.get("HeroData.Subclasses.freerunner");
-        public static final String HERO_SUB_FREERUNNER_DESC = RLoader.get("HeroData.Subclasses.freerunner.desc --The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.";
+        public static final String HERO_SUB_FREERUNNER_DESC = RLoader.get("HeroData.Subclasses.freerunner.desc --The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.");
         public static final String HERO_SUB_SNIPER_NAME = RLoader.get("HeroData.Subclasses.sniper");
         public static final String HERO_SUB_SNIPER_DESC = RLoader.get("HeroData.Subclasses.sniper.desc --_Snipers_ are able to detect weak points in an enemy's armor, effectively ignoring it when using a missile weapon.");
         public static final String HERO_SUB_WARDEN_NAME = RLoader.get("HeroData.Subclasses.warden");

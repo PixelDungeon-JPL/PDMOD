@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 
+import com.jpl.pdmod.Logging;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
@@ -98,16 +99,20 @@ public class Dungeon {
 	 * Initialisiert den Dungeon
 	 */
 	public static void init() {
-
+		//Logging.debug("Initializing dungeon...");
 		challenges = PixelDungeon.challenges();
 		
 		Actor.clear();
 		
 		PathFinder.setMapSize( Level.WIDTH, Level.HEIGHT );
-		
+
+		//Logging.debug("-- Labels");
 		Scroll.initLabels();
+		//Logging.debug("-- Potions");
 		Potion.initColors();
+		//Logging.debug("-- Wands");
 		Wand.initWoods();
+		//Logging.debug("-- Rings");
 		Ring.initGems();
 		
 		Statistics.reset();
@@ -157,7 +162,7 @@ public class Dungeon {
 	 * @return Das generierte Level
 	 */
 	public static Level newLevel() {
-		
+		//Logging.debug("Generating new Level...");
 		Dungeon.level = null;
 		Actor.clear();
 		
@@ -175,6 +180,7 @@ public class Dungeon {
 		Arrays.fill( visible, false );
 		
 		Level level;
+		//Logging.debug("-- Looking for specials");
 		switch (depth) {
 		case 1:
 		case 2:

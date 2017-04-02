@@ -26,6 +26,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
+import com.jpl.pdmod.Logging;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Music;
 import com.watabou.noosa.audio.Sample;
@@ -125,7 +126,12 @@ public class PixelDungeon extends Game {
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
-		
+
+		//Logging.resetFile(); // CHANGED: RESET FILE
+		//Logging.setLevel(Logging.DEBUG); // CHANGED: SET LOGGING LEVEL TO DEBUG
+
+        //.info("Starting Pixel Dungeon initialization...");
+
 		updateImmersiveMode();
 		
 		DisplayMetrics metrics = new DisplayMetrics();
@@ -138,7 +144,8 @@ public class PixelDungeon extends Game {
 		
 		Music.INSTANCE.enable( music() );
 		Sample.INSTANCE.enable( soundFx() );
-		
+
+		//Logging.debug("Loading Sound Assets...");
 		Sample.INSTANCE.load( 
 			Assets.SND_CLICK, 
 			Assets.SND_BADGE, 
@@ -193,6 +200,8 @@ public class PixelDungeon extends Game {
 	public void onWindowFocusChanged( boolean hasFocus ) {
 		
 		super.onWindowFocusChanged( hasFocus );
+
+		//Logging.debug("Window focus changed");
 		
 		if (hasFocus) {
 			updateImmersiveMode();
@@ -209,6 +218,7 @@ public class PixelDungeon extends Game {
 	 */
 	
 	public static void landscape( boolean value ) {
+	    //Logging.info("Landscape mode active");
 		Game.instance.setRequestedOrientation( value ?
 			ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE :
 			ActivityInfo.SCREEN_ORIENTATION_PORTRAIT );
@@ -291,6 +301,7 @@ public class PixelDungeon extends Game {
 	}
 	
 	public static void music( boolean value ) {
+	    //Logging.info("Music " + (value ? "enabled":"disabled"));
 		Music.INSTANCE.enable( value );
 		Preferences.INSTANCE.put( Preferences.KEY_MUSIC, value );
 	}
@@ -300,6 +311,7 @@ public class PixelDungeon extends Game {
 	}
 	
 	public static void soundFx( boolean value ) {
+	    //Logging.info("SoundFX " + (value ? "enabled":"disabled"));
 		Sample.INSTANCE.enable( value );
 		Preferences.INSTANCE.put( Preferences.KEY_SOUND_FX, value );
 	}
@@ -309,6 +321,7 @@ public class PixelDungeon extends Game {
 	}
 	
 	public static void brightness( boolean value ) {
+	    Logging.info("Bightness " + (value ? "on":"off"));
 		Preferences.INSTANCE.put( Preferences.KEY_BRIGHTNESS, value );
 		if (scene() instanceof GameScene) {
 			((GameScene)scene()).brightness( value );
