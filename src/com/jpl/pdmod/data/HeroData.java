@@ -123,21 +123,21 @@ public class HeroData {
 
     public static class Subclasses {
         public static final String HERO_SUB_GLADIATOR_NAME = RLoader.get("HeroData.Subclasses.gladiator");
-        public static final String HERO_SUB_GLADIATOR_DESC = RLoader.get("HeroData.Subclasses.gladiator.desc --A successful attack with a melee weapon allows the _Gladiator_ to start a combo, in which every next successful hit inflicts more damage.");
+        public static final String HERO_SUB_GLADIATOR_DESC = RLoader.get("HeroData.Subclasses.gladiator.desc");
         public static final String HERO_SUB_BERSERKER_NAME = RLoader.get("HeroData.Subclasses.berserker");
-        public static final String HERO_SUB_BERSERKER_DESC = RLoader.get("HeroData.Subclasses.berserker.desc --When severely wounded, the _Berserker_ enters a state of wild fury significantly increasing his damage output.");
+        public static final String HERO_SUB_BERSERKER_DESC = RLoader.get("HeroData.Subclasses.berserker.desc");
         public static final String HERO_SUB_WARLOCK_NAME = RLoader.get("HeroData.Subclasses.warlock");
-        public static final String HERO_SUB_WARLOCK_DESC = RLoader.get("HeroData.Subclasses.warlock.desc --After killing an enemy the _Warlock_ consumes its soul. It heals his wounds and satisfies his hunger.");
+        public static final String HERO_SUB_WARLOCK_DESC = RLoader.get("HeroData.Subclasses.warlock.desc");
         public static final String HERO_SUB_BATTLEMAGE_NAME = RLoader.get("HeroData.Subclasses.battlemage");
-        public static final String HERO_SUB_BATTLEMAGE_DESC = RLoader.get("HeroData.Subclasses.battlemage.desc --When fighting with a wand in his hands, the _Battlemage_ inflicts additional damage depending on the current number of charges. Every successful hit restores 1 charge to this wand.");
+        public static final String HERO_SUB_BATTLEMAGE_DESC = RLoader.get("HeroData.Subclasses.battlemage.desc");
         public static final String HERO_SUB_ASSASSIN_NAME = RLoader.get("HeroData.Subclasses.assassin");
-        public static final String HERO_SUB_ASSASSIN_DESC = RLoader.get("HeroData.Subclasses.assassin.desc --When performing a surprise attack, the _Assassin_ inflicts additional damage to his target.");
+        public static final String HERO_SUB_ASSASSIN_DESC = RLoader.get("HeroData.Subclasses.assassin.desc");
         public static final String HERO_SUB_FREERUNNER_NAME = RLoader.get("HeroData.Subclasses.freerunner");
-        public static final String HERO_SUB_FREERUNNER_DESC = RLoader.get("HeroData.Subclasses.freerunner.desc --The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.");
+        public static final String HERO_SUB_FREERUNNER_DESC = RLoader.get("HeroData.Subclasses.freerunner.desc");
         public static final String HERO_SUB_SNIPER_NAME = RLoader.get("HeroData.Subclasses.sniper");
-        public static final String HERO_SUB_SNIPER_DESC = RLoader.get("HeroData.Subclasses.sniper.desc --_Snipers_ are able to detect weak points in an enemy's armor, effectively ignoring it when using a missile weapon.");
+        public static final String HERO_SUB_SNIPER_DESC = RLoader.get("HeroData.Subclasses.sniper.desc");
         public static final String HERO_SUB_WARDEN_NAME = RLoader.get("HeroData.Subclasses.warden");
-        public static final String HERO_SUB_WARDEN_DESC = RLoader.get("HeroData.Subclasses.warden.desc --Having a strong connection with forces of nature gives _Wardens_ an ability to gather dewdrops and seeds from plants. Also trampling a high grass grants them a temporary armor buff.");
+        public static final String HERO_SUB_WARDEN_DESC = RLoader.get("HeroData.Subclasses.warden.desc");
     }
 
 
