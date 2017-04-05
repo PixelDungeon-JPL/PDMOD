@@ -11,7 +11,7 @@ import com.watabou.pixeldungeon.utils.GLog;
 public class BagUpgrade extends Item {
     {
         stackable = false;
-        name = "BagUpgrade Upgrade";
+        name = "Bag Upgrade Upgrade";
         image = ItemSpriteSheet.BAG_UPGRADE;
     }
 
@@ -32,6 +32,7 @@ public class BagUpgrade extends Item {
             GLog.p("Du hast nun ein groesseres Inventar");
         } else {
             GLog.n("Du kannst deinen Rucksack nicht mehr verbessern.");
+            super.collect(container);
         }
         return true;
     }
@@ -39,7 +40,7 @@ public class BagUpgrade extends Item {
     @Override
     public String info() {
         return
-                "Dieses Upgrade wir deine Tasche um bis zu 8 Slots erweitern.";
+                "Dieses Upgrade wird deine Tasche um bis zu 8 Slots erweitern.";
     }
 
     @Override
