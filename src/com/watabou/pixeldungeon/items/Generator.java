@@ -19,6 +19,7 @@ package com.watabou.pixeldungeon.items;
 
 import java.util.HashMap;
 
+import com.jpl.pdmod.items.ElectricSword;
 import com.jpl.pdmod.plants.Hanp;
 import com.jpl.pdmod.potions.PotionOfSatisfy;
 import com.watabou.pixeldungeon.Dungeon;
@@ -147,8 +148,9 @@ public class Generator {
 			CurareDart.class,
 			Shuriken.class,
 			Boomerang.class,
-			Tamahawk.class };
-		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1 };
+			Tamahawk.class,
+				ElectricSword.class};
+		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 100}; // CHANGED!
 		
 		Category.ARMOR.classes = new Class<?>[]{ 
 			ClothArmor.class, 
