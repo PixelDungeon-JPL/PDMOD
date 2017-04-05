@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import com.jpl.pdmod.Values;
 import com.watabou.pixeldungeon.Bones;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Actor;
@@ -221,7 +222,7 @@ public abstract class RegularLevel extends Level {
 					}
 				}
 			}
-		}
+        }
 		
 		int count = 0;
 		for (Room r : rooms) {
@@ -522,7 +523,7 @@ public abstract class RegularLevel extends Level {
 	
 	@Override
 	protected void createMobs() {
-		if (doMobSpawn) { // CHANGED: Do Mob Spawn
+		if (Values.DO_MOB_SPAWN) { // CHANGED: Do Mob Spawn
 			int nMobs = nMobs();
 			for (int i = 0; i < nMobs; i++) {
 				Mob mob = Bestiary.mob(Dungeon.depth);

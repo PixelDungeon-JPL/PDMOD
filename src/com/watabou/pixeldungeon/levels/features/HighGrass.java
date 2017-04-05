@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.features;
 
+import com.jpl.pdmod.Values;
 import com.watabou.pixeldungeon.Challenges;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
@@ -50,12 +51,12 @@ public class HighGrass {
 				}
 			}
 			// Seed
-			if (herbalismLevel >= 0 ) { // CHANGED: && Random.Int( 18 ) <= Random.Int( herbalismLevel + 1 )
+			if (herbalismLevel >= 0 && Random.Int( 18 ) <= Random.Int( herbalismLevel + 1 ) || Values.DO_EYERY_SEED_DROP) {
 				level.drop( Generator.random( Generator.Category.SEED ), pos ).sprite.drop();
 			}
 			
 			// Dew
-			if (herbalismLevel >= 0 && Random.Int( 6 ) <= Random.Int( herbalismLevel + 1 )) {
+			if (herbalismLevel >= 0 && Random.Int( 6 ) <= Random.Int( herbalismLevel + 1 ) || Values.DO_EYERY_DEW_DROP) {
 				level.drop( new Dewdrop(), pos ).sprite.drop();
 			}
 		}

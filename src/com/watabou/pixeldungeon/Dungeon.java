@@ -26,6 +26,7 @@ import java.util.Date;
 import java.util.HashSet;
 
 import com.jpl.pdmod.Logging;
+import com.jpl.pdmod.Values;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
@@ -118,8 +119,8 @@ public class Dungeon {
 		Statistics.reset();
 		Journal.reset();
 		
-		depth = 0;
-		gold = 100000;
+		depth = Values.START_DEPTH;
+		gold = Values.GOLD;
 		
 		droppedItems = new SparseArray<ArrayList<Item>>();
 		
@@ -291,7 +292,7 @@ public class Dungeon {
 	 * @return True, wenn ein shop auf dem level ist.
 	 */
 	public static boolean shopOnLevel() {
-		return depth == 1 || depth == 6 || depth == 11 || depth == 16 || depth == 21 || depth == 26 || depth == 31 || depth == 36 || depth == 41 || depth == 46;
+		return Values.DO_SHOP_LEVEL_ONE ? depth == 1 : depth == 6 || depth == 11 || depth == 16 || depth == 21 || depth == 26 || depth == 31 || depth == 36 || depth == 41 || depth == 46;
 	}
 
 	/**

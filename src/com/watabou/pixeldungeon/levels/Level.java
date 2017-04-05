@@ -23,6 +23,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import com.jpl.pdmod.Values;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
@@ -362,7 +363,7 @@ public abstract class Level implements Bundlable {
 	}
 	
 	public Actor respawner() {
-		if (RegularLevel.doMobSpawn) { // CHANGED: doMobSpawn
+		if (Values.DO_MOB_SPAWN) { // CHANGED: doMobSpawn
 			return new Actor() {
 				@Override
 				protected boolean act() {

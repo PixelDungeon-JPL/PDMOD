@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
+import com.jpl.pdmod.Values;
 import com.jpl.pdmod.data.HeroData;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
@@ -153,7 +154,7 @@ public class Hero extends Char {
 		super();
 		name = "you";
 		
-		HP = HT = 100000; //Changed! (20)
+		HP = HT = Values.START_HEALTH; //Changed! (20)
 		STR = STARTING_STR;
 		awareness = 0.1f;
 		
