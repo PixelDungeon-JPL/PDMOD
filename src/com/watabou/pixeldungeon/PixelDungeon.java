@@ -113,10 +113,10 @@ public class PixelDungeon extends Game {
 			"com.watabou.pixeldungeon.actors.mobs.npcs.Ghost$FetidRat" );
 		com.watabou.utils.Bundle.addAlias( 
 			com.watabou.pixeldungeon.plants.Rotberry.class,
-			"com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker$Rotberry" );
+			"com.watabou.pixeldungeon.actors.mobs.npcs.Kevin$Rotberry" );
 		com.watabou.utils.Bundle.addAlias( 
 			com.watabou.pixeldungeon.plants.Rotberry.Seed.class,
-			"com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker$Rotberry$Seed" );
+			"com.watabou.pixeldungeon.actors.mobs.npcs.Kevin$Rotberry$Seed" );
 		// 1.9.0
 		com.watabou.utils.Bundle.addAlias( 
 			com.watabou.pixeldungeon.items.wands.WandOfReach.class,

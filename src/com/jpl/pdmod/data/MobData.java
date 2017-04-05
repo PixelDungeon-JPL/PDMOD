@@ -254,7 +254,7 @@ public class MobData {
         }
 
         public static class Wandmaker {
-            // Wandmaker
+            // Kevin
             public static final String NPC_WANDMAKER_NAME = "old wandmaker";
             public static final String NPC_WANDMAKER_DESC = "This old but hale gentleman wears a slightly confused expression. He is protected by a magic shield.";
             public static final String NPC_WANDMAKER_BERRY_1 = "Oh, what a pleasant surprise to meet a decent person in such place! I came here for a rare ingredient - a _Rotberry seed_. Being a magic user, I'm quite able to defend myself against local monsters, but I'm getting lost in no time, it's very embarrassing. Probably you could help me? I would be happy to pay for your service with one of my best wands.";
