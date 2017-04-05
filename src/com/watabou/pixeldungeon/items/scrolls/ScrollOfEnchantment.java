@@ -37,7 +37,7 @@ public class ScrollOfEnchantment extends InventoryScroll {
 	}
 	
 	@Override
-	protected void onItemSelected( Item item ) {
+    public void onItemSelected(Item item) {
 
 		ScrollOfRemoveCurse.uncurse( Dungeon.hero, item );
 		

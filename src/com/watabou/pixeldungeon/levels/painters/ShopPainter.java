@@ -20,6 +20,7 @@ package com.watabou.pixeldungeon.levels.painters;
 import java.util.ArrayList;
 
 import com.jpl.pdmod.items.Bag;
+import com.jpl.pdmod.items.ElectricSword;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.actors.mobs.npcs.ImpShopkeeper;
@@ -143,6 +144,7 @@ public class ShopPainter extends Painter {
 		}
 
 		items.add(new Bag());
+		items.add(new ElectricSword().identify());
 		
 		items.add( new ScrollOfIdentify() );
 		items.add( new ScrollOfRemoveCurse() );

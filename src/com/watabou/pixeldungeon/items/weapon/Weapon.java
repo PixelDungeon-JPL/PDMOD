@@ -258,4 +258,6 @@ abstract public class Weapon extends KindOfWeapon {
 		}
 		
 	}
+
+	public void onHit(){}
 }

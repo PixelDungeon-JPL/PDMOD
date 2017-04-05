@@ -106,9 +106,6 @@ public class StandardPainter extends Painter {
 					case 3:
 						t = Terrain.INACTIVE_TRAP;
 						break;
-					case 4:
-						t = Terrain.DROP_TRAP;
-						break;
 				}
 				level.map[i * Level.WIDTH + j] = t;
 			}
