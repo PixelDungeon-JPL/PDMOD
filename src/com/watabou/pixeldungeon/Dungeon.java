@@ -182,59 +182,87 @@ public class Dungeon {
 		Level level;
 		//Logging.debug("-- Looking for specials");
 		switch (depth) {
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-			level = new SewerLevel();
-			break;
-		case 5:
-			level = new SewerBossLevel();
-			break;
-		case 6:
-		case 7:
-		case 8:
-		case 9:
-			level = new PrisonLevel();
-			break;
-		case 10:
-			level = new PrisonBossLevel();
-			break;
-		case 11:
-		case 12:
-		case 13:
-		case 14:
-			level = new CavesLevel();
-			break;
-		case 15:
-			level = new CavesBossLevel();
-			break;
-		case 16:
-		case 17:
-		case 18:
-		case 19:
-			level = new CityLevel();
-			break;
-		case 20:
-			level = new CityBossLevel();
-			break;
-		case 21:
-			level = new LastShopLevel();
-			break;
-		case 22:
-		case 23:
-		case 24:
-			level = new HallsLevel();
-			break;
-		case 25:
-			level = new HallsBossLevel();
-			break;
-		case 26:
-			level = new LastLevel();
-			break;
-		default:
-			level = new DeadEndLevel();
-			Statistics.deepestFloor--;
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+				level = new SewerLevel();
+				break;
+			case 10:
+				level = new SewerBossLevel();
+				break;
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 15:
+			case 16:
+			case 17:
+			case 18:
+			case 19:
+				level = new PrisonLevel();
+				break;
+			case 20:
+				level = new PrisonBossLevel();
+				break;
+			case 21:
+			case 22:
+			case 23:
+			case 24:
+			case 25:
+			case 26:
+			case 27:
+			case 28:
+			case 29:
+				level = new CavesLevel();
+				break;
+			case 30:
+				level = new CavesBossLevel();
+				break;
+			case 31:
+			case 32:
+			case 33:
+			case 34:
+			case 35:
+			case 36:
+			case 37:
+			case 38:
+			case 39:
+				level = new CityLevel();
+				break;
+			case 40:
+				level = new CityBossLevel();
+				break;
+			case 41:
+			case 42:
+			case 43:
+			case 44:
+			case 45:
+			case 46:
+			case 47:
+			case 48:
+			case 49:
+				level = new SewerLevel();
+			case 50:
+				level = new LastShopLevel();
+				break;
+			case 51:
+				level = new HallsLevel();
+				break;
+			case 52:
+				level = new HallsBossLevel();
+				break;
+			case 53:
+				level = new LastLevel();
+				break;
+			default:
+				level = new DeadEndLevel();
+				Statistics.deepestFloor--;
 		}
 		
 		level.create();
@@ -263,7 +291,7 @@ public class Dungeon {
 	 * @return True, wenn ein shop auf dem level ist.
 	 */
 	public static boolean shopOnLevel() {
-		return depth == 1 || depth == 6 || depth == 11 || depth == 16;
+		return depth == 1 || depth == 6 || depth == 11 || depth == 16 || depth == 21 || depth == 26 || depth == 31 || depth == 36 || depth == 41 || depth == 46;
 	}
 
 	/**
@@ -280,7 +308,7 @@ public class Dungeon {
 	 * @return True, wenn es ein boss level ist.
 	 */
 	public static boolean bossLevel( int depth ) {
-		return depth == 5 || depth == 10 || depth == 15 || depth == 20 || depth == 25;
+		return depth == 10 || depth == 20 || depth == 30 || depth == 40 || depth == 45;
 	}
 	
 	@SuppressWarnings("deprecation")
