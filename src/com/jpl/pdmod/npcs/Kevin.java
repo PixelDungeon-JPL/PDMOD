@@ -90,14 +90,8 @@ public class Kevin extends NPC {
         private static boolean spawned;
         private static boolean given;
 
-        public static Wand wand1;
-        public static Wand wand2;
-
         public static void reset() {
             spawned = false;
-
-            wand1 = null;
-            wand2 = null;
         }
 
         private static final String NODE		= "wandmaker";
@@ -120,9 +114,6 @@ public class Kevin extends NPC {
                 node.put( TYPE, type.toString() );
 
                 node.put( GIVEN, given );
-
-                node.put( WAND1, wand1 );
-                node.put( WAND2, wand2 );
             }
 
             bundle.put( NODE, node );
@@ -166,57 +157,15 @@ public class Kevin extends NPC {
                 }
 
                 given = false;
-
-                switch (Random.Int( 5 )) {
-                    case 0:
-                        wand1 = new WandOfAvalanche();
-                        break;
-                    case 1:
-                        wand1 = new WandOfDisintegration();
-                        break;
-                    case 2:
-                        wand1 = new WandOfFirebolt();
-                        break;
-                    case 3:
-                        wand1 = new WandOfLightning();
-                        break;
-                    case 4:
-                        wand1 = new WandOfPoison();
-                        break;
-                }
-                wand1.random().upgrade();
-
-                switch (Random.Int( 5 )) {
-                    case 0:
-                        wand2 = new WandOfAmok();
-                        break;
-                    case 1:
-                        wand2 = new WandOfBlink();
-                        break;
-                    case 2:
-                        wand2 = new WandOfRegrowth();
-                        break;
-                    case 3:
-                        wand2 = new WandOfSlowness();
-                        break;
-                    case 4:
-                        wand2 = new WandOfReach();
-                        break;
-                }
-                wand2.random().upgrade();
             }
         }
 
         public static void complete() {
-            wand1 = null;
-            wand2 = null;
-
             Journal.remove( Journal.Feature.WANDMAKER );
         }
     }
 
     abstract public static class QuestHandler {
-
         protected String NPC_KEVIN_Q1;
         protected String NPC_KEVIN_Q2;
 
@@ -252,16 +201,12 @@ public class Kevin extends NPC {
 
         @Override
         protected Item checkItem() {
-            return Dungeon.hero.belongings.getItem( Rotberry.Seed.class );
+            return null;
         }
 
         @Override
         protected void placeItem() {
-            int shrubPos = Dungeon.level.randomRespawnCell();
-            while (Dungeon.level.heaps.get( shrubPos ) != null) {
-                shrubPos = Dungeon.level.randomRespawnCell();
-            }
-            Dungeon.level.plant( new Rotberry.Seed(), shrubPos );
+            // Place quest item
         }
     };
 
@@ -273,30 +218,12 @@ public class Kevin extends NPC {
 
         @Override
         protected Item checkItem() {
-            return Dungeon.hero.belongings.getItem( CorpseDust.class );
+            return null;
         }
 
         @Override
         protected void placeItem() {
-            ArrayList<Heap> candidates = new ArrayList<Heap>();
-            for (Heap heap : Dungeon.level.heaps.values()) {
-                if (heap.type == Heap.Type.SKELETON && !Dungeon.visible[heap.pos]) {
-                    candidates.add( heap );
-                }
-            }
-
-            if (candidates.size() > 0) {
-                Random.element( candidates ).drop( new CorpseDust() );
-            } else {
-                int pos = Dungeon.level.randomRespawnCell();
-                while (Dungeon.level.heaps.get( pos ) != null) {
-                    pos = Dungeon.level.randomRespawnCell();
-                }
-
-                Heap heap = Dungeon.level.drop( new CorpseDust(), pos );
-                heap.type = Heap.Type.SKELETON;
-                heap.sprite.link();
-            }
+            // Place quest item
         }
     };
 
@@ -308,29 +235,12 @@ public class Kevin extends NPC {
 
         @Override
         protected Item checkItem() {
-            return Dungeon.hero.belongings.getItem( PhantomFish.class );
+            return null;
         }
 
         @Override
         protected void placeItem() {
-            Heap heap = null;
-            for (int i=0; i < 100; i++) {
-                int pos = Random.Int( Level.LENGTH );
-                if (Level.water[pos]) {
-                    heap = Dungeon.level.drop( new PhantomFish(), pos );
-                    heap.type = Heap.Type.HIDDEN;
-                    heap.sprite.link();
-                    return;
-                }
-            }
-            if (heap == null) {
-                int pos = Dungeon.level.randomRespawnCell();
-                while (Dungeon.level.heaps.get( pos ) != null) {
-                    pos = Dungeon.level.randomRespawnCell();
-                }
-
-                Dungeon.level.drop( new PhantomFish(), pos );
-            }
+            // Place quest item
         }
     };
 }
