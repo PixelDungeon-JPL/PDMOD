@@ -119,7 +119,7 @@ public class Dungeon {
 		Journal.reset();
 		
 		depth = 0;
-		gold = 0;
+		gold = 100000;
 		
 		droppedItems = new SparseArray<ArrayList<Item>>();
 		

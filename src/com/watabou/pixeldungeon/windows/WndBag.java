@@ -101,7 +101,7 @@ public class WndBag extends WndTabbed {
 		lastBag = bag;
 		
 		nCols = PixelDungeon.landscape() ? COLS_L : COLS_P;
-		nRows = (Belongings.BACKPACK_SIZE + 4 + 1) / nCols + ((Belongings.BACKPACK_SIZE + 4 + 1) % nCols > 0 ? 1 : 0);
+		nRows = (bag.size + 4 + 1) / nCols + ((bag.size + 4 + 1) % nCols > 0 ? 1 : 0);
 		
 		int slotsWidth = SLOT_SIZE * nCols + SLOT_MARGIN * (nCols - 1);
 		int slotsHeight = SLOT_SIZE * nRows + SLOT_MARGIN * (nRows - 1);
