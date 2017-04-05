@@ -7,7 +7,6 @@ import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Vertigo;
 import com.watabou.pixeldungeon.effects.CellEmitter;
 import com.watabou.pixeldungeon.effects.particles.EnergyParticle;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
 import com.watabou.pixeldungeon.plants.Plant;
 import com.watabou.pixeldungeon.sprites.PlantSpriteSheet;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
@@ -15,10 +14,10 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 /**
  * Created by Luis Michaelis on 31.03.2017.
  */
-public class Hanp extends Plant {
+public class Hamp extends Plant {
     {
         image = PlantSpriteSheet.PLANT_HANP;
-        plantName = "Hanp";
+        plantName = "Hamp";
 
     }
 
@@ -42,12 +41,12 @@ public class Hanp extends Plant {
 
     public static class Seed extends Plant.Seed {
         {
-            plantName = "Hanp";
+            plantName = "Hamp";
 
             name = "seed of " + plantName;
             image = ItemSpriteSheet.SEED_HANP;
 
-            plantClass = Hanp.class;
+            plantClass = Hamp.class;
             alchemyClass = PotionOfSatisfy.class;
         }
 

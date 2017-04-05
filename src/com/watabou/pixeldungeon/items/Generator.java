@@ -20,7 +20,7 @@ package com.watabou.pixeldungeon.items;
 import java.util.HashMap;
 
 import com.jpl.pdmod.items.ElectricSword;
-import com.jpl.pdmod.plants.Hanp;
+import com.jpl.pdmod.plants.Hamp;
 import com.jpl.pdmod.potions.PotionOfSatisfy;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.hero.Hero;
@@ -191,7 +191,7 @@ public class Generator {
 				Fadeleaf.Seed.class,
 				Rotberry.Seed.class,
 
-				Hanp.Seed.class };
+				Hamp.Seed.class };
 		Category.SEED.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 0, 1};
 		
 		Category.MISC.classes = new Class<?>[]{ 
