@@ -20,8 +20,8 @@ public class ItemData {
         public static final String ARMOR_TXT_INFO_INADEQUATE_STR_INVENTORY = "\n\nBecause of your inadequate strength wearing this armor will decrease your movement speed and defense skill. ";
         public static final String ARMOR_TXT_TOO_HEAVY = "Probably this armor is too heavy for you. ";
         public static final String ARMOR_TXT_ENCHANTED = "It is enchanted.";
-        public static final String ARMOR_TXT_WEARING = "\n\nYou are wearing the%d, %d";
-        public static final String ARMOR_TXT_CURSE_KNOWN = "\n\nYou can feel a malevolent magic lurking within the %d.";
+        public static final String ARMOR_TXT_WEARING = "\n\nYou are wearing the %s, %s";
+        public static final String ARMOR_TXT_CURSE_KNOWN = "\n\nYou can feel a malevolent magic lurking within the %s.";
         public static final String ARMOR_TXT_LOW_HEALTH = "Your health is too low!";
         public static final String ARMOR_TXT_NOT_EQUIPPED = "You need to be wearing this armor to use its special power!";
         public static final String ARMOR_TXT_AWESOME = "The thing looks awesome!";
