@@ -11,7 +11,7 @@ public class Bag extends Item {
     {
         stackable = false;
         name = "Bag";
-        image = ItemSpriteSheet.BONES;
+        image = ItemSpriteSheet.BAG_UPGRADE;
     }
 
     @Override
