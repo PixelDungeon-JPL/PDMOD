@@ -148,22 +148,22 @@ public class HeroData {
     public static class ResultDescriptions {
 
         // Mobs
-        public static final String RESULT_MOB = "Killed by %s on level %d";
-        public static final String RESULT_BOSS = "Killed by the %s on level %d";
+        public static final String RESULT_MOB = RLoader.get("HeroData.ResultDescriptions.Mobs.killed_by");
+        public static final String RESULT_BOSS = RLoader.get("HeroData.ResultDescriptions.Mobs.killed_by");
         // Items
-        public static final String RESULT_WAND = "Killed by your own %s on level %d";
-        public static final String RESULT_GLYPH = "Killed by the %s on level %d";
-        public static final String RESULT_BOMB = "Killed by an explosion of a bomb on level %d";
+        public static final String RESULT_WAND = RLoader.get("HeroData.ResultDescriptions.Items.killed_by");
+        public static final String RESULT_GLYPH = RLoader.get("HeroData.ResultDescriptions.Killed by the %s on level %d");
+        public static final String RESULT_BOMB = RLoader.get("HeroData.ResultDescriptions.Killed by an explosion of a bomb on level %d");
         // Dungeon features
-        public static final String RESULT_TRAP = "Killed by discharge of %s on level %d";
+        public static final String RESULT_TRAP = RLoader.get("HeroData.ResultDescriptions.Killed by discharge of %s on level %d");
         // Debuffs & blobs
-        public static final String RESULT_BURNING = "Burned to death on level %d";
-        public static final String RESULT_HUNGER = "Starved to death on level %d";
-        public static final String RESULT_POISON = "Died from poison on level %d";
-        public static final String RESULT_GAS = "Died from toxic gas on level %d";
-        public static final String RESULT_BLEEDING = "Bled to death on level %d";
-        public static final String RESULT_OOZE = "Killed by a caustic ooze on level %d";
-        public static final String RESULT_FALL = "Fell to death on level %d";
-        public static final String RESULT_WIN = "Obtained the Amulet of Yendor";
+        public static final String RESULT_BURNING = RLoader.get("HeroData.ResultDescriptions.Burned to death on level %d");
+        public static final String RESULT_HUNGER = RLoader.get("HeroData.ResultDescriptions.Starved to death on level %d");
+        public static final String RESULT_POISON = RLoader.get("HeroData.ResultDescriptions.Died from poison on level %d");
+        public static final String RESULT_GAS = RLoader.get("HeroData.ResultDescriptions.Died from toxic gas on level %d");
+        public static final String RESULT_BLEEDING = RLoader.get("HeroData.ResultDescriptions.Bled to death on level %d");
+        public static final String RESULT_OOZE = RLoader.get("HeroData.ResultDescriptions.Killed by a caustic ooze on level %d");
+        public static final String RESULT_FALL = RLoader.get("HeroData.ResultDescriptions.Fell to death on level %d");
+        public static final String RESULT_WIN = RLoader.get("HeroData.ResultDescriptions.Obtained the Amulet of Yendor");
     }
 }
