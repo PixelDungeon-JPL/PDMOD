@@ -19,7 +19,7 @@ package com.watabou.pixeldungeon.levels.painters;
 
 import java.util.ArrayList;
 
-import com.jpl.pdmod.items.Bag;
+import com.jpl.pdmod.items.BagUpgrade;
 import com.jpl.pdmod.items.ElectricSword;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
@@ -96,6 +96,7 @@ public class ShopPainter extends Painter {
             case 1: // CHANGED: Shop Level
 				items.add( (Random.Int( 2 ) == 0 ? new Quarterstaff() : new Spear()).identify() );
 				items.add( new LeatherArmor().identify() );
+                items.add(new ElectricSword().identify());
 				items.add( new SeedPouch() );
 				items.add( new Weightstone() );
 				break;
@@ -112,6 +113,7 @@ public class ShopPainter extends Painter {
 				items.add( new MailArmor().identify() );
 				items.add( new ScrollHolder() );
 				items.add( new Weightstone() );
+                items.add(new ElectricSword().identify());
 				break;
 
 			case 16:
@@ -143,8 +145,7 @@ public class ShopPainter extends Painter {
 			items.add( Generator.random( Generator.Category.POTION ) );
 		}
 
-		items.add(new Bag());
-		items.add(new ElectricSword().identify());
+        items.add(new BagUpgrade());
 		
 		items.add( new ScrollOfIdentify() );
 		items.add( new ScrollOfRemoveCurse() );

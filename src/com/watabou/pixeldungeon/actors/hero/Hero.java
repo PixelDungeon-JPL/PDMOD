@@ -112,7 +112,7 @@ import com.watabou.utils.Random;
 
 public class Hero extends Char {
 
-	public static final int STARTING_STR = 10;
+	public static final int STARTING_STR = Values.START_STR;
 
 	private static final float TIME_TO_REST		= 1f;
 	private static final float TIME_TO_SEARCH	= 2f;

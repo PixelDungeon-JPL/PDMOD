@@ -1,16 +1,17 @@
 package com.jpl.pdmod.items;
 
 import com.watabou.pixeldungeon.items.Item;
+import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.pixeldungeon.utils.GLog;
 
 /**
  * Created by Freddy on 05.04.2017.
  */
-public class Bag extends Item {
+public class BagUpgrade extends Item {
     {
         stackable = false;
-        name = "Bag";
+        name = "Bag Upgrade Upgrade";
         image = ItemSpriteSheet.BAG_UPGRADE;
     }
 
@@ -25,12 +26,13 @@ public class Bag extends Item {
     }
 
     @Override
-    public boolean collect(com.watabou.pixeldungeon.items.bags.Bag container) {
+    public boolean collect(Bag container) {
         if (container.size < 27) {
             container.size += 4;
             GLog.p("Du hast nun ein groesseres Inventar");
         } else {
             GLog.n("Du kannst deinen Rucksack nicht mehr verbessern.");
+            super.collect(container);
         }
         return true;
     }
@@ -38,7 +40,7 @@ public class Bag extends Item {
     @Override
     public String info() {
         return
-                "Wow. Eine Tasche.";
+                "Dieses Upgrade wird deine Tasche um bis zu 8 Slots erweitern.";
     }
 
     @Override
