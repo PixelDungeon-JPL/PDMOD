@@ -189,4 +189,7 @@ public class ItemSpriteSheet {
 
 	public static final int KEVINS_EGG = 131;
 	public static final int KEVINS_KNUFFI = 132;
+
+	//Umhänge
+	public static final int LIFE_UMHANG = 133;
 }

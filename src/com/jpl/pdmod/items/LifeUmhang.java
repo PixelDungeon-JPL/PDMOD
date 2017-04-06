@@ -14,7 +14,7 @@ public class LifeUmhang extends Item {
     {
         stackable = false;
         name = "LifeUmhang";
-        image = ItemSpriteSheet.BAG_UPGRADE; //TODO
+        image = ItemSpriteSheet.LIFE_UMHANG;
     }
 
     @Override
