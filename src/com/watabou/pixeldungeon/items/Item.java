@@ -550,8 +550,7 @@ public class Item implements Bundlable {
 		
 		Char enemy = Actor.findChar( cell );
 		QuickSlot.target( this, enemy );
-		
-		// FIXME!!!
+
 		float delay = TIME_TO_THROW;
 		if (this instanceof MissileWeapon) {
 			delay *= ((MissileWeapon)this).speedFactor( user );

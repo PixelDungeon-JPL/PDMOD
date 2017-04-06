@@ -134,7 +134,7 @@ public class ItemSpriteSheet {
 	public static final int SEED_FADELEAF	= 94;
 	public static final int SEED_ROTBERRY	= 95;
 
-	public static final int SEED_HANP = 119; // CHANGED!
+	public static final int SEED_HANP = 119;
 	
 	// Quest items
 	public static final int ROSE	= 100;

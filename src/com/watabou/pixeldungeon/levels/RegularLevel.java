@@ -523,7 +523,7 @@ public abstract class RegularLevel extends Level {
 	
 	@Override
 	protected void createMobs() {
-		if (Values.DO_MOB_SPAWN) { // CHANGED: Do Mob Spawn
+		if (Values.DO_MOB_SPAWN) {
 			int nMobs = nMobs();
 			for (int i = 0; i < nMobs; i++) {
 				Mob mob = Bestiary.mob(Dungeon.depth);

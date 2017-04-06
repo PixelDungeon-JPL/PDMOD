@@ -138,8 +138,7 @@ public abstract class Char extends Actor {
 			if (visibleFight) {
 				GLog.i( TXT_HIT, name, enemy.name );
 			}
-			
-			// FIXME
+
 			int dr = this instanceof Hero && ((Hero)this).rangedWeapon != null && ((Hero)this).subClass == HeroSubClass.SNIPER ? 0 :
 				Random.IntRange( 0, enemy.dr() );
 			
@@ -168,8 +167,7 @@ public abstract class Char extends Actor {
 				if (enemy == Dungeon.hero) {
 					
 					if (Dungeon.hero.killerGlyph != null) {
-						
-					// FIXME
+
 					//	Dungeon.fail( Utils.format( ResultDescriptions.RESULT_GLYPH, Dungeon.hero.killerGlyph.name(), Dungeon.depth ) );
 					//	GLog.n( TXT_KILL, Dungeon.hero.killerGlyph.name() );
 						

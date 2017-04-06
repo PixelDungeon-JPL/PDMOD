@@ -88,8 +88,8 @@ public class Assets {
 	public static final String BEE		= "bee.png";
 	public static final String MIMIC	= "mimic.png";
 	
-	public static final String ITEMS	= "items.png"; // CHANGED!
-	public static final String PLANTS	= "plants.png"; // CHANGED!
+	public static final String ITEMS	= "items.png";
+	public static final String PLANTS	= "plants.png";
 	
 	public static final String TILES_SEWERS	= "tiles0.png";
 	public static final String TILES_PRISON	= "tiles1.png";

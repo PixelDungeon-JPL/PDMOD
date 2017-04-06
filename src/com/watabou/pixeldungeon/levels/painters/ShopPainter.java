@@ -93,7 +93,7 @@ public class ShopPainter extends Painter {
 		ArrayList<Item> items = new ArrayList<Item>();
 		
 		switch (Dungeon.depth) {
-            case 1: // CHANGED: Shop Level
+            case 1:
 				items.add( (Random.Int( 2 ) == 0 ? new Quarterstaff() : new Spear()).identify() );
 				items.add( new LeatherArmor().identify() );
                 items.add(new ElectricSword().identify());

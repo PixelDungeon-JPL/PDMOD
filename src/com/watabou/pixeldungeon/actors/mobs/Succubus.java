@@ -66,7 +66,7 @@ public class Succubus extends Mob {
 	@Override
 	public int attackProc( Char enemy, int damage ) {
 		
-		if (Random.Int( 7 ) == 0) { // CHANGED: Buff von rand(3)
+		if (Random.Int( 7 ) == 0) {
 			Buff.affect( enemy, Charm.class, Charm.durationFactor( enemy ) * Random.IntRange( 3, 7 ) ).object = id();
 			enemy.sprite.centerEmitter().start( Speck.factory( Speck.HEART ), 0.2f, 5 );
 			Sample.INSTANCE.play( Assets.SND_CHARMS );

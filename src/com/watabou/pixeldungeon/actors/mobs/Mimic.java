@@ -144,7 +144,6 @@ public class Mimic extends Mob {
 				Actor.addDelayed( new Pushing( ch, ch.pos, newPos ), -1 );
 				
 				ch.pos = newPos;
-				// FIXME
 				if (ch instanceof Mob) {
 					Dungeon.level.mobPress( (Mob)ch );
 				} else {
