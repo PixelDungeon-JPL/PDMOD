@@ -46,15 +46,15 @@ public class PotionOfHealing extends Potion {
 	public static void heal( Hero hero ) {
 		LifeUmhang umhang = Dungeon.hero.belongings.getItem(LifeUmhang.class);
 		int missHp = hero.HT - hero.HP;
+
 		if (missHp < 100) {
 			hero.HP = hero.HT;
-			if (umhang != null) {
+			if (umhang != null)
 				umhang.addLife(100 - missHp);
-			}
-		}
-		else {
+
+		} else
 			hero.HP += 100;
-		}
+
 		Buff.detach( hero, Poison.class );
 		Buff.detach( hero, Cripple.class );
 		Buff.detach( hero, Weakness.class );

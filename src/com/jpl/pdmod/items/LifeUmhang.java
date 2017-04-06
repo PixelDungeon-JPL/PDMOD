@@ -13,7 +13,13 @@ import java.util.ArrayList;
  */
 public class LifeUmhang extends Item {
     public static final String AC_DRINK = "DRINK";
+    private int lifelvl = 0;
 
+    {
+        stackable = false;
+        name = "LifeUmhang";
+        image = ItemSpriteSheet.LIFE_UMHANG;
+    }
 
     @Override
     public ArrayList<String> actions(Hero hero) {
@@ -43,17 +49,6 @@ public class LifeUmhang extends Item {
         else {
             super.execute(hero, action);
         }
-    }
-
-
-
-
-
-    private int lifelvl = 0;
-    {
-        stackable = false;
-        name = "LifeUmhang";
-        image = ItemSpriteSheet.LIFE_UMHANG;
     }
 
 
@@ -101,7 +96,5 @@ public class LifeUmhang extends Item {
     public int price() {
         return 100 * quantity;
     }
-
-
 
 }
