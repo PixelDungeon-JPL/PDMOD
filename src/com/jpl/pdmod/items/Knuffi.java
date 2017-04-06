@@ -18,7 +18,7 @@ public class Knuffi extends Item {
     {
         stackable = false;
         name = "Ei";
-        image = ItemSpriteSheet.BAG_UPGRADE; //TODO
+        image = ItemSpriteSheet.KEVINS_KNUFFI;
     }
 
     @Override

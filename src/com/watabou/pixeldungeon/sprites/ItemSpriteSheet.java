@@ -186,4 +186,7 @@ public class ItemSpriteSheet {
 	public static final int BOMB	= 124;
 	public static final int HONEYPOT= 125;
 	public static final int BAG_UPGRADE = 129;
+
+	public static final int KEVINS_EGG = 131;
+	public static final int KEVINS_KNUFFI = 132;
 }
