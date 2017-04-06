@@ -9,6 +9,7 @@ import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.mobs.npcs.NPC;
+import com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.levels.Room;
 import com.watabou.pixeldungeon.levels.SewerLevel;
@@ -32,7 +33,8 @@ public class Kevin extends NPC {
 
     @Override
     public void interact() {
-
+        sprite.turnTo( pos, Dungeon.hero.pos );
+        Kevin.Quest.type.handler.interact( this );
     }
 
     @Override
@@ -73,7 +75,7 @@ public class Kevin extends NPC {
             ILLEGAL( null ), EI(eiQuest)/*, DUST( dustQuest ), FISH( fishQuest )*/;
 
             public Kevin.QuestHandler handler;
-            private Type( Kevin.QuestHandler handler ) {
+            Type( Kevin.QuestHandler handler ) {
                 this.handler = handler;
             }
         }
