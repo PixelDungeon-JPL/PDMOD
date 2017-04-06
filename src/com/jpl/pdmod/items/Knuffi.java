@@ -3,6 +3,8 @@ package com.jpl.pdmod.items;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
+import com.watabou.pixeldungeon.actors.hero.Hero;
+import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
@@ -17,7 +19,7 @@ public class Knuffi extends Item {
 
     {
         stackable = false;
-        name = "Ei";
+        name = "Knuffi";
         image = ItemSpriteSheet.KEVINS_KNUFFI;
     }
 
@@ -52,7 +54,7 @@ public class Knuffi extends Item {
     @Override
     public String info() {
         return
-                "Das ist ein Ei! Brüte es aus um ein tolles Gechenk zu erhalten...";
+                "Das gehoert Kevin!";
     }
 
     @Override
@@ -62,6 +64,7 @@ public class Knuffi extends Item {
 
 
     protected class Charger extends Buff {
+        private static final float TIME_TO_CHARGE = 1f;
         private Knuffi ei;
         public Charger(Knuffi ei){
             this.ei = ei;
@@ -70,7 +73,7 @@ public class Knuffi extends Item {
         @Override
         public boolean attachTo( Char target ) {
             super.attachTo( target );
-
+            delay();
             return true;
         }
 
@@ -79,9 +82,19 @@ public class Knuffi extends Item {
             if (lastDepth != Dungeon.depth) {
                 GLog.p("Du warst zu lange weg. Kevin ist sauer!");
                 // TODO: Kevin follow
+                detach();
             }
             lastDepth = Dungeon.depth;
-            return super.act();
+
+            delay();
+            return true;
+        }
+
+        protected void delay() {
+            float time2charge = ((Hero)target).heroClass == HeroClass.MAGE ?
+                    TIME_TO_CHARGE / (float)Math.sqrt( 1 + effectiveLevel() ) :
+                    TIME_TO_CHARGE;
+            spend( time2charge );
         }
     }
 }

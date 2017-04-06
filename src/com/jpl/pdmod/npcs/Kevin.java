@@ -167,6 +167,7 @@ public class Kevin extends NPC {
                 Item item = checkItem();
                 if (item != null) {
                     GameScene.show( new WndKevin( kevin, item ) );
+                    item.detach(Dungeon.hero.belongings.backpack);
                 } else {
                     kevin.tell(NPC_KEVIN_Q1, Dungeon.hero.className() );
                 }
@@ -176,7 +177,7 @@ public class Kevin extends NPC {
 
 
                 if (!giveItem()){
-                    GLog.n("Du hast keinen platz!");
+                    GLog.n("Du hast keinen Platz!");
                 } else {
                     Quest.given = true;
                     Journal.add( Journal.Feature.KEVIN );
@@ -191,7 +192,7 @@ public class Kevin extends NPC {
     private static final Kevin.QuestHandler eiQuest = new Kevin.QuestHandler() {
         {
             NPC_KEVIN_Q1 = "Das Ei sollst du ausbrueten!";
-            NPC_KEVIN_Q2 = "Kannst du bitte dieses Ei für mich ausbrueten? Lauf damit 10 Schritte und komm zurueck!";
+            NPC_KEVIN_Q2 = "LOL";
         }
 
         @Override

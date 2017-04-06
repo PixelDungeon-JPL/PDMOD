@@ -15,7 +15,7 @@ import com.watabou.pixeldungeon.utils.GLog;
  */
 public class KevinEi extends Item {
     private int steps = 0;
-    private Charger charger;
+    private StepCounter charger;
 
     {
         stackable = false;
@@ -54,7 +54,7 @@ public class KevinEi extends Item {
 
     public void charge( Char owner ) {
         if (charger == null) {
-            (charger = new Charger(this)).attachTo( owner );
+            (charger = new StepCounter(this)).attachTo( owner );
         }
     }
 
@@ -69,16 +69,27 @@ public class KevinEi extends Item {
         return 100 * quantity;
     }
 
+    @Override
+    protected void onDetach() {
+        if (charger != null) {
+            charger.detach();
+            charger = null;
+        }
+    }
 
-    protected class Charger extends Buff {
+    protected class StepCounter extends Buff {
+        private static final float TIME_TO_CHARGE = 1f;
+
         private KevinEi ei;
-        public Charger(KevinEi ei){
+        public StepCounter(KevinEi ei){
             this.ei = ei;
         }
 
         @Override
         public boolean attachTo( Char target ) {
             super.attachTo( target );
+
+            delay();
 
             return true;
         }
@@ -88,12 +99,25 @@ public class KevinEi extends Item {
             steps++;
 
             if (steps == 10){
-                GLog.p("Kevins Knuffi ist geschluepft. Bring es schnell zurueck, sonst wird Kevin boese!");
+                GLog.p("Kevins Knuffi ist geschluepft. Bring es schnell zurueck sonst wird Kevin boese!");
                 ei.detach(Dungeon.hero.belongings.backpack);
                 new Knuffi().collect(Dungeon.hero.belongings.backpack);
+                ei = null;
+            } else if (steps > 10) {
+                diactivate();
+            } else {
+                delay();
             }
 
-            return super.act();
+
+            return true;
+        }
+
+        protected void delay() {
+            float time2charge = ((Hero)target).heroClass == HeroClass.MAGE ?
+                    TIME_TO_CHARGE / (float)Math.sqrt( 1 + effectiveLevel() ) :
+                    TIME_TO_CHARGE;
+            spend( time2charge );
         }
     }
 }
