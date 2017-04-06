@@ -81,7 +81,7 @@ public class Knuffi extends Item {
                 // TODO: Kevin follow
             }
             lastDepth = Dungeon.depth;
-            return true;
+            return super.act();
         }
     }
 }

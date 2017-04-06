@@ -61,7 +61,7 @@ public class KevinEi extends Item {
     @Override
     public String info() {
         return
-                "Das ist ein Ei! Brüte es aus um ein tolles Gechenk zu erhalten...";
+                "Das ist ein Ei! Bruete es aus um ein tolles Gechenk zu erhalten...";
     }
 
     @Override
@@ -93,7 +93,7 @@ public class KevinEi extends Item {
                 new Knuffi().collect(Dungeon.hero.belongings.backpack);
             }
 
-            return true;
+            return super.act();
         }
     }
 }

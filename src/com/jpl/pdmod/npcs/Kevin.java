@@ -172,7 +172,7 @@ public class Kevin extends NPC {
                 }
 
             } else {
-                kevin.tell(NPC_KEVIN_Q2);
+                kevin.tell(NPC_KEVIN_Q2, "");
 
 
                 if (!giveItem()){
@@ -190,8 +190,8 @@ public class Kevin extends NPC {
 
     private static final Kevin.QuestHandler eiQuest = new Kevin.QuestHandler() {
         {
-            NPC_KEVIN_Q1 = "Kannst du bitte dieses Ei für mich aubrueten? Lauf damit 10 Schritte, dann komm zurück!";
-            NPC_KEVIN_Q2 = "Das Ei sollst du ausbrueten!";
+            NPC_KEVIN_Q1 = "Das Ei sollst du ausbrueten!";
+            NPC_KEVIN_Q2 = "Kannst du bitte dieses Ei für mich ausbrueten? Lauf damit 10 Schritte und komm zurueck!";
         }
 
         @Override
