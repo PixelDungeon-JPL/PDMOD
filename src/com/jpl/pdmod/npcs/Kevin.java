@@ -17,6 +17,7 @@ import com.watabou.pixeldungeon.levels.Room;
 import com.watabou.pixeldungeon.levels.SewerLevel;
 import com.watabou.pixeldungeon.levels.Terrain;
 import com.watabou.pixeldungeon.scenes.GameScene;
+import com.watabou.pixeldungeon.sprites.CharSprite;
 import com.watabou.pixeldungeon.sprites.WandmakerSprite;
 import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
@@ -47,7 +48,9 @@ public class Kevin extends NPC {
     @Override
     public String defenseVerb() {
         Dungeon.hero.attack(Dungeon.hero);
-        return "don't touch this\nsonst klatscht es!";
+        sprite.showStatus(CharSprite.NEGATIVE, "don't touch this");
+        sprite.showStatus(CharSprite.NEGATIVE, "sonst klatscht es!");
+        return "";
     }
 
     @Override
@@ -124,7 +127,7 @@ public class Kevin extends NPC {
         }
 
         public static void spawn(SewerLevel level, Room room ) {
-            if (!spawned && Dungeon.depth > 6 && Random.Int( 10 - Dungeon.depth ) == 0 || Values.DO_SPAWN_KEVIN_LEVEL_1) {
+            if (!spawned && Dungeon.depth > 6 && Random.Int( 10 - Dungeon.depth ) == 0 || Values.DO_SPAWN_KEVIN_LEVEL_1 && Dungeon.depth == 1) {
 
                 Kevin npc = new Kevin();
                 do {
@@ -192,7 +195,7 @@ public class Kevin extends NPC {
     private static final Kevin.QuestHandler eiQuest = new Kevin.QuestHandler() {
         {
             NPC_KEVIN_Q1 = "Das Ei sollst du ausbrueten!";
-            NPC_KEVIN_Q2 = "LOL";
+            NPC_KEVIN_Q2 = "LOL"; // TODO: Add desc
         }
 
         @Override

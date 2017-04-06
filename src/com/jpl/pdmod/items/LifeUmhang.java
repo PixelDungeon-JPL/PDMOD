@@ -1,6 +1,7 @@
 package com.jpl.pdmod.items;
 
 import com.watabou.pixeldungeon.actors.hero.Hero;
+import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.bags.Bag;
 import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
@@ -45,6 +46,8 @@ public class LifeUmhang extends Item {
                 hero.HP = hero.HT;
                 lifelvl -= missHp;
             }
+
+            hero.sprite.emitter().start( Speck.factory( Speck.HEALING ), 0.4f, 4 );
         }
         else {
             super.execute(hero, action);
@@ -66,7 +69,7 @@ public class LifeUmhang extends Item {
     @Override
     public String status() {
 
-        return lifelvl + "/ 100";
+        return lifelvl + "/10";
     }
 
 
@@ -77,12 +80,6 @@ public class LifeUmhang extends Item {
 
     @Override
     public boolean isIdentified() {
-        return true;
-    }
-
-    @Override
-    public boolean collect(Bag container) {
-
         return true;
     }
 

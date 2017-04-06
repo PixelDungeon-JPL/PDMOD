@@ -14,7 +14,7 @@ import com.watabou.pixeldungeon.utils.GLog;
  * Created by Freddy on 06.04.2017.
  */
 public class Knuffi extends Item {
-    private int lastDepth = 0;
+    private int lastDepth = Dungeon.depth;
     private Charger charger;
 
     {
