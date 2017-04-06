@@ -24,9 +24,6 @@ public class LifeUmhang extends Item {
     }
 
 
-
-
-
     @Override
     public boolean isUpgradable() {
         return false;
