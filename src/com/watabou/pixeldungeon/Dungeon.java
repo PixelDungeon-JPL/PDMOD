@@ -26,6 +26,7 @@ import java.util.Date;
 import java.util.HashSet;
 
 import com.jpl.pdmod.Values;
+import com.jpl.pdmod.npcs.Kevin;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
@@ -134,6 +135,7 @@ public class Dungeon {
 		Wandmaker.Quest.reset();
 		Blacksmith.Quest.reset();
 		Imp.Quest.reset();
+		Kevin.Quest.reset();
 		
 		Room.shuffleTypes();
 		
@@ -484,6 +486,7 @@ public class Dungeon {
 			Wandmaker	.Quest.storeInBundle( quests );
 			Blacksmith	.Quest.storeInBundle( quests );
 			Imp			.Quest.storeInBundle( quests );
+			Kevin.Quest.storeInBundle(quests);
 			bundle.put( QUESTS, quests );
 			
 			Room.storeRoomsInBundle( bundle );
@@ -608,11 +611,13 @@ public class Dungeon {
 				Wandmaker.Quest.restoreFromBundle( quests );
 				Blacksmith.Quest.restoreFromBundle( quests );
 				Imp.Quest.restoreFromBundle( quests );
+				Kevin.Quest.restoreFromBundle(quests);
 			} else {
 				Ghost.Quest.reset();
 				Wandmaker.Quest.reset();
 				Blacksmith.Quest.reset();
 				Imp.Quest.reset();
+				Kevin.Quest.reset();
 			}
 			
 			Room.restoreRoomsFromBundle( bundle );

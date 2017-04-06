@@ -1,10 +1,9 @@
 package com.jpl.pdmod.windows;
 
-import com.jpl.pdmod.data.HeroData;
+import com.jpl.pdmod.items.LifeUmhang;
 import com.jpl.pdmod.npcs.Kevin;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.pixeldungeon.windows.WndQuest;
 
@@ -12,11 +11,8 @@ import com.watabou.pixeldungeon.windows.WndQuest;
  * Created by Freddy on 05.04.2017.
  */
 public class WndKevin extends WndQuest {
-    private static final String TXT_MESSAGE	=
-            "Oh, I see you have succeeded! I do hope it hasn't troubled you too much. " +
-                    "As I promised, you can choose one of my high quality wands.";
-    private static final String TXT_BATTLE		= "Battle wand";
-    private static final String TXT_NON_BATTLE	= "Non-battle wand";
+    private static final String TXT_MESSAGE	= "Ah! Danke.";
+    private static final String TXT_TAKE = "Life Unhang";
 
     private static final String TXT_FARAWELL	= "Good luck in your quest, %s!";
 
@@ -26,7 +22,7 @@ public class WndKevin extends WndQuest {
 
     public WndKevin(final Kevin kevin, final Item item ) {
 
-        super( kevin, TXT_MESSAGE, TXT_BATTLE, TXT_NON_BATTLE );
+        super( kevin, TXT_MESSAGE, TXT_TAKE);
 
         this.kevin = kevin;
         questItem = item;
@@ -34,13 +30,15 @@ public class WndKevin extends WndQuest {
 
     @Override
     protected void onSelect( int index ) {
-        // Kevin Quest
+        if (!new LifeUmhang().identify().collect())
+            kevin.yell("Dein Rucksack ist zu voll! Bitte leere einen Slot.");
+        else {
+            kevin.yell(Utils.format(TXT_FARAWELL, Dungeon.hero.className()));
+            kevin.destroy();
 
-        kevin.yell( Utils.format( TXT_FARAWELL, Dungeon.hero.className() ) );
-        kevin.destroy();
+            kevin.sprite.die();
 
-        kevin.sprite.die();
-
-        Kevin.Quest.complete();
+            Kevin.Quest.complete();
+        }
     }
 }

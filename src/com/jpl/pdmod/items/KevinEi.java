@@ -7,7 +7,7 @@ import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 /**
  * Created by jan-torbensendke on 06.04.17.
  */
-public class KevinEi extends Item{
+public class KevinEi extends Item {
 
     {
         stackable = false;
@@ -17,7 +17,7 @@ public class KevinEi extends Item{
 
     @Override
     public String status() {
-
+        return "";
 
     }
 

@@ -52,8 +52,6 @@ public class Quad {
 		
 		if (size > indexSize) {
 			
-			// TODO: Optimize it!
-			
 			indexSize = size;
 			indices = ByteBuffer.
 				allocateDirect( size * SIZE * Short.SIZE / 8 ).

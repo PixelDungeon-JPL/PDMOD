@@ -163,9 +163,7 @@ public class Room extends Rect implements Graph.Node, Bundlable {
 	@Override
 	public Collection<Room> edges() {
 		return neigbours;
-	} 
-	
-	// FIXME: use proper string constants
+	}
 	
 	@Override
 	public void storeInBundle( Bundle bundle ) {	

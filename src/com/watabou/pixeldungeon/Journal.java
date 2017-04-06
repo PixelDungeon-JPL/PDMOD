@@ -35,6 +35,7 @@ public class Journal {
 		
 		GHOST					( "Sad ghost" ),
 		WANDMAKER				( "Old wandmaker" ),
+		KEVIN				( "Kevin" ),
 		TROLL					( "Troll blacksmith" ),
 		IMP						( "Ambitious imp" );
 		

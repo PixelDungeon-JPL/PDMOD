@@ -1,6 +1,7 @@
 package com.jpl.pdmod.npcs;
 
-import com.jpl.pdmod.data.MobData;
+import com.jpl.pdmod.Values;
+import com.jpl.pdmod.items.KevinEi;
 import com.jpl.pdmod.windows.WndKevin;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.Journal;
@@ -8,25 +9,18 @@ import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.mobs.npcs.NPC;
-import com.watabou.pixeldungeon.items.Heap;
+import com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker;
 import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.quest.CorpseDust;
-import com.watabou.pixeldungeon.items.quest.PhantomFish;
-import com.watabou.pixeldungeon.items.wands.*;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.levels.PrisonLevel;
 import com.watabou.pixeldungeon.levels.Room;
+import com.watabou.pixeldungeon.levels.SewerLevel;
 import com.watabou.pixeldungeon.levels.Terrain;
-import com.watabou.pixeldungeon.plants.Rotberry;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.WandmakerSprite;
+import com.watabou.pixeldungeon.utils.GLog;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.pixeldungeon.windows.WndQuest;
-import com.watabou.pixeldungeon.windows.WndWandmaker;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
-
-import java.util.ArrayList;
 
 /**
  * Created by Freddy on 05.04.2017.
@@ -39,7 +33,8 @@ public class Kevin extends NPC {
 
     @Override
     public void interact() {
-
+        sprite.turnTo( pos, Dungeon.hero.pos );
+        Kevin.Quest.type.handler.interact( this );
     }
 
     @Override
@@ -77,10 +72,10 @@ public class Kevin extends NPC {
     public static class Quest {
 
         enum Type {
-            ILLEGAL( null ), BERRY( berryQuest ), DUST( dustQuest ), FISH( fishQuest );
+            ILLEGAL( null ), EI(eiQuest)/*, DUST( dustQuest ), FISH( fishQuest )*/;
 
             public Kevin.QuestHandler handler;
-            private Type( Kevin.QuestHandler handler ) {
+            Type( Kevin.QuestHandler handler ) {
                 this.handler = handler;
             }
         }
@@ -94,14 +89,11 @@ public class Kevin extends NPC {
             spawned = false;
         }
 
-        private static final String NODE		= "wandmaker";
+        private static final String NODE		= "kevin";
 
         private static final String SPAWNED		= "spawned";
         private static final String TYPE		= "type";
-        private static final String ALTERNATIVE	= "alternative";
         private static final String GIVEN		= "given";
-        private static final String WAND1		= "wand1";
-        private static final String WAND2		= "wand2";
 
         public static void storeInBundle( Bundle bundle ) {
 
@@ -110,9 +102,7 @@ public class Kevin extends NPC {
             node.put( SPAWNED, spawned );
 
             if (spawned) {
-
                 node.put( TYPE, type.toString() );
-
                 node.put( GIVEN, given );
             }
 
@@ -120,12 +110,18 @@ public class Kevin extends NPC {
         }
 
         public static void restoreFromBundle( Bundle bundle ) {
-
             Bundle node = bundle.getBundle( NODE );
+
+            spawned = node.getBoolean(SPAWNED);
+
+            if (spawned){
+                type = Type.valueOf(node.getString(TYPE));
+                given = node.getBoolean(GIVEN);
+            }
         }
 
-        public static void spawn(PrisonLevel level, Room room ) {
-            if (!spawned && Dungeon.depth > 6 && Random.Int( 10 - Dungeon.depth ) == 0) {
+        public static void spawn(SewerLevel level, Room room ) {
+            if (!spawned && Dungeon.depth > 6 && Random.Int( 10 - Dungeon.depth ) == 0 || Values.DO_SPAWN_KEVIN_LEVEL_1) {
 
                 Kevin npc = new Kevin();
                 do {
@@ -135,16 +131,18 @@ public class Kevin extends NPC {
                 Actor.occupyCell( npc );
 
                 spawned = true;
-                switch (Random.Int( 3 )) {
+                switch (Random.Int( 1 )) {
                     case 0:
-                        type = Kevin.Quest.Type.BERRY;
+                        type = Kevin.Quest.Type.EI;
                         break;
+                    /*
                     case 1:
                         type = Kevin.Quest.Type.DUST;
                         break;
                     case 2:
                         type = Kevin.Quest.Type.FISH;
                         break;
+                    */
                 }
 
                 given = false;
@@ -152,7 +150,7 @@ public class Kevin extends NPC {
         }
 
         public static void complete() {
-            Journal.remove( Journal.Feature.WANDMAKER );
+            Journal.remove( Journal.Feature.KEVIN );
         }
     }
 
@@ -172,32 +170,35 @@ public class Kevin extends NPC {
 
             } else {
                 kevin.tell(NPC_KEVIN_Q2);
-                Quest.given = true;
 
-                placeItem();
 
-                Journal.add( Journal.Feature.WANDMAKER );
+                if (!giveItem()){
+                    GLog.n("Du hast keinen platz!");
+                } else {
+                    Quest.given = true;
+                    Journal.add( Journal.Feature.KEVIN );
+                }
             }
         }
 
         abstract protected Item checkItem();
-        abstract protected void placeItem();
+        abstract protected boolean giveItem();
     }
 
-    private static final Kevin.QuestHandler berryQuest = new Kevin.QuestHandler() {
+    private static final Kevin.QuestHandler eiQuest = new Kevin.QuestHandler() {
         {
-            NPC_KEVIN_Q1 = "Q1.1";
-            NPC_KEVIN_Q2 = "Q1.2";
+            NPC_KEVIN_Q1 = "Kannst du bitte dieses Ei für mich aubrueten? Lauf damit 10 Schritte, dann komm zurück!";
+            NPC_KEVIN_Q2 = "Das Ei sollst du ausbrueten!";
         }
 
         @Override
         protected Item checkItem() {
-            return null;
+            return Dungeon.hero.belongings.getItem(KevinEi.class);
         }
 
         @Override
-        protected void placeItem() {
-            // Place quest item
+        protected boolean giveItem() {
+            return new KevinEi().collect(Dungeon.hero.belongings.backpack);
         }
     };
 
@@ -213,8 +214,9 @@ public class Kevin extends NPC {
         }
 
         @Override
-        protected void placeItem() {
+        protected boolean giveItem() {
             // Place quest item
+            return false;
         }
     };
 
@@ -230,8 +232,9 @@ public class Kevin extends NPC {
         }
 
         @Override
-        protected void placeItem() {
+        protected boolean giveItem() {
             // Place quest item
+            return false;
         }
     };
 }

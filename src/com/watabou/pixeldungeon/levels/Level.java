@@ -363,7 +363,7 @@ public abstract class Level implements Bundlable {
 	}
 	
 	public Actor respawner() {
-		if (Values.DO_MOB_SPAWN) { // CHANGED: doMobSpawn
+		if (Values.DO_MOB_SPAWN) {
 			return new Actor() {
 				@Override
 				protected boolean act() {

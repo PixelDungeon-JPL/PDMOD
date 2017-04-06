@@ -79,7 +79,6 @@ public class CursePersonification extends Mob {
 					Actor.addDelayed( new Pushing( enemy, enemy.pos, newPos ), -1 );
 					
 					enemy.pos = newPos;
-					// FIXME
 					if (enemy instanceof Mob) {
 						Dungeon.level.mobPress( (Mob)enemy );
 					} else {

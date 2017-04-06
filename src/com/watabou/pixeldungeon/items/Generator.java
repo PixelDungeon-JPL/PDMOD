@@ -93,10 +93,9 @@ public class Generator {
 			ScrollOfTerror.class,
 			ScrollOfLullaby.class,
 			ScrollOfPsionicBlast.class,
-			// CHANGED: ScrollOfMirrorImage.class,
 			ScrollOfUpgrade.class,
 			ScrollOfEnchantment.class };
-		Category.SCROLL.probs = new float[]{ 30, 10, 15, 10, 15, 12, 8, 8, 4 /*CHANGED: 6,*/, 10, 1 };
+		Category.SCROLL.probs = new float[]{ 30, 10, 15, 10, 15, 12, 8, 8, 4, 10, 1 };
 		
 		Category.POTION.classes = new Class<?>[]{ 
 			PotionOfHealing.class, 
@@ -150,7 +149,7 @@ public class Generator {
 			Boomerang.class,
 			Tamahawk.class,
 				ElectricSword.class};
-		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 100}; // CHANGED!
+		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0};
 		
 		Category.ARMOR.classes = new Class<?>[]{ 
 			ClothArmor.class, 

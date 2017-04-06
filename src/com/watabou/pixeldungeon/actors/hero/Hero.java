@@ -154,7 +154,7 @@ public class Hero extends Char {
 		super();
 		name = "you";
 		
-		HP = HT = Values.START_HEALTH; //Changed! (20)
+		HP = HT = Values.START_HEALTH;
 		STR = STARTING_STR;
 		awareness = 0.1f;
 		

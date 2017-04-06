@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels;
 
+import com.jpl.pdmod.npcs.Kevin;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.particles.Emitter;
@@ -107,6 +108,7 @@ public class SewerLevel extends RegularLevel {
 		super.createMobs();
 
 		Ghost.Quest.spawn( this );
+		Kevin.Quest.spawn(this, roomEntrance);
 	}
 	
 	@Override
