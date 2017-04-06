@@ -9,6 +9,7 @@ public class Values {
     public static final boolean DO_EYERY_SEED_DROP = false;
     public static final boolean DO_EYERY_DEW_DROP = false;
     public static final boolean DO_SPAWN_KEVIN_LEVEL_1 = true;
+    public static final boolean DO_SPAWN_GARDEN = true;
 
     public static final int GOLD = 100000;
     public static final int START_DEPTH = 0;

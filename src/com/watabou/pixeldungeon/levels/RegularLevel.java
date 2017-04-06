@@ -34,6 +34,7 @@ import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.watabou.pixeldungeon.levels.Room.Type;
 import com.watabou.pixeldungeon.levels.painters.*;
 import com.watabou.utils.*;
+import de.jpl.pdmod.R;
 
 public abstract class RegularLevel extends Level {
 	public static final boolean doMobSpawn = true;
@@ -172,7 +173,7 @@ public abstract class RegularLevel extends Level {
 
 				if (specials.size() > 0 &&
 					r.width() > 3 && r.height() > 3 &&
-					Random.Int( specialRooms * specialRooms + 2 ) == 0) {
+					Random.Int( specialRooms * specialRooms + 2 ) == 0 && ! Values.DO_SPAWN_GARDEN) {
 
 					if (pitRoomNeeded) {
 
@@ -206,7 +207,13 @@ public abstract class RegularLevel extends Level {
 					specials.remove( r.type );
 					specialRooms++;
 					
-				} else if (Random.Int( 2 ) == 0){
+				} else if (Values.DO_SPAWN_GARDEN){
+					r.type = Type.GARDEN;
+					Room.useType(r.type);
+					specials.remove(r.type);
+					specialRooms++;
+				}
+				else if (Random.Int( 2 ) == 0){
 
 					HashSet<Room> neigbours = new HashSet<Room>();
 					for (Room n : r.neigbours) {
