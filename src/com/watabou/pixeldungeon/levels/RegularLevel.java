@@ -207,7 +207,7 @@ public abstract class RegularLevel extends Level {
 					specials.remove( r.type );
 					specialRooms++;
 					
-				} else if (Values.DO_SPAWN_GARDEN){
+				} else if (Values.DO_SPAWN_GARDEN && specials.contains(Type.GARDEN)){
 					r.type = Type.GARDEN;
 					Room.useType(r.type);
 					specials.remove(r.type);
