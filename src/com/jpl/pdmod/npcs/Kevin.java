@@ -2,12 +2,14 @@ package com.jpl.pdmod.npcs;
 
 import com.jpl.pdmod.Values;
 import com.jpl.pdmod.items.KevinEi;
+import com.jpl.pdmod.items.Knuffi;
 import com.jpl.pdmod.windows.WndKevin;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.Journal;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
+import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.actors.mobs.npcs.NPC;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker;
 import com.watabou.pixeldungeon.items.Item;
@@ -44,7 +46,8 @@ public class Kevin extends NPC {
 
     @Override
     public String defenseVerb() {
-        return "failed";
+        Dungeon.hero.attack(Dungeon.hero);
+        return "don't touch this\nsonst klatscht es!";
     }
 
     @Override
@@ -193,7 +196,7 @@ public class Kevin extends NPC {
 
         @Override
         protected Item checkItem() {
-            return Dungeon.hero.belongings.getItem(KevinEi.class);
+            return Dungeon.hero.belongings.getItem(Knuffi.class);
         }
 
         @Override
