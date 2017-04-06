@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.levels.painters;
 
+import com.jpl.pdmod.items.Apple;
 import com.watabou.pixeldungeon.actors.blobs.Foliage;
 import com.watabou.pixeldungeon.items.Honeypot;
 import com.watabou.pixeldungeon.levels.Level;
@@ -34,7 +35,11 @@ public class GardenPainter extends Painter {
 		fill( level, room, 2, Terrain.GRASS );
 		
 		room.entrance().set( Room.Door.Type.REGULAR );
-		
+
+		if (Random.Int( 2 ) == 0) {
+			level.drop( new Apple(), room.random() );
+		}
+
 		if (Random.Int( 2 ) == 0) {
 			level.drop( new Honeypot(), room.random() );
 		} else {
