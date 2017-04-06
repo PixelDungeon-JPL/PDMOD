@@ -3,6 +3,7 @@ package com.jpl.pdmod.windows;
 import com.jpl.pdmod.items.LifeUmhang;
 import com.jpl.pdmod.npcs.Kevin;
 import com.watabou.pixeldungeon.Dungeon;
+import com.watabou.pixeldungeon.actors.hero.Hero;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.utils.Utils;
 import com.watabou.pixeldungeon.windows.WndQuest;
@@ -30,9 +31,10 @@ public class WndKevin extends WndQuest {
 
     @Override
     protected void onSelect( int index ) {
-        if (!new LifeUmhang().identify().collect())
-            kevin.yell("Dein Rucksack ist zu voll! Bitte leere einen Slot.");
-        else {
+        LifeUmhang umhang = new LifeUmhang();
+        if (!umhang.collect(Dungeon.hero.belongings.backpack)) {
+            umhang.doDrop(Dungeon.hero);
+        } else {
             kevin.yell(Utils.format(TXT_FARAWELL, Dungeon.hero.className()));
             kevin.destroy();
 
