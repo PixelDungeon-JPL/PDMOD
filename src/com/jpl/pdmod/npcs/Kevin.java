@@ -3,15 +3,15 @@ package com.jpl.pdmod.npcs;
 import com.jpl.pdmod.Values;
 import com.jpl.pdmod.items.KevinEi;
 import com.jpl.pdmod.items.Knuffi;
+import com.jpl.pdmod.mobs.EvilKevin;
 import com.jpl.pdmod.windows.WndKevin;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.Journal;
 import com.watabou.pixeldungeon.actors.Actor;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.hero.Hero;
+import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.actors.mobs.npcs.NPC;
-import com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.levels.Room;
 import com.watabou.pixeldungeon.levels.SewerLevel;
@@ -29,6 +29,9 @@ import com.watabou.utils.Random;
  * Created by Freddy on 05.04.2017.
  */
 public class Kevin extends NPC {
+    private static int depth;
+    private KevinListener listener;
+
     {
         name = "Kevin";
         spriteClass = WandmakerSprite.class; // TODO: Neue sprite
@@ -38,6 +41,7 @@ public class Kevin extends NPC {
     public void interact() {
         sprite.turnTo( pos, Dungeon.hero.pos );
         Kevin.Quest.type.handler.interact( this );
+        initListener(Dungeon.hero);
     }
 
     @Override
@@ -59,6 +63,11 @@ public class Kevin extends NPC {
 
     @Override
     public void add( Buff buff ) {
+    }
+
+    private void initListener(Char ch){
+        if (listener == null)
+            (listener = new KevinListener(this)).attachTo(ch);
     }
 
     @Override
@@ -128,7 +137,7 @@ public class Kevin extends NPC {
 
         public static void spawn(SewerLevel level, Room room ) {
             if (!spawned && Dungeon.depth > 6 && Random.Int( 10 - Dungeon.depth ) == 0 || Values.DO_SPAWN_KEVIN_LEVEL_1 && Dungeon.depth == 1) {
-
+                depth = Dungeon.depth;
                 Kevin npc = new Kevin();
                 do {
                     npc.pos = room.random();
@@ -244,4 +253,40 @@ public class Kevin extends NPC {
             return false;
         }
     };
+
+
+    protected class KevinListener extends Buff {
+        private Kevin kevin;
+
+        public KevinListener(Kevin kevin){
+            this.kevin = kevin;
+        }
+
+        @Override
+        public boolean attachTo(Char target) {
+            return super.attachTo(target);
+        }
+
+        @Override
+        public boolean act() {
+            if (depth != Dungeon.depth){
+                EvilKevin kevin = new EvilKevin();
+                kevin.aggro(Dungeon.hero);
+                kevin.hostile = true;
+                do {
+                    kevin.pos = Dungeon.level.randomRespawnCell();
+                } while (Dungeon.level.map[kevin.pos] == Terrain.ENTRANCE || Dungeon.level.map[kevin.pos] == Terrain.SIGN);
+                Dungeon.level.mobs.add( kevin );
+                Actor.occupyCell( kevin );
+                kevin.die(kevin);
+                detach();
+            }
+
+            diactivate();
+
+            return true;
+        }
+
+
+    }
 }

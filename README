@@ -12,7 +12,7 @@ TODO:
     8. Enchanten bei Händlern (gegen Geld)
     9. Bag Upgrade (nur 2x finden, random)
     10. Teleportieren durch ebene
-    11. Tränketasche
+    11. Tränketasche -> WndBag.java (123)
     12. Shop refresh
     13. Beacon (wieder zurück)
     14. Erdhügel + Schaufeln
@@ -23,7 +23,7 @@ TODO:
 
 BUGFIXES:
     1. Rüstung
-    2. Kevin wird Wütend
+    2. Kevin wird Wütend -> Fix: Evil Kevin spawn (Via new level testing)
 
 
 INFOs:

@@ -147,7 +147,6 @@ public class ShopPainter extends Painter {
 		}
 
         items.add(new BagUpgrade());
-		items.add(new LifeUmhang());
 
 		items.add( new ScrollOfIdentify() );
 		items.add( new ScrollOfRemoveCurse() );
