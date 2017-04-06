@@ -37,6 +37,7 @@ import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Blacksmith;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Imp;
 import com.watabou.pixeldungeon.actors.mobs.npcs.Ghost;
+import com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker;
 import com.watabou.pixeldungeon.items.Ankh;
 import com.watabou.pixeldungeon.items.Item;
 import com.watabou.pixeldungeon.items.potions.Potion;
@@ -130,7 +131,7 @@ public class Dungeon {
 		chapters = new HashSet<Integer>();
 		
 		Ghost.Quest.reset();
-		Kevin.Quest.reset();
+		Wandmaker.Quest.reset();
 		Blacksmith.Quest.reset();
 		Imp.Quest.reset();
 		
@@ -480,7 +481,7 @@ public class Dungeon {
 			
 			Bundle quests = new Bundle();
 			Ghost		.Quest.storeInBundle( quests );
-			Kevin.Quest.storeInBundle( quests );
+			Wandmaker	.Quest.storeInBundle( quests );
 			Blacksmith	.Quest.storeInBundle( quests );
 			Imp			.Quest.storeInBundle( quests );
 			bundle.put( QUESTS, quests );
@@ -604,12 +605,12 @@ public class Dungeon {
 			Bundle quests = bundle.getBundle( QUESTS );
 			if (!quests.isNull()) {
 				Ghost.Quest.restoreFromBundle( quests );
-				Kevin.Quest.restoreFromBundle( quests );
+				Wandmaker.Quest.restoreFromBundle( quests );
 				Blacksmith.Quest.restoreFromBundle( quests );
 				Imp.Quest.restoreFromBundle( quests );
 			} else {
 				Ghost.Quest.reset();
-				Kevin.Quest.reset();
+				Wandmaker.Quest.reset();
 				Blacksmith.Quest.reset();
 				Imp.Quest.reset();
 			}

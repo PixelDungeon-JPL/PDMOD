@@ -144,15 +144,6 @@ public class Kevin extends NPC {
                         break;
                     case 2:
                         type = Kevin.Quest.Type.FISH;
-                        int water = 0;
-                        for (int i = 0; i < Level.LENGTH; i++) {
-                            if (Level.water[i]) {
-                                if (++water > Level.LENGTH / 16) {
-                                    type = Random.Int( 2 ) == 0 ? Kevin.Quest.Type.BERRY : Kevin.Quest.Type.DUST;
-                                    break;
-                                }
-                            }
-                        }
                         break;
                 }
 
