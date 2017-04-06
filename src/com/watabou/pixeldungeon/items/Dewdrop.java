@@ -17,6 +17,7 @@
  */
 package com.watabou.pixeldungeon.items;
 
+import com.jpl.pdmod.items.LifeUmhang;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
 import com.watabou.pixeldungeon.Dungeon;

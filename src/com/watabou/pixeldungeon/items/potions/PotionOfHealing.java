@@ -18,6 +18,7 @@
 package com.watabou.pixeldungeon.items.potions;
 
 import com.jpl.pdmod.data.ItemData;
+import com.jpl.pdmod.items.LifeUmhang;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.buffs.Bleeding;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
@@ -29,6 +30,7 @@ import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.utils.GLog;
 
 public class PotionOfHealing extends Potion {
+
 
 	{
 		name = ItemData.Potion.POTION_HEALING_NAME;
@@ -42,8 +44,17 @@ public class PotionOfHealing extends Potion {
 	}
 	
 	public static void heal( Hero hero ) {
-		
-		hero.HP = (hero.HP - hero.HT <100 ? hero.HT : hero.HP +100);
+		LifeUmhang umhang = Dungeon.hero.belongings.getItem(LifeUmhang.class);
+		int missHp = hero.HT - hero.HP;
+		if (missHp < 100) {
+			hero.HP = hero.HT;
+			if (umhang != null) {
+				umhang.addLife(100 - missHp);
+			}
+		}
+		else {
+			hero.HP += 100;
+		}
 		Buff.detach( hero, Poison.class );
 		Buff.detach( hero, Cripple.class );
 		Buff.detach( hero, Weakness.class );
