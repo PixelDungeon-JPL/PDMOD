@@ -38,6 +38,8 @@ public class PixelDungeon extends Game {
 	
 	public PixelDungeon() {
 		super( TitleScene.class );
+
+		Logging.init();
 		
 		com.watabou.utils.Bundle.addAlias( 
 			com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade.class, 
@@ -127,10 +129,8 @@ public class PixelDungeon extends Game {
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
 
-		//Logging.resetFile(); // CHANGED: RESET FILE
-		//Logging.setLevel(Logging.DEBUG); // CHANGED: SET LOGGING LEVEL TO DEBUG
+		Logging.debug("INVOKED: PixelDungeon.onCreate(Bundle)");
 
-        //.info("Starting Pixel Dungeon initialization...");
 
 		updateImmersiveMode();
 		
@@ -311,7 +311,6 @@ public class PixelDungeon extends Game {
 	}
 	
 	public static void soundFx( boolean value ) {
-	    //Logging.info("SoundFX " + (value ? "enabled":"disabled"));
 		Sample.INSTANCE.enable( value );
 		Preferences.INSTANCE.put( Preferences.KEY_SOUND_FX, value );
 	}
@@ -321,7 +320,6 @@ public class PixelDungeon extends Game {
 	}
 	
 	public static void brightness( boolean value ) {
-	    Logging.info("Bightness " + (value ? "on":"off"));
 		Preferences.INSTANCE.put( Preferences.KEY_BRIGHTNESS, value );
 		if (scene() instanceof GameScene) {
 			((GameScene)scene()).brightness( value );

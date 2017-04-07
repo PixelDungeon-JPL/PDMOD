@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
+import com.jpl.pdmod.Logging;
 import com.jpl.pdmod.Values;
 import com.jpl.pdmod.data.HeroData;
 import com.watabou.noosa.Camera;
@@ -219,6 +220,7 @@ public class Hero extends Char {
 	}
 	
 	public void live() {
+		Logging.debug("INVOKED: Hero.live()");
 		Buff.affect( this, Regeneration.class );	
 		Buff.affect( this, Hunger.class );
 	}
@@ -228,7 +230,7 @@ public class Hero extends Char {
 	}
 	
 	public boolean shoot( Char enemy, MissileWeapon wep ) {
-		
+		Logging.debug("INVOKED: Hero.shoot(Char, MissileWeapon)");
 		rangedWeapon = wep;
 		boolean result = attack( enemy );
 		rangedWeapon = null;
@@ -238,7 +240,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int attackSkill( Char target ) {
-		
+		Logging.debug("INVOKED: Hero.attachSkill(Char)");
 		int bonus = 0;
 		for (Buff buff : buffs( RingOfAccuracy.Accuracy.class )) {
 			bonus += ((RingOfAccuracy.Accuracy)buff).level;
@@ -258,7 +260,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int defenseSkill( Char enemy ) {
-		
+		Logging.debug("INVOKED: Hero.defenseSkill(Char)");
 		int bonus = 0;
 		for (Buff buff : buffs( RingOfEvasion.Evasion.class )) {
 			bonus += ((RingOfEvasion.Evasion)buff).level;
@@ -289,6 +291,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int dr() {
+		Logging.debug("INVOKED: Hero.dr()");
 		int dr = belongings.armor != null ? Math.max( belongings.armor.DR(), 0 ) : 0;
 		Barkskin barkskin = buff( Barkskin.class );
 		if (barkskin != null) {
@@ -299,6 +302,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int damageRoll() {
+		Logging.debug("INVOKED: Hero.damageRoll()");
 		KindOfWeapon wep = rangedWeapon != null ? rangedWeapon : belongings.weapon;
 		int dmg;
 		if (wep != null) {	
@@ -353,7 +357,7 @@ public class Hero extends Char {
 	
 	@Override
 	public boolean act() {
-		
+        Logging.debug("INVOKED: Hero.act()");
 		super.act();
 		
 		if (paralysed) {
@@ -447,6 +451,7 @@ public class Hero extends Char {
 	}
 	
 	private void ready() {
+        Logging.debug("INVOKED: Hero.ready()");
 		sprite.idle();
 		curAction = null;
 		ready = true;
@@ -455,6 +460,7 @@ public class Hero extends Char {
 	}
 	
 	public void interrupt() {
+        Logging.debug("INVOKED: Hero.interrupt()");
 		if (isAlive() && curAction != null && curAction.dst != pos) {
 			lastAction = curAction;
 		}
@@ -462,13 +468,14 @@ public class Hero extends Char {
 	}
 	
 	public void resume() {
+        Logging.debug("INVOKED: Hero.resume()");
 		curAction = lastAction;
 		lastAction = null;
 		act();
 	}
 	
 	private boolean actMove( HeroAction.Move action ) {
-
+        Logging.debug("INVOKED: Hero.actMove(HeroAction.Move)");
 		if (getCloser( action.dst )) {
 			
 			return true;
@@ -484,7 +491,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actInteract( HeroAction.Interact action ) {
-		
+        Logging.debug("INVOKED: Hero.actInteract(HeroAction.Interact)");
 		NPC npc = action.npc;
 
 		if (Level.adjacent( pos, npc.pos )) {
@@ -509,6 +516,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actBuy( HeroAction.Buy action ) {
+        Logging.debug("INVOKED: Hero.actBuy(HeroAction.Buy)");
 		int dst = action.dst;
 		if (pos == dst || Level.adjacent( pos, dst )) {
 
@@ -532,6 +540,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actCook( HeroAction.Cook action ) {
+        Logging.debug("INVOKED: Hero.actCook(HeroAction.Cook)");
 		int dst = action.dst;
 		if (Dungeon.visible[dst]) {
 
@@ -550,6 +559,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actPickUp( HeroAction.PickUp action ) {
+        Logging.debug("INVOKED: Hero.actPickUp(HeroAction.PickUp)");
 		int dst = action.dst;
 		if (pos == dst) {
 			
@@ -596,6 +606,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actOpenChest( HeroAction.OpenChest action ) {
+        Logging.debug("INVOKED: Hero.actOpenChest(HeroAction.OpenChest)");
 		int dst = action.dst;
 		if (Level.adjacent( pos, dst ) || pos == dst) {
 			
@@ -646,6 +657,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actUnlock( HeroAction.Unlock action ) {
+        Logging.debug("INVOKED: Hero.actUnlock(HeroAction.Unlock)");
 		int doorCell = action.dst;
 		if (Level.adjacent( pos, doorCell )) {
 			
@@ -687,6 +699,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actDescend( HeroAction.Descend action ) {
+        Logging.debug("INVOKED: Hero.actDescend(HeroAction.Descend)");
 		int stairs = action.dst;
 		if (pos == stairs && pos == Dungeon.level.exit) {
 			
@@ -713,6 +726,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actAscend( HeroAction.Ascend action ) {
+        Logging.debug("INVOKED: Hero.actAscend(HeroAction.Ascend)");
 		int stairs = action.dst;
 		if (pos == stairs && pos == Dungeon.level.entrance) {
 			
@@ -753,7 +767,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean actAttack( HeroAction.Attack action ) {
-
+        Logging.debug("INVOKED: Hero.actAttack(HeroAction.Attack)");
 		enemy = action.target;
 
 		if (Level.adjacent( pos, enemy.pos ) && enemy.isAlive() && !isCharmedBy( enemy )) {
@@ -778,6 +792,7 @@ public class Hero extends Char {
 	}
 	
 	public void rest( boolean tillHealthy ) {
+        Logging.debug("INVOKED: Hero.rest(boolean)");
 		spendAndNext( TIME_TO_REST );
 		if (!tillHealthy) {
 			sprite.showStatus( CharSprite.DEFAULT, HeroData.Common.TXT_WAIT );
@@ -787,6 +802,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
+        Logging.debug("INVOKED: Hero.attachProc(Char, int)");
 		KindOfWeapon wep = rangedWeapon != null ? rangedWeapon : belongings.weapon;
 		if (wep != null) {
 			
@@ -828,7 +844,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int defenseProc( Char enemy, int damage ) {
-		
+        Logging.debug("INVOKED: Hero.defenseProc(Char, int)");
 		RingOfThorns.Thorns thorns = buff( RingOfThorns.Thorns.class ); 
 		if (thorns != null) {
 			int dmg = Random.IntRange( 0, damage );
@@ -850,7 +866,8 @@ public class Hero extends Char {
 	}
 	
 	@Override
-	public void damage( int dmg, Object src ) {		
+	public void damage( int dmg, Object src ) {
+        Logging.debug("INVOKED: Hero.damage(int, Object)");
 		restoreHealth = false;
 		super.damage( dmg, src );
 		
@@ -890,7 +907,7 @@ public class Hero extends Char {
 	}
 	
 	private boolean getCloser( final int target ) {
-		
+        Logging.debug("INVOKED: Hero.getCloser(int)");
 		if (rooted) {
 			Camera.main.shake( 1, 1f );
 			return false;
@@ -943,7 +960,7 @@ public class Hero extends Char {
 	}
 	
 	public boolean handle( int cell ) {
-		
+        Logging.debug("INVOKED: Hero.handle(int)");
 		if (cell == -1) {
 			return false;
 		}
@@ -1001,7 +1018,7 @@ public class Hero extends Char {
 	}
 	
 	public void earnExp( int exp ) {
-		
+        Logging.debug("INVOKED: Hero.earnExp(int)");
 		this.exp += exp;
 		
 		boolean levelUp = false;
@@ -1047,6 +1064,7 @@ public class Hero extends Char {
 	}
 	
 	void updateAwareness() {
+        Logging.debug("INVOKED: Hero.updateAwareness()");
 		awareness = (float)(1 - Math.pow( 
 			(heroClass == HeroClass.ROGUE ? 0.85 : 0.90), 
 			(1 + Math.min( lvl,  9 )) * 0.5 
@@ -1059,6 +1077,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void add( Buff buff ) {
+        Logging.debug("INVOKED: Hero.add(Buff)");
 		super.add( buff );
 		
 		if (sprite != null) {
@@ -1103,6 +1122,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void remove( Buff buff ) {
+        Logging.debug("INVOKED: Hero.remove(Buff)");
 		super.remove( buff );
 		
 		if (buff instanceof Light) {
@@ -1114,6 +1134,7 @@ public class Hero extends Char {
 	
 	@Override
 	public int stealth() {
+        Logging.debug("INVOKED: Hero.stealth()");
 		int stealth = super.stealth();
 		for (Buff buff : buffs( RingOfShadows.Shadows.class )) {
 			stealth += ((RingOfShadows.Shadows)buff).level;
@@ -1123,7 +1144,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void die( Object cause  ) {
-		
+        Logging.debug("INVOKED: Hero.die(Object)");
 		curAction = null;
 		
 		DewVial.autoDrink( this );
@@ -1149,7 +1170,7 @@ public class Hero extends Char {
 	}
 	
 	public static void reallyDie( Object cause ) {
-		
+        Logging.debug("INVOKED: Hero.reallyDie(Object)");
 		int length = Level.LENGTH;
 		int[] map = Dungeon.level.map;
 		boolean[] visited = Dungeon.level.visited;
@@ -1208,6 +1229,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void move( int step ) {
+        Logging.debug("INVOKED: Hero.move(int)");
 		super.move( step );
 		
 		if (!flying) {
@@ -1223,6 +1245,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void onMotionComplete() {
+        Logging.debug("INVOKED: Hero.onMotionComplete()");
 		Dungeon.observe();
 		search( false );
 			
@@ -1231,7 +1254,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void onAttackComplete() {
-		
+        Logging.debug("INVOKED: Hero.onAttackComplete()");
 		AttackIndicator.target( enemy );
 		
 		attack( enemy );
@@ -1244,7 +1267,7 @@ public class Hero extends Char {
 	
 	@Override
 	public void onOperateComplete() {
-		
+        Logging.debug("INVOKED: Hero.onOperateComplete(Char)");
 		if (curAction instanceof HeroAction.Unlock) {
 			
 			if (theKey != null) {
@@ -1277,7 +1300,7 @@ public class Hero extends Char {
 	}
 	
 	public boolean search( boolean intentional ) {
-		
+        Logging.debug("INVOKED: Hero.search(boolean)");
 		boolean smthFound = false;
 		
 		int positive = 0;
@@ -1374,7 +1397,7 @@ public class Hero extends Char {
 	}
 	
 	public void resurrect( int resetLevel ) {
-		
+        Logging.debug("INVOKED: Hero.resurrect(int)");
 		HP = HT;
 		Dungeon.gold = 0;
 		exp = 0;

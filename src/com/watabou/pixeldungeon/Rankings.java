@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import com.jpl.pdmod.Logging;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.hero.HeroClass;
 import com.watabou.pixeldungeon.utils.Utils;
@@ -46,7 +47,7 @@ public enum Rankings {
 	public int wonNumber;
 	
 	public void submit( boolean win ) {
-		
+		Logging.debug("INVOKED: Rankings.submit(boolean)");
 		load();
 		
 		Record rec = new Record();
@@ -97,6 +98,7 @@ public enum Rankings {
 	}
 	
 	private int score( boolean win ) {
+		Logging.debug("INVOKED: Rankings.score(boolean)");
 		return (Statistics.goldCollected + Dungeon.hero.lvl * Statistics.deepestFloor * 100) * (win ? 2 : 1);
 	}
 	

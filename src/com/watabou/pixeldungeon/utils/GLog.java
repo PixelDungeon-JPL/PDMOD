@@ -19,6 +19,7 @@ package com.watabou.pixeldungeon.utils;
 
 import android.graphics.Bitmap;
 import android.util.Config;
+import android.util.LogPrinter;
 import com.watabou.utils.Signal;
 
 import android.util.Log;

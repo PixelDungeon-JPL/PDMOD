@@ -19,6 +19,7 @@ package com.watabou.pixeldungeon;
 
 import java.util.ArrayList;
 
+import com.jpl.pdmod.Logging;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 
@@ -100,6 +101,8 @@ public class Journal {
 	}
 	
 	public static void add( Feature feature ) {
+		Logging.debug("INVOKED: Journal.add(Feature)");
+
 		int size = records.size();
 		for (int i=0; i < size; i++) {
 			Record rec = records.get( i );
@@ -112,7 +115,9 @@ public class Journal {
 	}
 	
 	public static void remove( Feature feature ) {
-		int size = records.size();
+        Logging.debug("INVOKED: Journal.remove(Feature)");
+
+        int size = records.size();
 		for (int i=0; i < size; i++) {
 			Record rec = records.get( i );
 			if (rec.feature == feature && rec.depth == Dungeon.depth) {

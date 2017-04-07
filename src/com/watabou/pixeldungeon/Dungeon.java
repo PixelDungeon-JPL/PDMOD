@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 
+import com.jpl.pdmod.Logging;
 import com.jpl.pdmod.Values;
 import com.jpl.pdmod.items.Knuffi;
 import com.jpl.pdmod.mobs.EvilKevin;
@@ -88,8 +89,9 @@ public class Dungeon {
 	 * Initialisiert den Dungeon
 	 */
 	public static void init() {
-		//Logging.debug("Initializing dungeon...");
-		challenges = PixelDungeon.challenges();
+        Logging.debug("INVOKED: Dungeon.init()");
+
+        challenges = PixelDungeon.challenges();
 		
 		Actor.clear();
 		
@@ -152,8 +154,9 @@ public class Dungeon {
 	 * @return Das generierte Level
 	 */
 	public static Level newLevel() {
-		//Logging.debug("Generating new Level...");
-		Dungeon.level = null;
+        Logging.debug("INVOKED: Dungeon.newLevel()");
+
+        Dungeon.level = null;
 		Actor.clear();
 		
 		depth++;
@@ -266,8 +269,9 @@ public class Dungeon {
 	 * Setzt des jetzige Level zurück
 	 */
 	public static void resetLevel() {
-		
-		Actor.clear();
+        Logging.debug("INVOKED: Dungeon.resetLevel()");
+
+        Actor.clear();
 		
 		Arrays.fill( visible, false );
 		
@@ -303,8 +307,9 @@ public class Dungeon {
 	
 	@SuppressWarnings("deprecation")
 	public static void switchLevel( final Level level, int pos ) {
-		
-		nightMode = new Date().getHours() < 7;
+        Logging.debug("INVOKED: Dungeon.switchLevel()");
+
+        nightMode = new Date().getHours() < 7;
 		
 		Dungeon.level = level;
 		Actor.init();
@@ -327,7 +332,9 @@ public class Dungeon {
      * @param item
      */
 	public static void dropToChasm( Item item ) {
-		int depth = Dungeon.depth + 1;
+        Logging.debug("INVOKED: Dungeon.dropToChasm()");
+
+        int depth = Dungeon.depth + 1;
 		ArrayList<Item> dropped = (ArrayList<Item>)Dungeon.droppedItems.get( depth );
 		if (dropped == null) {
 			Dungeon.droppedItems.put( depth, dropped = new ArrayList<Item>() ); 
@@ -444,7 +451,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static void saveGame( String fileName ) throws IOException {
-		try {
+        Logging.debug("INVOKED: Dungeon.saveGame()");
+
+        try {
 			Bundle bundle = new Bundle();
 			
 			bundle.put( VERSION, Game.version );
@@ -508,7 +517,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static void saveLevel() throws IOException {
-		Bundle bundle = new Bundle();
+        Logging.debug("INVOKED: Dungeon.saveLevel()");
+
+        Bundle bundle = new Bundle();
 		bundle.put( LEVEL, level );
 		
 		OutputStream output = Game.instance.openFileOutput( Utils.format( depthFile( hero.heroClass ), depth ), Game.MODE_PRIVATE );
@@ -521,7 +532,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static void saveAll() throws IOException {
-		if (hero.isAlive()) {
+        Logging.debug("INVOKED: Dungeon.saveAll()");
+
+        if (hero.isAlive()) {
 			
 			Actor.fixTime();
 			saveGame( gameFile( hero.heroClass ) );
@@ -543,7 +556,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static void loadGame( HeroClass cl ) throws IOException {
-		loadGame( gameFile( cl ), true );
+        Logging.debug("INVOKED: Dungeon.loadGame(HeroClass)");
+
+        loadGame( gameFile( cl ), true );
 	}
 
     /**
@@ -552,7 +567,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static void loadGame( String fileName ) throws IOException {
-		loadGame( fileName, false );
+        Logging.debug("INVOKED: Dungeon.loadGame(String)");
+
+        loadGame( fileName, false );
 	}
 
     /**
@@ -562,8 +579,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static void loadGame( String fileName, boolean fullLoad ) throws IOException {
-		
-		Bundle bundle = gameBundle( fileName );
+        Logging.debug("INVOKED: Dungeon.loadGame(String, boolean)");
+
+        Bundle bundle = gameBundle( fileName );
 		
 		Dungeon.challenges = bundle.getInt( CHALLENGES );
 		
@@ -653,8 +671,9 @@ public class Dungeon {
      * @throws IOException
      */
 	public static Level loadLevel( HeroClass cl ) throws IOException {
-		
-		Dungeon.level = null;
+        Logging.debug("INVOKED: Dungeon.loadLevel(HeroClass)");
+
+        Dungeon.level = null;
 		Actor.clear();
 		
 		InputStream input = Game.instance.openFileInput( Utils.format( depthFile( cl ), depth ) ) ;
@@ -670,8 +689,9 @@ public class Dungeon {
      * @param deleteLevels Sollen auch die Level gelöscht werden?
      */
 	public static void deleteGame( HeroClass cl, boolean deleteLevels ) {
-		
-		Game.instance.deleteFile( gameFile( cl ) );
+        Logging.debug("INVOKED: Dungeon.deleteGame(HeroClass, boolean)");
+
+        Game.instance.deleteFile( gameFile( cl ) );
 		
 		if (deleteLevels) {
 			int depth = 1;
@@ -702,15 +722,18 @@ public class Dungeon {
 	}
 	
 	public static void fail( String desc ) {
-		resultDescription = desc;
+        Logging.debug("INVOKED: Dungeon.fail(String)");
+
+        resultDescription = desc;
 		if (hero.belongings.getItem( Ankh.class ) == null) { 
 			Rankings.INSTANCE.submit( false );
 		}
 	}
 	
 	public static void win( String desc ) {
-		
-		hero.belongings.identify();
+        Logging.debug("INVOKED: Dungeon.win(String)");
+
+        hero.belongings.identify();
 		
 		if (challenges != 0) {
 			Badges.validateChampion();
@@ -737,8 +760,9 @@ public class Dungeon {
 	private static boolean[] passable = new boolean[Level.LENGTH];
 	
 	public static int findPath( Char ch, int from, int to, boolean pass[], boolean[] visible ) {
-		
-		if (Level.adjacent( from, to )) {
+        Logging.debug("INVOKED: Dungeon.findPath(Char, int, int, boolean[], boolean[])");
+
+        if (Level.adjacent( from, to )) {
 			return Actor.findChar( to ) == null && (pass[to] || Level.avoid[to]) ? to : -1;
 		}
 		
@@ -771,8 +795,9 @@ public class Dungeon {
      * @return
      */
 	public static int flee( Char ch, int cur, int from, boolean pass[], boolean[] visible ) {
-		
-		if (ch.flying) {
+        Logging.debug("INVOKED: Dungeon.flee(Char, int, int, boolean[], boolean[])");
+
+        if (ch.flying) {
 			BArray.or( pass, Level.avoid, passable );
 		} else {
 			System.arraycopy( pass, 0, passable, 0, Level.LENGTH );

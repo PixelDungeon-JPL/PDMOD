@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.*;
 
+import com.jpl.pdmod.Logging;
 import com.jpl.pdmod.RLoader;
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.mobs.Acidic;
@@ -252,6 +253,8 @@ public class Badges {
 	 * Updated den "X Monster Getötet" Erfolg
 	 */
 	public static void validateMonstersSlain() {
+        Logging.debug("INVOKED: Badges.validateMonstersSlain()");
+
 		Badge badge = null;
 		
 		if (!local.contains( Badge.MONSTERS_SLAIN_1 ) && Statistics.enemiesSlain >= 10) {
@@ -278,6 +281,7 @@ public class Badges {
 	 * Updated den "X Gold Gesammelt" Erfolg
 	 */
 	public static void validateGoldCollected() {
+        Logging.debug("INVOKED: Badges.validateGoldCollected()");
 		Badge badge = null;
 		
 		if (!local.contains( Badge.GOLD_COLLECTED_1 ) && Statistics.goldCollected >= 100) {
@@ -304,7 +308,8 @@ public class Badges {
 	 * Updated den "Level X Erreicht" Erfolg
 	 */
 	public static void validateLevelReached() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateLevelReached()");
+        Badge badge = null;
 		
 		if (!local.contains( Badge.LEVEL_REACHED_1 ) && Dungeon.hero.lvl >= 6) {
 			badge = Badge.LEVEL_REACHED_1;
@@ -330,7 +335,9 @@ public class Badges {
 	 * Updated den "X Stärke Erhalten" Erfolg
 	 */
 	public static void validateStrengthAttained() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateStrengthAttained()");
+
+        Badge badge = null;
 		
 		if (!local.contains( Badge.STRENGTH_ATTAINED_1 ) && Dungeon.hero.STR >= 13) {
 			badge = Badge.STRENGTH_ATTAINED_1;
@@ -356,7 +363,9 @@ public class Badges {
 	 * Updated den "X Nahrung Gegessen" Erfolg
 	 */
 	public static void validateFoodEaten() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateFoodEaten()");
+
+        Badge badge = null;
 		
 		if (!local.contains( Badge.FOOD_EATEN_1 ) && Statistics.foodEaten >= 10) {
 			badge = Badge.FOOD_EATEN_1;
@@ -382,7 +391,9 @@ public class Badges {
 	 * Updated den "X Tränke Gebraut" Erfolg
 	 */
 	public static void validatePotionsCooked() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validatePotionsCooked()");
+
+        Badge badge = null;
 		
 		if (!local.contains( Badge.POTIONS_COOKED_1 ) && Statistics.potionsCooked >= 3) {
 			badge = Badge.POTIONS_COOKED_1;
@@ -408,7 +419,9 @@ public class Badges {
 	 * Updated den "X Piranhas Getötet" Erfolg
 	 */
 	public static void validatePiranhasKilled() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validatePiranhasKilled()");
+
+        Badge badge = null;
 		
 		if (!local.contains( Badge.PIRANHAS_1 ) && Statistics.piranhasKilled >= 6) {
 			badge = Badge.PIRANHAS_1;
@@ -436,8 +449,9 @@ public class Badges {
 	 * @param item The jeweilige Item
 	 */
 	public static void validateItemLevelAquired( Item item ) {
-		
-		// This method should be called:
+        Logging.debug("INVOKED: Badges.validateItemLevelAquired()");
+
+        // This method should be called:
 		// 1) When an item gets obtained (Item.collect)
 		// 2) When an item gets upgraded (ScrollOfUpgrade, ScrollOfWeaponUpgrade, ShortSword, WandOfMagicMissile)
 		// 3) When an item gets identified
@@ -471,7 +485,9 @@ public class Badges {
 	 * Updated den "Alle Tränke Identifiziert" Erfolg
 	 */
 	public static void validateAllPotionsIdentified() {
-		if (Dungeon.hero != null && Dungeon.hero.isAlive() && 
+        Logging.debug("INVOKED: Badges.validateAllPotionsIdentified()");
+
+        if (Dungeon.hero != null && Dungeon.hero.isAlive() &&
 			!local.contains( Badge.ALL_POTIONS_IDENTIFIED ) && Potion.allKnown()) {
 			
 			Badge badge = Badge.ALL_POTIONS_IDENTIFIED;
@@ -486,7 +502,9 @@ public class Badges {
 	 * Updated den "Alle Spruchrollen Identifiziert" Erfolg
 	 */
 	public static void validateAllScrollsIdentified() {
-		if (Dungeon.hero != null && Dungeon.hero.isAlive() && 
+        Logging.debug("INVOKED: Badges.validateAllScrollsIdentified()");
+
+        if (Dungeon.hero != null && Dungeon.hero.isAlive() &&
 			!local.contains( Badge.ALL_SCROLLS_IDENTIFIED ) && Scroll.allKnown()) {
 			
 			Badge badge = Badge.ALL_SCROLLS_IDENTIFIED;
@@ -501,7 +519,9 @@ public class Badges {
 	 * Updated den "Alle Ringe Identifiziert" Erfolg
 	 */
 	public static void validateAllRingsIdentified() {
-		if (Dungeon.hero != null && Dungeon.hero.isAlive() && 
+        Logging.debug("INVOKED: Badges.validateAllRingsIdentified()");
+
+        if (Dungeon.hero != null && Dungeon.hero.isAlive() &&
 			!local.contains( Badge.ALL_RINGS_IDENTIFIED ) && Ring.allKnown()) {
 			
 			Badge badge = Badge.ALL_RINGS_IDENTIFIED;
@@ -516,7 +536,9 @@ public class Badges {
 	 * Updated den "Alle Zauberstäbe Indentifiziert" Erfolg
 	 */
 	public static void validateAllWandsIdentified() {
-		if (Dungeon.hero != null && Dungeon.hero.isAlive() && 
+        Logging.debug("INVOKED: Badges.validateAllWandsIdentified()");
+
+        if (Dungeon.hero != null && Dungeon.hero.isAlive() &&
 			!local.contains( Badge.ALL_WANDS_IDENTIFIED ) && Wand.allKnown()) {
 			
 			Badge badge = Badge.ALL_WANDS_IDENTIFIED;
@@ -532,8 +554,9 @@ public class Badges {
 	 * @param bag Die gerade gekaufte Tasche
 	 */
 	public static void validateAllBagsBought( Item bag ) {
-		
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateAllBagsBought()");
+
+        Badge badge = null;
 		if (bag instanceof SeedPouch) {
 			badge = Badge.BAG_BOUGHT_SEED_POUCH;
 		} else if (bag instanceof ScrollHolder) {
@@ -562,7 +585,9 @@ public class Badges {
 	 * Updated den "Alle Item Identifiziert" Erfolg
 	 */
 	public static void validateAllItemsIdentified() {
-		if (!global.contains( Badge.ALL_ITEMS_IDENTIFIED ) &&
+        Logging.debug("INVOKED: Badges.validateAllItemsIdentified()");
+
+        if (!global.contains( Badge.ALL_ITEMS_IDENTIFIED ) &&
 			global.contains( Badge.ALL_POTIONS_IDENTIFIED ) &&
 			global.contains( Badge.ALL_SCROLLS_IDENTIFIED ) &&
 			global.contains( Badge.ALL_RINGS_IDENTIFIED ) &&
@@ -577,7 +602,9 @@ public class Badges {
 	 * Updated den "Tod durch Feuer" Erfolg
 	 */
 	public static void validateDeathFromFire() {
-		Badge badge = Badge.DEATH_FROM_FIRE;
+        Logging.debug("INVOKED: Badges.validateDeathFromFire()");
+
+        Badge badge = Badge.DEATH_FROM_FIRE;
 		local.add( badge );
 		displayBadge( badge );
 		
@@ -588,7 +615,9 @@ public class Badges {
 	 * Updated den "Tod durch Gift" Erfolg
 	 */
 	public static void validateDeathFromPoison() {
-		Badge badge = Badge.DEATH_FROM_POISON;
+        Logging.debug("INVOKED: Badges.validateDeathFromPoison()");
+
+        Badge badge = Badge.DEATH_FROM_POISON;
 		local.add( badge );
 		displayBadge( badge );
 		
@@ -599,7 +628,9 @@ public class Badges {
 	 * Updated den "Tod durch Gas" Erfolg
 	 */
 	public static void validateDeathFromGas() {
-		Badge badge = Badge.DEATH_FROM_GAS;
+        Logging.debug("INVOKED: Badges.validateDeathFromGas()");
+
+        Badge badge = Badge.DEATH_FROM_GAS;
 		local.add( badge );
 		displayBadge( badge );
 		
@@ -610,7 +641,9 @@ public class Badges {
 	 * Updated den "Tod durch Hunger" Erfolg
 	 */
 	public static void validateDeathFromHunger() {
-		Badge badge = Badge.DEATH_FROM_HUNGER;
+        Logging.debug("INVOKED: Badges.validateDeathFromHunger()");
+
+        Badge badge = Badge.DEATH_FROM_HUNGER;
 		local.add( badge );
 		displayBadge( badge );
 		
@@ -621,7 +654,9 @@ public class Badges {
 	 * Updated den "Tod durch Glyph(?)" Erfolg
 	 */
 	public static void validateDeathFromGlyph() {
-		Badge badge = Badge.DEATH_FROM_GLYPH;
+        Logging.debug("INVOKED: Badges.validateDeathFromGlyph()");
+
+        Badge badge = Badge.DEATH_FROM_GLYPH;
 		local.add( badge );
 		displayBadge( badge );
 	}
@@ -630,7 +665,9 @@ public class Badges {
 	 * Updated den "Tod durch Fallen" Erfolg
 	 */
 	public static void validateDeathFromFalling() {
-		Badge badge = Badge.DEATH_FROM_FALLING;
+        Logging.debug("INVOKED: Badges.validateDeathFromFalling()");
+
+        Badge badge = Badge.DEATH_FROM_FALLING;
 		local.add( badge );
 		displayBadge( badge );
 	}
@@ -639,7 +676,9 @@ public class Badges {
 	 * Updated den "YASD" Erfolg
 	 */
 	private static void validateYASD() {
-		if (global.contains( Badge.DEATH_FROM_FIRE ) &&
+        Logging.debug("INVOKED: Badges.validateYASD()");
+
+        if (global.contains( Badge.DEATH_FROM_FIRE ) &&
 			global.contains( Badge.DEATH_FROM_POISON ) &&
 			global.contains( Badge.DEATH_FROM_GAS ) &&
 			global.contains( Badge.DEATH_FROM_HUNGER)) {
@@ -654,7 +693,9 @@ public class Badges {
 	 * Updated den "Boss Getötet" Erfolg
 	 */
 	public static void validateBossSlain() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateBossSlain()");
+
+        Badge badge = null;
 		switch (Dungeon.depth) {
 		case 5:
 			badge = Badge.BOSS_SLAIN_1;
@@ -767,8 +808,9 @@ public class Badges {
 	 * Updated den "Mastery" Erfolg
 	 */
 	public static void validateMastery() {
-		
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateMastery()");
+
+        Badge badge = null;
 		switch (Dungeon.hero.heroClass) {
 		case WARRIOR:
 			badge = Badge.MASTERY_WARRIOR;
@@ -794,7 +836,9 @@ public class Badges {
 	 * Updated den "Mastery Combo" Erfolg
 	 */
 	public static void validateMasteryCombo( int n ) {
-		if (!local.contains( Badge.MASTERY_COMBO ) && n == 7) {
+        Logging.debug("INVOKED: Badges.validateMasteryCombo()");
+
+        if (!local.contains( Badge.MASTERY_COMBO ) && n == 7) {
 			Badge badge = Badge.MASTERY_COMBO;
 			local.add( badge );
 			displayBadge( badge );
@@ -805,7 +849,9 @@ public class Badges {
 	 * Updated den "Ring des Hagglers Erhalten" Erfolg
 	 */
 	public static void validateRingOfHaggler() {
-		if (!local.contains( Badge.RING_OF_HAGGLER ) && new RingOfHaggler().isKnown()) {
+        Logging.debug("INVOKED: Badges.validateRingOfHaggler()");
+
+        if (!local.contains( Badge.RING_OF_HAGGLER ) && new RingOfHaggler().isKnown()) {
 			Badge badge = Badge.RING_OF_HAGGLER;
 			local.add( badge );
 			displayBadge( badge );
@@ -816,7 +862,9 @@ public class Badges {
 	 * Updated den "Ring der Dornen Erhalten" Erfolg
 	 */
 	public static void validateRingOfThorns() {
-		if (!local.contains( Badge.RING_OF_THORNS ) && new RingOfThorns().isKnown()) {
+        Logging.debug("INVOKED: Badges.validateRingOfThorns()");
+
+        if (!local.contains( Badge.RING_OF_THORNS ) && new RingOfThorns().isKnown()) {
 			Badge badge = Badge.RING_OF_THORNS;
 			local.add( badge );
 			displayBadge( badge );
@@ -827,8 +875,9 @@ public class Badges {
 	 * Updated den "Seltenes Monster Getötet" Erfolg
 	 */
 	public static void validateRare( Mob mob ) {
-		
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateRare()");
+
+        Badge badge = null;
 		if (mob instanceof Albino) {
 			badge = Badge.RARE_ALBINO;
 		} else if (mob instanceof Bandit) {
@@ -860,6 +909,7 @@ public class Badges {
 	 * Updated den "Gewinn" Erfolg
 	 */
 	public static void validateVictory() {
+        Logging.debug("INVOKED: Badges.validateVictory()");
 
 		Badge badge = Badge.VICTORY;
 		displayBadge( badge );
@@ -898,7 +948,9 @@ public class Badges {
 	 * Updated den "Ebene ohne ein Monster zu töten abgeschlossen" Erfolg
 	 */
 	public static void validateNoKilling() {
-		if (!local.contains( Badge.NO_MONSTERS_SLAIN ) && Statistics.completedWithNoKilling) {
+        Logging.debug("INVOKED: Badges.validateNoKilling()");
+
+        if (!local.contains( Badge.NO_MONSTERS_SLAIN ) && Statistics.completedWithNoKilling) {
 			Badge badge = Badge.NO_MONSTERS_SLAIN;
 			local.add( badge );
 			displayBadge( badge );
@@ -909,7 +961,9 @@ public class Badges {
 	 * Updated den "Gegner mit verfluchter Waffe getötet" Erfolg
 	 */
 	public static void validateGrimWeapon() {
-		if (!local.contains( Badge.GRIM_WEAPON )) {
+        Logging.debug("INVOKED: Badges.validateGrimWeapon()");
+
+        if (!local.contains( Badge.GRIM_WEAPON )) {
 			Badge badge = Badge.GRIM_WEAPON;
 			local.add( badge );
 			displayBadge( badge );
@@ -920,7 +974,9 @@ public class Badges {
 	 * Updated den "X Monser bei Nacht Getötet" Erfolg
 	 */
 	public static void validateNightHunter() {
-		if (!local.contains( Badge.NIGHT_HUNTER ) && Statistics.nightHunt >= 15) {
+        Logging.debug("INVOKED: Badges.validateNightHunter()");
+
+        if (!local.contains( Badge.NIGHT_HUNTER ) && Statistics.nightHunt >= 15) {
 			Badge badge = Badge.NIGHT_HUNTER;
 			local.add( badge );
 			displayBadge( badge );
@@ -939,7 +995,9 @@ public class Badges {
 	 * Updated den "X Spiele Gespielt" Erfolg
 	 */
 	public static void validateGamesPlayed() {
-		Badge badge = null;
+        Logging.debug("INVOKED: Badges.validateGamesPlayed()");
+
+        Badge badge = null;
 		if (Rankings.INSTANCE.totalNumber >= 10) {
 			badge = Badge.GAMES_PLAYED_1;
 		}
@@ -960,14 +1018,18 @@ public class Badges {
 	 * Updated den "Happy End" Erfolg
 	 */
 	public static void validateHappyEnd() {
-		displayBadge( Badge.HAPPY_END );
+        Logging.debug("INVOKED: Badges.validateHappyEnd()");
+
+        displayBadge( Badge.HAPPY_END );
 	}
 
 	/**
 	 * Updated den "Challenger" Erfolg
 	 */
 	public static void validateChampion() {
-		displayBadge( Badge.CHAMPION );
+        Logging.debug("INVOKED: Badges.validateChampion()");
+
+        displayBadge( Badge.CHAMPION );
 	}
 
 	/**
