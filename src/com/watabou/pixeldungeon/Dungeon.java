@@ -760,7 +760,16 @@ public class Dungeon {
 		return PathFinder.getStep( from, to, passable );
 		
 	}
-	
+
+    /**
+     * Lässt einen Charakter von einer best. Zelle fiehen
+     * @param ch Der Charakter, der fliehen soll
+     * @param cur Die jeztige position
+     * @param from Die Zelle, von der der C. fliehen soll
+     * @param pass Alle
+     * @param visible
+     * @return
+     */
 	public static int flee( Char ch, int cur, int from, boolean pass[], boolean[] visible ) {
 		
 		if (ch.flying) {
