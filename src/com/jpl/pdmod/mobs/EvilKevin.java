@@ -1,6 +1,7 @@
 package com.jpl.pdmod.mobs;
 
 import com.jpl.pdmod.data.MobData;
+import com.jpl.pdmod.items.LifeUmhang;
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Burning;
@@ -9,6 +10,7 @@ import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.actors.mobs.npcs.NPC;
 import com.watabou.pixeldungeon.effects.Speck;
 import com.watabou.pixeldungeon.items.potions.PotionOfLiquidFlame;
+import com.watabou.pixeldungeon.sprites.RatKingSprite;
 import com.watabou.pixeldungeon.sprites.WandmakerSprite;
 import com.watabou.utils.Random;
 
@@ -16,19 +18,16 @@ import com.watabou.utils.Random;
  * Created by Freddy on 06.04.2017.
  */
 public class EvilKevin extends Mob {
+    public static boolean spawned;
+
     {
         name = "Evil Kevin";
-        spriteClass = WandmakerSprite.class; // TODO: Neue sprite
+        spriteClass = RatKingSprite.class; // TODO: Neue sprite
 
         HP = HT = 65;
         defenseSkill = 20;
 
-        EXP = 10;
-        maxLvl = 20;
-
-        flying = true;
-
-        loot = new PotionOfLiquidFlame();
+        loot = new LifeUmhang();
         lootChance = 0.1f;
     }
 

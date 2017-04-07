@@ -30,7 +30,6 @@ import com.watabou.utils.Random;
  */
 public class Kevin extends NPC {
     private static int depth;
-    private KevinListener listener;
 
     {
         name = "Kevin";
@@ -41,7 +40,6 @@ public class Kevin extends NPC {
     public void interact() {
         sprite.turnTo( pos, Dungeon.hero.pos );
         Kevin.Quest.type.handler.interact( this );
-        initListener(Dungeon.hero);
     }
 
     @Override
@@ -63,11 +61,6 @@ public class Kevin extends NPC {
 
     @Override
     public void add( Buff buff ) {
-    }
-
-    private void initListener(Char ch){
-        if (listener == null)
-            (listener = new KevinListener(this)).attachTo(ch);
     }
 
     @Override
@@ -253,40 +246,4 @@ public class Kevin extends NPC {
             return false;
         }
     };
-
-
-    protected class KevinListener extends Buff {
-        private Kevin kevin;
-
-        public KevinListener(Kevin kevin){
-            this.kevin = kevin;
-        }
-
-        @Override
-        public boolean attachTo(Char target) {
-            return super.attachTo(target);
-        }
-
-        @Override
-        public boolean act() {
-            if (depth != Dungeon.depth){
-                EvilKevin kevin = new EvilKevin();
-                kevin.aggro(Dungeon.hero);
-                kevin.hostile = true;
-                do {
-                    kevin.pos = Dungeon.level.randomRespawnCell();
-                } while (Dungeon.level.map[kevin.pos] == Terrain.ENTRANCE || Dungeon.level.map[kevin.pos] == Terrain.SIGN);
-                Dungeon.level.mobs.add( kevin );
-                Actor.occupyCell( kevin );
-                kevin.die(kevin);
-                detach();
-            }
-
-            diactivate();
-
-            return true;
-        }
-
-
-    }
 }

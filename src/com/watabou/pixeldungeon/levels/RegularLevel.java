@@ -22,6 +22,8 @@ import java.util.HashSet;
 import java.util.List;
 
 import com.jpl.pdmod.Values;
+import com.jpl.pdmod.items.Knuffi;
+import com.jpl.pdmod.mobs.EvilKevin;
 import com.watabou.pixeldungeon.Bones;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.Actor;
@@ -540,6 +542,19 @@ public abstract class RegularLevel extends Level {
 				mobs.add(mob);
 				Actor.occupyCell(mob);
 			}
+
+            if (Dungeon.hero.belongings.getItem(Knuffi.class) != null && !EvilKevin.spawned) {
+                EvilKevin kevin = new EvilKevin();
+
+                do {
+                    kevin.pos = randomRespawnCell();
+                } while (kevin.pos == -1);
+
+                mobs.add( kevin );
+                Actor.occupyCell( kevin );
+
+                EvilKevin.spawned = true;
+            }
 		}
 	}
 	

@@ -24,6 +24,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 import com.jpl.pdmod.Values;
+import com.jpl.pdmod.items.Knuffi;
+import com.jpl.pdmod.mobs.EvilKevin;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.pixeldungeon.Assets;
