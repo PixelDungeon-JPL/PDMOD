@@ -543,7 +543,7 @@ public abstract class RegularLevel extends Level {
 				Actor.occupyCell(mob);
 			}
 
-            if (Dungeon.hero.belongings.getItem(Knuffi.class) != null && !EvilKevin.spawned) {
+            if (Dungeon.hero.belongings.getItem(Knuffi.class) != null && !EvilKevin.spawned) { // CHANGED: KEVIN
                 EvilKevin kevin = new EvilKevin();
 
                 do {
