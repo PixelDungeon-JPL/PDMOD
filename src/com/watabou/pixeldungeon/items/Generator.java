@@ -20,6 +20,7 @@ package com.watabou.pixeldungeon.items;
 import java.util.HashMap;
 
 import com.jpl.pdmod.items.ElectricSword;
+import com.jpl.pdmod.items.Shovel;
 import com.jpl.pdmod.plants.Hamp;
 import com.jpl.pdmod.potions.PotionOfSatisfy;
 import com.watabou.pixeldungeon.Dungeon;
@@ -195,8 +196,9 @@ public class Generator {
 		
 		Category.MISC.classes = new Class<?>[]{ 
 			Bomb.class,
-			Honeypot.class};
-		Category.MISC.probs = new float[]{ 2, 1 };
+			Honeypot.class,
+				Shovel.class};
+		Category.MISC.probs = new float[]{ 2, 1, 2}; // CHANGED: Shovel prob (2)
 	}
 	
 	public static void reset() {

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import com.jpl.pdmod.items.BagUpgrade;
 import com.jpl.pdmod.items.ElectricSword;
 import com.jpl.pdmod.items.LifeUmhang;
+import com.jpl.pdmod.items.Shovel;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.actors.mobs.npcs.ImpShopkeeper;
@@ -147,6 +148,7 @@ public class ShopPainter extends Painter {
 		}
 
         items.add(new BagUpgrade());
+		items.add(new Shovel().identify());// CHANGED
 
 		items.add( new ScrollOfIdentify() );
 		items.add( new ScrollOfRemoveCurse() );

@@ -613,20 +613,27 @@ public abstract class RegularLevel extends Level {
 		for (int i=0; i < nItems; i++) {
 			Heap.Type type = null;
 			switch (Random.Int( 20 )) {
-			case 0:
-				type = Heap.Type.SKELETON;
-				break;
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-				type = Heap.Type.CHEST;
-				break;
-			case 5:
-				type = Dungeon.depth > 1 ? Heap.Type.MIMIC : Heap.Type.CHEST;
-				break;
-			default:
-				type = Heap.Type.HEAP;
+                case 0:
+                    type = Heap.Type.SKELETON;
+                    break;
+                case 1:
+                case 2:
+                    type = Heap.Type.DIRT;
+                    break;
+                case 3:
+                case 4:
+                    type = Heap.Type.CHEST;
+                    break;
+                case 5:
+                    type = Dungeon.depth > 1 ? Heap.Type.MIMIC : Heap.Type.CHEST;
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    type = Heap.Type.DIRT;
+                    break;
+			    default:
+				    type = Heap.Type.HEAP;
 			}
 			drop( Generator.random(), randomDropCell() ).type = type;
 		}

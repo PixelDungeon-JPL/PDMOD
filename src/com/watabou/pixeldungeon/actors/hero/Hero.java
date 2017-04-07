@@ -24,6 +24,7 @@ import java.util.HashSet;
 import com.jpl.pdmod.Logging;
 import com.jpl.pdmod.Values;
 import com.jpl.pdmod.data.HeroData;
+import com.jpl.pdmod.items.Shovel;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
@@ -625,16 +626,24 @@ public class Hero extends Char {
 						return false;
 					}
 				}
+
+				if (heap.type == Type.DIRT){
+                    if (Dungeon.hero.belongings.getItem(Shovel.class) == null) {
+                        GLog.w("Du brauchst eine Schaufel um das Item auszugraben!");
+                        ready();
+                        return false;
+                    }
+                }
 				
 				switch (heap.type) {
-				case TOMB:
-					Sample.INSTANCE.play( Assets.SND_TOMB );
-					Camera.main.shake( 1, 0.5f );
-					break;
-				case SKELETON:
-					break;
-				default:
-					Sample.INSTANCE.play( Assets.SND_UNLOCK );
+                    case TOMB:
+                        Sample.INSTANCE.play( Assets.SND_TOMB );
+                        Camera.main.shake( 1, 0.5f );
+                        break;
+                    case SKELETON:
+                        break;
+				    default:
+					    Sample.INSTANCE.play( Assets.SND_UNLOCK );
 				}
 				
 				spend( Key.TIME_TO_UNLOCK );

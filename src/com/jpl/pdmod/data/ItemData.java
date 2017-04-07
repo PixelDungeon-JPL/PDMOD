@@ -15,7 +15,7 @@ public class ItemData {
         public static final String ARMOR_TXT_BROKEN = "broken %s :%d";
         public static final String ARMOR_TXT_INCOMPATIBLE = "Interaction of different types of magic has erased the glyph on this armor!";
         public static final String ARMOR_TXT_INFO_KNOWN = "\n\nThis %s provides damage absorption up to %d points per attack. ";
-        public static final String ARMOR_TXT_INFO_UNKNOWN = "\n\nTypical %d provides damage absorption up to %d points per attack and requires %d points of strength. ";
+        public static final String ARMOR_TXT_INFO_UNKNOWN = "\n\nTypical %s provides damage absorption up to %d points per attack and requires %d points of strength. ";
         public static final String ARMOR_TXT_INFO_INADEQUATE_STR_WEARING = "\n\nBecause of your inadequate strength your movement speed and defense skill is decreased. ";
         public static final String ARMOR_TXT_INFO_INADEQUATE_STR_INVENTORY = "\n\nBecause of your inadequate strength wearing this armor will decrease your movement speed and defense skill. ";
         public static final String ARMOR_TXT_TOO_HEAVY = "Probably this armor is too heavy for you. ";

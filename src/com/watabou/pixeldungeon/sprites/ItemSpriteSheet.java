@@ -190,6 +190,10 @@ public class ItemSpriteSheet {
 
 	public static final int KEVINS_EGG = 131;
 	public static final int KEVINS_KNUFFI = 132;
+	public static final int POTION_BAG = 135;
+	public static final int DIRT = 136;
+	public static final int TROPHY = 137;
+	public static final int SHOVEL = 138;
 
 	//Umhänge
 	public static final int LIFE_UMHANG = 133;

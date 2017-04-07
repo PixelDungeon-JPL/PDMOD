@@ -68,7 +68,8 @@ public class Heap implements Bundlable {
 		TOMB, 
 		SKELETON,
 		MIMIC,
-		HIDDEN
+		HIDDEN,
+		DIRT
 	}
 	public Type type = Type.HEAP;
 	
@@ -80,24 +81,26 @@ public class Heap implements Bundlable {
 	
 	public int image() {
 		switch (type) {
-		case HEAP:
-		case FOR_SALE:
-			return size() > 0 ? items.peek().image() : 0;
-		case CHEST:
-		case MIMIC:
-			return ItemSpriteSheet.CHEST;
-		case LOCKED_CHEST:
-			return ItemSpriteSheet.LOCKED_CHEST;
-		case CRYSTAL_CHEST:
-			return ItemSpriteSheet.CRYSTAL_CHEST;
-		case TOMB:
-			return ItemSpriteSheet.TOMB;
-		case SKELETON:
-			return ItemSpriteSheet.BONES;
-		case HIDDEN:
-			return ItemSpriteSheet.HIDDEN;
-		default:
-			return 0;
+			case HEAP:
+			case FOR_SALE:
+				return size() > 0 ? items.peek().image() : 0;
+			case CHEST:
+			case MIMIC:
+				return ItemSpriteSheet.CHEST;
+			case LOCKED_CHEST:
+				return ItemSpriteSheet.LOCKED_CHEST;
+			case CRYSTAL_CHEST:
+				return ItemSpriteSheet.CRYSTAL_CHEST;
+			case TOMB:
+				return ItemSpriteSheet.TOMB;
+			case SKELETON:
+				return ItemSpriteSheet.BONES;
+			case HIDDEN:
+				return ItemSpriteSheet.HIDDEN;
+			case DIRT:
+				return ItemSpriteSheet.DIRT;
+			default:
+				return 0;
 		}
 	}
 	

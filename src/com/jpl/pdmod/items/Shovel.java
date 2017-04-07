@@ -2,6 +2,7 @@ package com.jpl.pdmod.items;
 
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.items.Item;
+import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
 import com.watabou.utils.Bundle;
 
 /**
@@ -10,7 +11,9 @@ import com.watabou.utils.Bundle;
 public class Shovel extends Item {
 
     {
+        name = "Schaufel";
         stackable = false;
+        image = ItemSpriteSheet.SHOVEL;
     }
 
     @Override
@@ -25,6 +28,11 @@ public class Shovel extends Item {
 
     @Override
     public String desc() {
-        return "Das ist eine Schaufel. Damit kannst du Erdhügel entfernen und so tolle Items finden! Aber gib acht... unter den Erdhügeln kann sich auch Boeses befinden.";
+        return "Das ist eine Schaufel. Damit kannst du Erdhuegel entfernen und so tolle Items finden! Aber gib acht... unter den Erdhuegeln kann sich auch Boeses befinden.";
+    }
+
+    @Override
+    public int price() {
+        return 80 * quantity;
     }
 }

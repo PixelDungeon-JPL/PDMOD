@@ -14,7 +14,7 @@ TODO:
     11. Tränketasche
     12. Shop refresh
     13. Beacon (wieder zurück)
-    14. Erdhügel + Schaufeln
+    14. Erdhügel + Schaufeln --> Heaps (RegularLevel.java z. 606f; Hero.java z.608f; Heap.java z. 62f & z. 81f)
     15. Drop Trap
     16. "Healbar dropping" (Skillful)
 
