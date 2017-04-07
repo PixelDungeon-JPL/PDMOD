@@ -43,4 +43,13 @@ public class WndKevin extends WndQuest {
             Kevin.Quest.complete();
         }
     }
+
+    @Override
+    public void destroy() {
+        if (Dungeon.hero.belongings.getItem(LifeUmhang.class) == null){
+            new LifeUmhang().doDrop(Dungeon.hero);
+        }
+
+        super.destroy();
+    }
 }
