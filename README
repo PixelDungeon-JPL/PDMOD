@@ -18,12 +18,10 @@ TODO:
     14. Erdhügel + Schaufeln
     15. Drop Trap
     16. "Healbar dropping" (Skillful)
-    18. Kevin der Questgeber -> wird wütend, wenn er sein Ei nicht bekommt.
     19. Heal Potions
 
 BUGFIXES:
     1. Rüstung
-    2. Kevin wird Wütend -> Fix: Evil Kevin spawn (Via new level testing)
 
 
 INFOs:
@@ -33,7 +31,7 @@ INFOs:
     Neues Item: Electric Sword
     Reworked HealPotion: +100 Health
     Cooked Beaf: more satisfy
-    Neue Quests: Kevin...
+    Neue Quests: Kevin
     Neues beim Shop:
         - Stärke Tränke kaufen
         - Upgrade Scroll Kaufen
